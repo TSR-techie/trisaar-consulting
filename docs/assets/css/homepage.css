@@ -6,6 +6,7 @@
     padding-top: var(--space-5); 
     padding-left: var(--space-10); 
     padding-right: var(--space-10);
+    padding-bottom: var(--space-10);
     background:
     radial-gradient(circle at 80% 20%,
     rgba(220,38,38,.08),
@@ -247,7 +248,9 @@ CAPABILITIES
 ==========================================================*/
 
 .capabilities{
-    padding:8rem 0;
+    padding:var(--space-10);
+
+    background:var(--surface-0);
 }
 
 .section-heading{
@@ -315,6 +318,12 @@ CAPABILITIES
 /*==========================================================
 CASE STUDIES
 ==========================================================*/
+
+.case-studies{
+    padding:var(--space-10);
+
+    background:var(--surface-1);
+}
 
 .case-grid{
 
@@ -419,6 +428,12 @@ CASE STUDIES
 /*==========================================================
 TECHNOLOGY
 ==========================================================*/
+
+.technology{
+    padding:var(--space-10);
+
+    background:var(--surface-0);
+}
 
 .technology-grid{
 
@@ -588,9 +603,28 @@ FOOTER
 
 }
 
+/*==========================================================
+    Contacts CTA
+==========================================================*/
+
+.contacts-cta{
+
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+
+    background:var(--surface-1);
+
+}
+
 /* =====================================================
    OUR APPROACH (Section-specific only)
 ===================================================== */
+
+.approach {
+    padding: var(--space-10);
+
+    background: var(--surface-0);
+}
 
 .approach-grid{
 

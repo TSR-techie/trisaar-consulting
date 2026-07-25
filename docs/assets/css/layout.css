@@ -12,6 +12,7 @@
     margin-inline: auto;
 }
 
+
 .container-wide {
     width: min(100% - 2rem, var(--container-wide-width));
     margin-inline: auto;
@@ -205,6 +206,8 @@
 
 .section {
     padding-block: var(--space-10);
+
+    scroll-snap-align: start;
 }
 
 .section-sm {
