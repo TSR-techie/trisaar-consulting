@@ -725,3 +725,22 @@ FOOTER
     }
 
 }
+
+.logo-business {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
