@@ -17,7 +17,7 @@ async function loadComponent(id, file) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    loadComponent("navbar", "./partials/navbar.html");
-    loadComponent("footer", "./partials/footer.html");
+    loadComponent("navbar", "./overrides/partials/navbar.html");
+    loadComponent("footer", "./overrides/partials/footer.html");
 
 });
