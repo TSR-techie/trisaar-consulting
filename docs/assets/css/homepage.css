@@ -798,11 +798,24 @@ FOOTER
     font-family:"Montserrat",sans-serif;
     font-size:1.0rem;
     font-weight:400;
-    letter-spacing:.25rem;
+    letter-spacing:.1rem;
 
     color:#2E2E2E;
 
     display:block;
+}
+
+.logo-secondary::before,
+.logo-secondary::after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 24px;
+    background: #B30A0A;
+    border-radius: 999px;
+
+    position: relative;
+    top: -4px;
 }
 
 .logo-secondary .text {
@@ -828,21 +841,15 @@ FOOTER
     display:block;
 }
 
-.logo-tertiary::before,
-.logo-tertiary::after {
-    content: "";
-    display: inline-block;
-    height: 2px;
-    width: 24px;
-    background: #B30A0A;
-    border-radius: 999px;
-
-    position: relative;
-    top: -4px;
-}
-
 .logo-tertiary.text {
     font-family: "Montserrat", sans-serif;
     font-size: 0.75rem;
     letter-spacing: 0.35rem;
+}
+
+.pipe{
+    color:#B30A0A;
+    font-size:.9rem;
+    font-weight:600;
+    line-height:1;
 }
