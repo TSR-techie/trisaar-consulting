@@ -7,10 +7,6 @@
  * ==========================================================
  */
 
-const providers = [
-            TriSaar.Providers.GoogleAnalytics,
-            TriSaar.Providers.MicrosoftClarity
-        ];
 
 const TrackingManager = (() => {
 
@@ -30,11 +26,19 @@ const TrackingManager = (() => {
 
         console.log("Initializing analytics...");
 
+        const providers = [
+            TriSaar.Providers.GoogleAnalytics,
+            TriSaar.Providers.MicrosoftClarity
+        ];
+
+
         // Initialize each provider
         providers.forEach(provider => {
 
             if (provider && typeof provider.load === "function") {
                 provider.load();
+
+                console.log("Provider: " & provider & typeof provider)
             }
 
         });
