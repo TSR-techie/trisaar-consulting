@@ -11,8 +11,19 @@ const MicrosoftClarity = (() => {
 
     let loaded = false;
 
+    console.log("MC: Clarity load called");
+
+    if(loaded)
+    {
+        console.log("MC: Clarity already loaded")
+    }
+
+    
+
     // Replace with your Clarity Project ID
     const PROJECT_ID = window.TriSaar.Config.clarityProjectId;
+
+    console.log("MC: ID - " & PROJECT_ID)
 
     function load() {
 
@@ -31,12 +42,14 @@ const MicrosoftClarity = (() => {
             t.async=1;
             t.src="https://www.clarity.ms/tag/" + i;
 
+            console.log("MC: Script created:", t.src);
+
             y=l.getElementsByTagName(r)[0];
             y.parentNode.insertBefore(t,y);
 
         })(window, document, "clarity", "script", PROJECT_ID);
 
-        console.log("Microsoft Clarity loaded.");
+        console.log("MC: Microsoft Clarity loaded.");
     }
 
     function isLoaded() {
