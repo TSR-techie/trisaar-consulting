@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://tsr-techie.github.io/trisaar-consulting/sitemap.xml
