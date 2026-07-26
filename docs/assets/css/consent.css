@@ -1,0 +1,132 @@
+/* ==========================================================
+   Cookie Consent Banner
+   TriSaar Consulting
+   ========================================================== */
+
+:root {
+    --cookie-width: 380px;
+    --cookie-bottom: 24px;
+    --cookie-right: 24px;
+
+    --cookie-bg: #ffffff;
+    --cookie-border: #e5e7eb;
+    --cookie-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+    --cookie-radius: 16px;
+    --cookie-accent: var(--color-primary, #c62828);
+
+    --cookie-transition: 0.3s ease;
+}
+
+/* ==========================================================
+   Container
+   ========================================================== */
+
+.cookie-consent {
+    position: fixed;
+    bottom: var(--cookie-bottom);
+    right: var(--cookie-right);
+
+    width: min(var(--cookie-width), calc(100vw - 32px));
+
+    background: var(--cookie-bg);
+    border: 1px solid var(--cookie-border);
+    border-radius: var(--cookie-radius);
+    box-shadow: var(--cookie-shadow);
+
+    overflow: hidden;
+
+    z-index: 9999;
+
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity var(--cookie-transition),
+        transform var(--cookie-transition);
+}
+
+/* Hidden state */
+
+.cookie-consent.hidden {
+    opacity: 0;
+    transform: translateY(24px);
+    pointer-events: none;
+}
+
+/* ==========================================================
+   Accent
+   ========================================================== */
+
+.cookie-accent {
+    height: 4px;
+    background: var(--cookie-accent);
+}
+
+/* ==========================================================
+   Content
+   ========================================================== */
+
+.cookie-content {
+    padding: 20px;
+}
+
+.cookie-content h3 {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.cookie-content p {
+    margin: 0 0 16px;
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================
+   Privacy Policy Link
+   ========================================================== */
+
+.cookie-policy-link {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    color: var(--cookie-accent);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.cookie-policy-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+
+.cookie-actions {
+    display: flex;
+    gap: 12px;
+    flex-direction: row-reverse;
+}
+
+.cookie-actions button {
+    flex: 1;
+}
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .cookie-consent {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        width: auto;
+    }
+
+}

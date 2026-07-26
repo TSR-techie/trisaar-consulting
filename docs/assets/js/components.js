@@ -1,3 +1,10 @@
+/**
+ * ==========================================================
+ * Components Loader
+ * TriSaar Consulting
+ * ==========================================================
+ */
+
 async function loadComponent(id, file) {
 
     const element = document.getElementById(id);
@@ -17,17 +24,28 @@ async function loadComponent(id, file) {
 
         element.innerHTML = await response.text();
 
-    } catch (err) {
+    } catch (error) {
 
-        console.error(err);
+        console.error(error);
 
     }
 
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
+const Components = (() => {
 
-    await loadComponent("navbar", "./partials/navbar.html");
-    await loadComponent("footer", "./partials/footer.html");
+    async function load() {
 
-});
+        await loadComponent("navbar", "./partials/navbar.html");
+        await loadComponent("footer", "./partials/footer.html");
+        await loadComponent("consent-banner", "./partials/consent-banner.html");
+
+    }
+
+    return {
+        load
+    };
+
+})();
+
+window.TriSaar.Components = Components;
