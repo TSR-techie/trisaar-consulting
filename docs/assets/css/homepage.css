@@ -768,7 +768,7 @@ FOOTER
 }
 
 .logo-image {
-    height: 40px;
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -777,4 +777,72 @@ FOOTER
     font-size: 1.2rem;
     font-weight: 700;
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.logo-primary{
+    font-family:"Montserrat",sans-serif;
+    font-size:1.5rem;
+    font-weight:300;
+    letter-spacing:.45rem;
+    color:#B30A0A;
+}
+
+.logo-secondary{
+    margin: top 10px;
+
+    font-family:"Montserrat",sans-serif;
+    font-size:1.0rem;
+    font-weight:400;
+    letter-spacing:.25rem;
+
+    color:#2E2E2E;
+
+    display:block;
+}
+
+.logo-secondary .text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35rem;
+}
+
+.logo-tertiary{
+    margin: top 10px;
+
+    font-family:"Montserrat",sans-serif;
+    font-size:.78rem;
+    font-weight:400;
+    letter-spacing:.05rem;
+    padding-top: 6px;
+
+    align-items: center;
+    justify-content: center;
+
+    color:#2E2E2E;
+
+    display:block;
+}
+
+.logo-tertiary::before,
+.logo-tertiary::after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 24px;
+    background: #B30A0A;
+    border-radius: 999px;
+
+    position: relative;
+    top: -4px;
+}
+
+.logo-tertiary.text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35rem;
 }
