@@ -1,0 +1,515 @@
+{
+  "schemaVersion": "1.0",
+
+  "metadata": {
+    "id": "sara-0001",
+    "number": "0001",
+    "series": "Sāra",
+    "title": "Infrastructure Network Feasibility Toolkit",
+    "titleHindi": "सार ०००१",
+    "slug": "infrastructure-network-feasibility",
+
+    "status": "published",
+    "version": "1.0",
+
+    "publishedDate": "",
+    "lastUpdated": "",
+
+    "author": "TriSaar Consulting",
+
+    "domain": "Critical Infrastructure",
+    "industry": "Water Utilities",
+
+    "capabilities": [
+      "Business Analytics",
+      "Automation"
+    ],
+
+    "technologies": [
+      "Excel",
+      "Office Scripts"
+    ],
+
+    "complexity": 3,
+    "maturity": "MVP",
+
+    "readingTime": 12,
+
+    "confidentiality": "Synthetic recreation"
+  },
+
+  "presentation": {
+
+    "theme": "automation",
+
+    "accentColor": "#EF4444",
+
+    "heroVariant": "immersive",
+
+    "navigationStyle": "floating",
+
+    "progressBar": true,
+
+    "tableOfContents": true,
+
+    "readingIndicator": true,
+
+    "animations": "normal",
+
+    "sectionSpacing": "comfortable",
+
+    "cornerStyle": "rounded",
+
+    "iconPack": "lucide"
+
+  },
+
+  "seo": {
+
+    "title": "",
+
+    "description": "",
+
+    "keywords": [],
+
+    "canonical": "",
+
+    "ogImage": "",
+
+    "robots": "index,follow"
+
+  },
+
+  "navigation": {
+
+    "previous": "",
+
+    "next": "",
+
+    "back": "/case-studies",
+
+    "related": [
+      "sara-0002",
+      "sara-0005"
+    ]
+
+  },
+
+  "hero": {
+
+    "variant": "immersive",
+
+    "eyebrow": "Business Analytics • Automation",
+
+    "title": "",
+
+    "subtitle": "",
+
+    "description": "",
+
+    "backgroundImage": "",
+
+    "illustration": "",
+
+    "badges": [
+
+      "Excel",
+
+      "Automation",
+
+      "Decision Support"
+
+    ],
+
+    "quickStats": [
+
+      {
+        "label": "Turnaround",
+        "value": "Minutes"
+      },
+
+      {
+        "label": "Technology",
+        "value": "Excel"
+      }
+
+    ],
+
+    "primaryCTA": {
+
+      "text": "View Solution",
+
+      "target": "#executive-summary"
+
+    }
+
+  },
+
+  "sections": [
+
+    {
+
+      "id": "executive-summary",
+
+      "component": "executive-summary",
+
+      "variant": "executive",
+
+      "title": "Executive Summary",
+
+      "navigationLabel": "Summary",
+
+      "visible": true,
+
+      "animation": "fade",
+
+      "background": "default",
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "business-context",
+
+      "component": "business-context",
+
+      "variant": "story",
+
+      "title": "Business Context",
+
+      "navigationLabel": "Context",
+
+      "visible": true,
+
+      "animation": "slide-up",
+
+      "background": "subtle",
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "challenge",
+
+      "component": "challenge",
+
+      "variant": "timeline",
+
+      "title": "Business Challenge",
+
+      "navigationLabel": "Challenge",
+
+      "visible": true,
+
+      "animation": "fade",
+
+      "background": "default",
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "objectives",
+
+      "component": "objectives",
+
+      "variant": "cards",
+
+      "title": "Objectives",
+
+      "navigationLabel": "Objectives",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "existing-process",
+
+      "component": "process",
+
+      "variant": "flow",
+
+      "title": "Existing Process",
+
+      "navigationLabel": "Current Process",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "solution-overview",
+
+      "component": "solution-overview",
+
+      "variant": "story",
+
+      "title": "Solution Overview",
+
+      "navigationLabel": "Solution",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "architecture",
+
+      "component": "architecture",
+
+      "variant": "pipeline",
+
+      "title": "Architecture",
+
+      "navigationLabel": "Architecture",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "data-model",
+
+      "component": "data-model",
+
+      "variant": "entity",
+
+      "title": "Data Model",
+
+      "navigationLabel": "Data",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "user-journey",
+
+      "component": "journey",
+
+      "variant": "flow",
+
+      "title": "User Journey",
+
+      "navigationLabel": "Journey",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "dashboard",
+
+      "component": "dashboard",
+
+      "variant": "gallery",
+
+      "title": "Dashboard Walkthrough",
+
+      "navigationLabel": "Dashboard",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "technical",
+
+      "component": "technical",
+
+      "variant": "deep-dive",
+
+      "title": "Technical Deep Dive",
+
+      "navigationLabel": "Technical",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "impact",
+
+      "component": "impact",
+
+      "variant": "kpi-cards",
+
+      "title": "Business Impact",
+
+      "navigationLabel": "Impact",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "limitations",
+
+      "component": "limitations",
+
+      "variant": "cards",
+
+      "title": "Limitations",
+
+      "navigationLabel": "Limitations",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "roadmap",
+
+      "component": "roadmap",
+
+      "variant": "timeline",
+
+      "title": "Evolution Roadmap",
+
+      "navigationLabel": "Roadmap",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "lessons",
+
+      "component": "lessons",
+
+      "variant": "sticky-notes",
+
+      "title": "Lessons Learned",
+
+      "navigationLabel": "Lessons",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "consultant-notebook",
+
+      "component": "notebook",
+
+      "variant": "journal",
+
+      "title": "Consultant's Notebook",
+
+      "navigationLabel": "Notebook",
+
+      "visible": true,
+
+      "data": {}
+
+    },
+
+    {
+
+      "id": "about",
+
+      "component": "about",
+
+      "variant": "minimal",
+
+      "title": "About this Sāra",
+
+      "navigationLabel": "About",
+
+      "visible": true,
+
+      "data": {}
+
+    }
+
+  ],
+
+  "downloads": {
+
+    "github": "",
+
+    "documentation": "",
+
+    "dataset": "",
+
+    "excel": "",
+
+    "pdf": "",
+
+    "presentation": ""
+
+  },
+
+  "assets": {
+
+    "coverImage": "",
+
+    "heroBackground": "",
+
+    "architectureDiagram": "",
+
+    "dashboardScreenshots": [],
+
+    "workflowImages": [],
+
+    "gallery": [],
+
+    "videos": [],
+
+    "downloads": []
+
+  },
+
+  "metrics": {
+
+    "readingProgress": true,
+
+    "showReadingTime": true,
+
+    "enableAnalytics": true
+
+  }
+}
