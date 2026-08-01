@@ -18,7 +18,7 @@ export default {
 
         const eyebrow = createElement("span", {
             className: "hero-eyebrow",
-            text: data.eyebrow
+            text: data.taxonomy.join(" • ")
         });
 
         container.append(eyebrow);
