@@ -16,9 +16,11 @@ export default {
 
         heroSection.append(container);
 
+        const taxonomyText = data.taxonomy.join(" • ");
+
         const eyebrow = createElement("span", {
             className: "hero-eyebrow",
-            text: data.taxonomy.join(" • ")
+            text: taxonomyText
         });
 
         container.append(eyebrow);
