@@ -1,0 +1,67 @@
+/* ==========================================================
+   TriSaar Consulting — Privacy Policy Page
+========================================================== */
+
+.privacy-page {
+    padding: var(--space-9) 0 var(--space-8);
+}
+
+.privacy-content {
+    max-width: 70ch;
+}
+
+.privacy-content h1 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-3);
+}
+
+.privacy-updated {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-7);
+}
+
+.privacy-content section {
+    margin-bottom: var(--space-7);
+}
+
+.privacy-content h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-4);
+}
+
+.privacy-content h3 {
+    font-size: var(--text-xl);
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-3);
+}
+
+.privacy-content p {
+    margin-bottom: var(--space-4);
+}
+
+.privacy-content ul {
+    list-style: disc;
+    padding-left: var(--space-5);
+    margin-bottom: var(--space-4);
+}
+
+.privacy-content li {
+    margin-bottom: var(--space-2);
+    max-width: 70ch;
+    color: var(--color-body);
+}
+
+.privacy-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.privacy-content a:hover {
+    color: var(--color-primary-hover);
+}
+
+.privacy-content hr {
+    margin: var(--space-6) 0;
+}
