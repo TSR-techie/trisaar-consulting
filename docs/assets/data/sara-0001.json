@@ -242,7 +242,7 @@
           {
             "label": "Start a Conversation",
             "type": "primary",
-            "target": "index.html#contact"
+            "target": "contact.html"
           },
           {
             "label": "View More Work",
