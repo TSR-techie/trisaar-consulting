@@ -4,10 +4,12 @@ export default {
 
     render(section) {
 
-        const data = section.data;
+        const data = section.data || {};
+        const variant = section.variant || "immersive";
 
         const heroSection = createElement("section", {
-            className: "hero"
+            className: `hero hero--${variant} cs-animate`,
+            id: section.id
         });
 
         const container = createElement("div", {
@@ -16,105 +18,87 @@ export default {
 
         heroSection.append(container);
 
-        const taxonomyText = data.taxonomy.join(" • ");
+        if (Array.isArray(data.taxonomy) && data.taxonomy.length) {
+            container.append(createElement("span", {
+                className: "hero-eyebrow",
+                text: data.taxonomy.join(" • ")
+            }));
+        }
 
-        const eyebrow = createElement("span", {
-            className: "hero-eyebrow",
-            text: taxonomyText
-        });
+        if (data.title) {
+            container.append(createElement("h1", {
+                className: "hero-title",
+                text: data.title
+            }));
+        }
 
-        container.append(eyebrow);
+        if (data.subtitle) {
+            container.append(createElement("p", {
+                className: "hero-subtitle",
+                text: data.subtitle
+            }));
+        }
 
-        const title = createElement("h1", {
-            className: "hero-title",
-            text: data.title
-        });
+        if (Array.isArray(data.actions) && data.actions.length) {
+            const actions = createElement("div", {
+                className: "hero-actions"
+            });
 
-        container.append(title);
+            data.actions.forEach((action) => {
+                const isExternal = /^https?:\/\//i.test(action.target || "");
 
-        const subtitle = createElement("p", {
-            className: "hero-subtitle",
-            text: data.subtitle
-        });
+                const attributes = {
+                    href: action.target || "#"
+                };
 
-        container.append(subtitle);
-
-        const buttonGroup = createElement("div", {
-            className: "hero-actions"
-        });
-
-        container.append(buttonGroup)
-
-        const actions = createElement("div", {
-            className: "hero-actions"
-        });
-
-        data.actions.forEach(action => {
-
-            const button = createElement("a", {
-
-                className: `btn btn-${action.type}`,
-
-                text: action.label,
-
-                attributes:{
-
-                    href:action.target
-
+                if (isExternal) {
+                    attributes.target = "_blank";
+                    attributes.rel = "noopener noreferrer";
                 }
 
+                actions.append(createElement("a", {
+                    className: `btn btn-${action.type || "primary"}`,
+                    text: action.label,
+                    attributes
+                }));
             });
 
-            actions.append(button);
+            container.append(actions);
+        }
 
-        });
+        if (data.description) {
+            container.append(createElement("p", {
+                className: "hero-description",
+                text: data.description
+            }));
+        }
 
-        container.append(actions);
-
-        const description = createElement("p", {
-            className: "hero-description",
-            text: data.description
-        });
-
-        container.append(description);
-
-        const snapshot = createElement("div", {
-            className: "hero-snapshot"
-        });
-
-        data.snapshot.forEach(item=>{
-
-            const card = createElement("div",{
-
-                className:"snapshot-card"
-
+        if (Array.isArray(data.snapshot) && data.snapshot.length) {
+            const snapshot = createElement("div", {
+                className: "hero-snapshot"
             });
 
-            const label=createElement("span",{
+            data.snapshot.forEach((item) => {
+                const card = createElement("div", {
+                    className: "snapshot-item"
+                });
 
-                className:"snapshot-label",
+                card.append(
+                    createElement("span", {
+                        className: "snapshot-label",
+                        text: item.label
+                    }),
+                    createElement("strong", {
+                        className: "snapshot-value",
+                        text: item.value
+                    })
+                );
 
-                text:item.label
-
+                snapshot.append(card);
             });
 
-            const value=createElement("strong",{
-
-                className:"snapshot-value",
-
-                text:item.value
-
-            });
-
-            card.append(label);
-
-            card.append(value);
-
-            snapshot.append(card);
-
-        });
-
-        container.append(snapshot);
+            container.append(snapshot);
+        }
 
         return heroSection;
 

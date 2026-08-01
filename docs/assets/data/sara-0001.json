@@ -1,6 +1,11 @@
 {
   "schemaVersion": "1.0",
 
+  "meta": {
+    "id": "sara-0001",
+    "title": "Infrastructure Network Feasibility Toolkit | TriSaar"
+  },
+
   "sections": [
     {
       "id": "hero",
@@ -10,9 +15,9 @@
 
       "data": {
         "taxonomy": [
-            "Energy",
-            "Network Feasibility",
-            "Automation"
+          "Energy",
+          "Network Feasibility",
+          "Automation"
         ],
 
         "title": "Infrastructure Network Feasibility Toolkit",
@@ -50,6 +55,129 @@
           {
             "label": "Data",
             "value": "Synthetic Recreation"
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "executive-summary",
+      "component": "summary",
+      "variant": "split",
+      "visible": true,
+
+      "data": {
+        "eyebrow": "Executive Summary",
+        "title": "A decision engine for network feasibility.",
+        "paragraphs": [
+          "Network feasibility assessments previously depended on a small group of specialists who carried the logic, assumptions, and edge cases in their heads. That made every evaluation slow, inconsistent, and difficult to scale.",
+          "We designed an Excel-first toolkit powered by Office Scripts that encodes the feasibility workflow into a reusable decision-support process — so teams can evaluate options quickly without waiting for scarce expert bandwidth."
+        ],
+        "highlights": [
+          "Codified expert judgment into structured, auditable steps",
+          "Reduced evaluation cycle time from days to minutes",
+          "Delivered as an MVP that teams can extend without rewriting the core logic"
+        ]
+      }
+    },
+
+    {
+      "id": "challenge",
+      "component": "challenge",
+      "variant": "callout",
+      "visible": true,
+
+      "data": {
+        "eyebrow": "The Challenge",
+        "title": "Feasibility lived as tribal knowledge.",
+        "body": "Critical network decisions were bottlenecked by specialist availability. Assumptions varied by person, documentation was thin, and repeating an analysis meant rebuilding context from scratch.",
+        "bullets": [
+          "Expert-dependent reviews created multi-day turnaround times",
+          "Inconsistent criteria made outcomes hard to compare across scenarios",
+          "No durable workflow existed for non-specialists to run first-pass assessments"
+        ]
+      }
+    },
+
+    {
+      "id": "approach",
+      "component": "approach",
+      "variant": "numbered",
+      "visible": true,
+
+      "data": {
+        "eyebrow": "Approach",
+        "title": "From informal judgment to a structured workflow.",
+        "intro": "We translated domain expertise into a transparent decision model, then automated the repetitive layers so analysts could focus on interpretation instead of reconstruction.",
+        "steps": [
+          {
+            "title": "Map the decision logic",
+            "body": "Worked with domain experts to capture feasibility criteria, dependencies, and exception paths in a form that could be reviewed and tested."
+          },
+          {
+            "title": "Build the Excel decision surface",
+            "body": "Designed a familiar spreadsheet interface for inputs, scenario comparison, and clear output states — without forcing users into a new platform."
+          },
+          {
+            "title": "Automate with Office Scripts",
+            "body": "Encoded repeatable calculations and validation checks so the same evaluation path could run consistently in minutes."
+          },
+          {
+            "title": "Validate with synthetic recreation",
+            "body": "Recreated representative scenarios to prove the toolkit matched expert outcomes before rolling it into day-to-day use."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "outcomes",
+      "component": "outcomes",
+      "variant": "strip",
+      "visible": true,
+
+      "data": {
+        "eyebrow": "Outcomes",
+        "title": "Faster, clearer, repeatable feasibility calls.",
+        "metrics": [
+          {
+            "value": "Days → Minutes",
+            "label": "Evaluation turnaround",
+            "note": "First-pass feasibility no longer waits on specialist availability."
+          },
+          {
+            "value": "MVP",
+            "label": "Delivery model",
+            "note": "Shipped a usable core workflow teams can extend without a rebuild."
+          },
+          {
+            "value": "Shared logic",
+            "label": "Decision consistency",
+            "note": "Criteria and assumptions live in the toolkit, not only in people's heads."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "next-step",
+      "component": "cta",
+      "variant": "centered",
+      "visible": true,
+
+      "data": {
+        "title": "Need a decision system your team can actually run?",
+        "body": "We help organizations turn expert-dependent processes into structured analytics and automation — starting with practical MVPs that create immediate operating leverage.",
+        "actions": [
+          {
+            "label": "Start a Conversation",
+            "type": "primary",
+            "target": "index.html#contact"
+          },
+          {
+            "label": "View More Work",
+            "type": "secondary",
+            "target": "index.html#case-studies"
           }
         ]
       }

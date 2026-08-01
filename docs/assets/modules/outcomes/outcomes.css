@@ -1,0 +1,59 @@
+.outcomes {
+    background: var(--surface-0);
+}
+
+.outcomes-header {
+    margin-bottom: var(--space-7);
+}
+
+.outcomes-metrics {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.outcomes--strip .outcomes-metrics {
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+}
+
+.outcomes--cards .outcomes-metrics {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.outcomes--cards .outcomes-metric {
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+}
+
+.outcomes-metric-value {
+    display: block;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: var(--font-bold);
+    color: var(--color-heading);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-2);
+}
+
+.outcomes-metric-label {
+    display: block;
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-heading);
+}
+
+.outcomes-metric-note {
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+    .outcomes--strip .outcomes-metrics,
+    .outcomes--cards .outcomes-metrics {
+        grid-template-columns: 1fr;
+    }
+}
