@@ -3,12 +3,7 @@
 
   "meta": {
     "id": "sara-0001",
-    "title": "Infrastructure Network Feasibility Toolkit | TriSaar",
-    "publicationLabel": "Sāra Publication",
-    "edition": "Public Edition",
-    "version": "1.0",
-    "published": "Jul 2026",
-    "readTime": "8 min read"
+    "title": "Infrastructure Network Feasibility Toolkit | TriSaar"
   },
 
   "sections": [
@@ -83,6 +78,21 @@
             }
           ]
         }
+      }
+    },
+
+    {
+      "id": "publication",
+      "component": "publication",
+      "variant": "rule",
+      "visible": true,
+
+      "data": {
+        "label": "Sāra Publication",
+        "edition": "Public Edition",
+        "version": "1.0",
+        "published": "Jul 2026",
+        "readTime": "8 min read"
       }
     },
 
