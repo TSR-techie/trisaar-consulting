@@ -3,7 +3,12 @@
 
   "meta": {
     "id": "sara-0001",
-    "title": "Infrastructure Network Feasibility Toolkit | TriSaar"
+    "title": "Infrastructure Network Feasibility Toolkit | TriSaar",
+    "publicationLabel": "Sāra Publication",
+    "edition": "Public Edition",
+    "version": "1.0",
+    "published": "Jul 2026",
+    "readTime": "8 min read"
   },
 
   "sections": [
@@ -20,43 +25,64 @@
           "Automation"
         ],
 
+        "identity": "Sāra 0001 · सार ०००१",
+
         "title": "Infrastructure Network Feasibility Toolkit",
 
         "subtitle": "Transforming network feasibility analysis from tribal knowledge into a repeatable decision engine.",
 
         "description": "A reusable decision-support solution that replaced manual dependency on domain experts with a structured, scalable workflow for evaluating network feasibility.",
 
+        "repository": "https://github.com/tsr-techie/trisaar-consulting",
+
         "actions": [
           {
-            "label": "Explore Case Study",
+            "label": "Read Case Study",
             "type": "primary",
-            "target": "#executive-summary"
-          },
-          {
-            "label": "View Repository",
-            "type": "secondary",
-            "target": "https://github.com/tsr-techie/trisaar-consulting"
+            "target": "#executive-summary",
+            "icon": "book"
           }
         ],
 
-        "snapshot": [
-          {
-            "label": "Turnaround",
-            "value": "Days → Minutes"
-          },
-          {
-            "label": "Technology",
-            "value": "Excel + Office Scripts"
-          },
-          {
-            "label": "Delivery",
-            "value": "MVP"
-          },
-          {
-            "label": "Data",
-            "value": "Synthetic Recreation"
-          }
-        ]
+        "brief": {
+          "title": "Case Brief",
+          "fields": [
+            {
+              "label": "Client",
+              "value": "Fortune 500",
+              "icon": "client"
+            },
+            {
+              "label": "Duration",
+              "value": "6 Weeks",
+              "icon": "duration"
+            },
+            {
+              "label": "Outcome",
+              "icon": "outcome",
+              "values": [
+                "Days → Minutes",
+                "Bottleneck Eliminated",
+                "Knowledge Democratized"
+              ]
+            },
+            {
+              "label": "Technology",
+              "value": "Excel • Office Scripts",
+              "icon": "technology"
+            },
+            {
+              "label": "Dataset",
+              "value": "Synthetic Recreation",
+              "icon": "dataset"
+            },
+            {
+              "label": "Confidentiality",
+              "value": "Public (Sanitized)",
+              "icon": "confidentiality"
+            }
+          ]
+        }
       }
     },
 

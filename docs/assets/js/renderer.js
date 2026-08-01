@@ -38,6 +38,81 @@ function renderError(root, message) {
     root.append(error);
 }
 
+function renderPublicationDivider(meta = {}) {
+    const hasMeta = meta.edition || meta.version || meta.published || meta.readTime;
+
+    if (!hasMeta) return null;
+
+    const wrap = createElement("div", {
+        className: "cs-publication"
+    });
+
+    const container = createElement("div", {
+        className: "case-study-container"
+    });
+
+    const rule = createElement("div", {
+        className: "cs-publication-rule"
+    });
+
+    const badge = createElement("div", {
+        className: "cs-publication-badge"
+    });
+
+    badge.append(
+        createElement("span", {
+            className: "cs-publication-icon",
+            html: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>`
+        }),
+        createElement("span", {
+            className: "cs-publication-badge-text",
+            text: meta.publicationLabel || "Sāra Publication"
+        })
+    );
+
+    rule.append(
+        createElement("span", { className: "cs-publication-node" }),
+        createElement("span", { className: "cs-publication-line" }),
+        badge,
+        createElement("span", { className: "cs-publication-line" }),
+        createElement("span", { className: "cs-publication-node" })
+    );
+
+    container.append(rule);
+
+    const details = [
+        meta.edition,
+        meta.version ? `Version ${meta.version}` : null,
+        meta.published,
+        meta.readTime
+    ].filter(Boolean);
+
+    if (details.length) {
+        const metaRow = createElement("p", {
+            className: "cs-publication-meta"
+        });
+
+        details.forEach((detail, index) => {
+            if (index > 0) {
+                metaRow.append(createElement("span", {
+                    className: "cs-publication-sep",
+                    text: "|"
+                }));
+            }
+
+            metaRow.append(createElement("span", {
+                className: "cs-publication-meta-item",
+                text: detail
+            }));
+        });
+
+        container.append(metaRow);
+    }
+
+    wrap.append(container);
+    return wrap;
+}
+
 export async function renderCaseStudy() {
     const root = document.getElementById("case-study-root");
 
@@ -63,6 +138,8 @@ export async function renderCaseStudy() {
 
         root.innerHTML = "";
 
+        let publicationInserted = false;
+
         for (const section of page.sections || []) {
             if (section.visible === false) continue;
 
@@ -77,6 +154,16 @@ export async function renderCaseStudy() {
 
             if (element instanceof Node) {
                 root.appendChild(element);
+            }
+
+            if (!publicationInserted && section.component === "hero") {
+                const divider = renderPublicationDivider(page.meta || {});
+
+                if (divider) {
+                    root.appendChild(divider);
+                }
+
+                publicationInserted = true;
             }
         }
     } catch (error) {
