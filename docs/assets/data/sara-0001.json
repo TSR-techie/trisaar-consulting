@@ -13,72 +13,106 @@
       "variant": "immersive",
       "visible": true,
 
-      "data": {
-        "taxonomy": [
-          "Energy",
-          "Network Feasibility",
-          "Automation"
-        ],
-
-        "identity": "Sāra 0001 · सार ०००१",
-
-        "title": "Infrastructure Network Feasibility Toolkit",
-
-        "subtitle": "Transforming network feasibility analysis from tribal knowledge into a repeatable decision engine.",
-
-        "description": "A reusable decision-support solution that replaced manual dependency on domain experts with a structured, scalable workflow for evaluating network feasibility.",
-
-        "repository": "https://github.com/tsr-techie/trisaar-consulting",
-
-        "actions": [
-          {
-            "label": "Read Case Study",
-            "type": "primary",
-            "target": "#executive-summary",
-            "icon": "book"
+      "parts": [
+        {
+          "type": "taxonomy",
+          "data": {
+            "items": [
+              "Energy",
+              "Network Feasibility",
+              "Automation"
+            ]
           }
-        ],
-
-        "brief": {
-          "title": "Case Brief",
-          "fields": [
-            {
-              "label": "Client",
-              "value": "Fortune 500",
-              "icon": "client"
-            },
-            {
-              "label": "Duration",
-              "value": "6 Weeks",
-              "icon": "duration"
-            },
-            {
-              "label": "Outcome",
-              "icon": "outcome",
-              "values": [
-                "Days → Minutes",
-                "Bottleneck Eliminated",
-                "Knowledge Democratized"
-              ]
-            },
-            {
-              "label": "Technology",
-              "value": "Excel • Office Scripts",
-              "icon": "technology"
-            },
-            {
-              "label": "Dataset",
-              "value": "Synthetic Recreation",
-              "icon": "dataset"
-            },
-            {
-              "label": "Confidentiality",
-              "value": "Public (Sanitized)",
-              "icon": "confidentiality"
-            }
-          ]
+        },
+        {
+          "type": "identity",
+          "variant": "dualTone",
+          "data": {
+            "text": "Sāra 0001 · सार ०००१"
+          }
+        },
+        {
+          "type": "title",
+          "data": {
+            "text": "Infrastructure Network Feasibility Toolkit"
+          }
+        },
+        {
+          "type": "subtitle",
+          "data": {
+            "text": "Transforming network feasibility analysis from tribal knowledge into a repeatable decision engine."
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "items": [
+              {
+                "label": "Read Case Study",
+                "type": "primary",
+                "target": "#executive-summary",
+                "icon": "book"
+              },
+              {
+                "label": "View Repository",
+                "type": "secondary",
+                "target": "https://github.com/tsr-techie/trisaar-consulting",
+                "icon": "github"
+              }
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "text": "A reusable decision-support solution that replaced manual dependency on domain experts with a structured, scalable workflow for evaluating network feasibility."
+          },
+          "visible": true
+        },
+        {
+          "type": "brief",
+          "variant": "rail",
+          "data": {
+            "title": "Case Brief",
+            "fields": [
+              {
+                "label": "Client",
+                "value": "Fortune 500",
+                "icon": "client"
+              },
+              {
+                "label": "Duration",
+                "value": "6 Weeks",
+                "icon": "duration"
+              },
+              {
+                "label": "Outcome",
+                "icon": "outcome",
+                "values": [
+                  "Days → Minutes",
+                  "Bottleneck Eliminated",
+                  "Knowledge Democratized"
+                ]
+              },
+              {
+                "label": "Technology",
+                "value": "Excel • Office Scripts",
+                "icon": "technology"
+              },
+              {
+                "label": "Dataset",
+                "value": "Synthetic Recreation",
+                "icon": "dataset"
+              },
+              {
+                "label": "Confidentiality",
+                "value": "Public (Sanitized)",
+                "icon": "confidentiality"
+              }
+            ]
+          }
         }
-      }
+      ]
     },
 
     {
@@ -107,7 +141,7 @@
         "title": "A decision engine for network feasibility.",
         "paragraphs": [
           "Network feasibility assessments previously depended on a small group of specialists who carried the logic, assumptions, and edge cases in their heads. That made every evaluation slow, inconsistent, and difficult to scale.",
-          "We designed an Excel-first toolkit powered by Office Scripts that encodes the feasibility workflow into a reusable decision-support process — so teams can evaluate options quickly without waiting for scarce expert bandwidth."
+          "We designed an Excel-first toolkit powered by Office Scripts that encodes the feasibility workflow into a reusable decision-support process, so teams can evaluate options quickly without waiting for scarce expert bandwidth."
         ],
         "highlights": [
           "Codified expert judgment into structured, auditable steps",
@@ -202,8 +236,8 @@
       "visible": true,
 
       "data": {
-        "title": "Need a decision system your team can actually run?",
-        "body": "We help organizations turn expert-dependent processes into structured analytics and automation — starting with practical MVPs that create immediate operating leverage.",
+        "title": "Need a decision system your team can run?",
+        "body": "We help organizations turn expert-dependent processes into structured analytics and automation; starting with practical MVPs that create immediate operating leverage.",
         "actions": [
           {
             "label": "Start a Conversation",
