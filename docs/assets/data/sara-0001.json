@@ -9,7 +9,11 @@
       "visible": true,
 
       "data": {
-        "eyebrow": "Business Analytics • Automation",
+        "taxonomy": [
+            "Energy",
+            "Network Feasibility",
+            "Automation"
+        ],
 
         "title": "Infrastructure Network Feasibility Toolkit",
 
