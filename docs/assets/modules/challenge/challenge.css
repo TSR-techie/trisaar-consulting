@@ -1,0 +1,21 @@
+.challenge {
+    background: var(--surface-0);
+}
+
+.challenge-callout {
+    max-width: 48rem;
+    padding: var(--space-7);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+}
+
+.challenge--callout .cs-title {
+    max-width: none;
+}
+
+@media (max-width: 600px) {
+    .challenge-callout {
+        padding: var(--space-5);
+    }
+}

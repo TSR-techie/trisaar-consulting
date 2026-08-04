@@ -8,6 +8,25 @@
 
     <title>TriSaar Case Study</title>
 
+    <!-- =========================
+         Favicons
+    ========================== -->
+    
+    <link rel="icon" type="image/x-icon"
+          href="./docs/assets/icons/favicon.ico">
+          
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="./docs/assets/icons/favicon-32x32.png">
+
+    <link rel="icon" type="image/png" sizes="16x16"
+      href="./docs/assets/icons/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+          href="./docs/assets/icons/apple-touch-icon.png">
+
+    <link rel="manifest"
+      href="./docs/assets/icons/site.webmanifest">
+
     <!-- Existing Website CSS -->
     <link rel="stylesheet" href="docs/assets/css/variables.css">
     <link rel="stylesheet" href="docs/assets/css/base.css">
@@ -21,17 +40,38 @@
 
     <!-- Component CSS -->
     <link rel="stylesheet" href="./docs/assets/modules/hero/hero.css">
+    <link rel="stylesheet" href="./docs/assets/modules/publication/publication.css">
+    <link rel="stylesheet" href="./docs/assets/modules/summary/summary.css">
+    <link rel="stylesheet" href="./docs/assets/modules/challenge/challenge.css">
+    <link rel="stylesheet" href="./docs/assets/modules/approach/approach.css">
+    <link rel="stylesheet" href="./docs/assets/modules/outcomes/outcomes.css">
+    <link rel="stylesheet" href="./docs/assets/modules/cta/cta.css">
 
 </head>
 
 <body>
 
+    <div id="navbar"></div>
+
     <main id="case-study-root">
-
         <!-- Entire page rendered here -->
-
     </main>
 
+    <div id="consent-banner"></div>
+    <div id="footer"></div>
+
+    <!-- Shared site chrome -->
+    <script src="docs/assets/js/core.js"></script>
+    <script src="docs/assets/js/config.js"></script>
+    <script src="docs/assets/js/components.js"></script>
+    <script src="docs/assets/js/consent-storage.js"></script>
+    <script src="docs/assets/js/tracking-manager.js"></script>
+    <script src="docs/assets/js/analytics.js"></script>
+    <script src="docs/assets/js/clarity.js"></script>
+    <script src="docs/assets/js/consent.js"></script>
+    <script src="docs/assets/js/app.js"></script>
+
+    <!-- Case study engine -->
     <script type="module" src="./docs/assets/js/case-study.js"></script>
 
 </body>
