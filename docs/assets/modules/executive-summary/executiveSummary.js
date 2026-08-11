@@ -3,11 +3,11 @@ import { icon } from "../../js/icons.js";
 
 const FLOW_VARIANTS = new Set([
     "executive-flow",
-    "executive-flow-light"
+    "executive-flow-lite"
 ]);
 
-function isLightFlow(variant) {
-    return variant === "executive-flow-light";
+function isLiteFlow(variant) {
+    return variant === "executive-flow-lite";
 }
 
 function metricChecklistText(metric = {}) {
@@ -165,7 +165,7 @@ function renderChecklist(metrics = []) {
 
 function renderPillar(pillar, index, variant) {
     const key = pillar.key || `pillar-${index + 1}`;
-    const light = isLightFlow(variant);
+    const light = isLiteFlow(variant);
 
     const article = createElement("article", {
         className: `summary-pillar summary-pillar--${key} cs-animate cs-animate-delay-${Math.min(index + 1, 3)}`
@@ -269,7 +269,7 @@ function renderBottomLineStatement(bottomLine = {}) {
 }
 
 function renderBottomLine(bottomLine = {}, variant) {
-    const light = isLightFlow(variant);
+    const light = isLiteFlow(variant);
     const label = bottomLine.label || "Bottom line";
 
     const bar = createElement("div", {
@@ -629,7 +629,131 @@ const BRIEF_CARD_TARGETS = {
     glance: "#outcomes"
 };
 
-function renderBriefHeader(data) {
+const BRIEF_ASSETS = {
+    hero: "executive-brief-hero.png",
+    mediaBack: "executive-brief-media-back.png",
+    mediaFront: "executive-brief-media-front.png"
+};
+
+function caseAsset(caseId, filename) {
+    if (!caseId || !filename) return "";
+    return `./docs/assets/images/${caseId}/${filename}`;
+}
+
+function createBriefBoardFallback() {
+    const board = createElement("div", {
+        className: "summary-brief-board",
+        attributes: { "aria-hidden": "true" }
+    });
+
+    board.innerHTML = `
+        <span class="summary-brief-board-gear"></span>
+        <span class="summary-brief-board-pin"></span>
+        <span class="summary-brief-board-node summary-brief-board-node--a"></span>
+        <span class="summary-brief-board-node summary-brief-board-node--b"></span>
+        <span class="summary-brief-board-node summary-brief-board-node--c"></span>
+        <span class="summary-brief-board-node summary-brief-board-node--d"></span>
+        <span class="summary-brief-board-line summary-brief-board-line--a"></span>
+        <span class="summary-brief-board-line summary-brief-board-line--b"></span>
+        <span class="summary-brief-board-line summary-brief-board-line--c"></span>
+    `;
+
+    return board;
+}
+
+function createBriefHeroVisual(caseId) {
+    const visual = createElement("div", {
+        className: "summary-brief-visual"
+    });
+
+    const src = caseAsset(caseId, BRIEF_ASSETS.hero);
+
+    if (!src) {
+        visual.append(createBriefBoardFallback());
+        return visual;
+    }
+
+    const image = createElement("img", {
+        className: "summary-brief-hero-image",
+        attributes: {
+            src,
+            alt: "",
+            loading: "lazy"
+        }
+    });
+
+    image.addEventListener("error", () => {
+        visual.replaceChildren(createBriefBoardFallback());
+    }, { once: true });
+
+    visual.append(image);
+    return visual;
+}
+
+function createBriefMediaFrame(caseId) {
+    const media = createElement("div", {
+        className: "summary-brief-media"
+    });
+
+    const back = createElement("div", {
+        className: "summary-brief-media-back summary-brief-media-back--fallback"
+    });
+
+    const front = createElement("div", {
+        className: "summary-brief-media-front summary-brief-media-front--fallback"
+    });
+
+    front.innerHTML = "<span></span><span></span><span></span><span></span>";
+
+    const backSrc = caseAsset(caseId, BRIEF_ASSETS.mediaBack);
+    const frontSrc = caseAsset(caseId, BRIEF_ASSETS.mediaFront);
+
+    if (backSrc) {
+        const backImage = createElement("img", {
+            className: "summary-brief-media-image",
+            attributes: {
+                src: backSrc,
+                alt: "",
+                loading: "lazy"
+            }
+        });
+
+        backImage.addEventListener("error", () => {
+            backImage.remove();
+            back.classList.add("summary-brief-media-back--fallback");
+        }, { once: true });
+
+        back.classList.remove("summary-brief-media-back--fallback");
+        back.append(backImage);
+    }
+
+    if (frontSrc) {
+        const frontImage = createElement("img", {
+            className: "summary-brief-media-image",
+            attributes: {
+                src: frontSrc,
+                alt: "",
+                loading: "lazy"
+            }
+        });
+
+        frontImage.addEventListener("error", () => {
+            frontImage.remove();
+            front.classList.add("summary-brief-media-front--fallback");
+            if (!front.querySelector("span")) {
+                front.innerHTML = "<span></span><span></span><span></span><span></span>";
+            }
+        }, { once: true });
+
+        front.classList.remove("summary-brief-media-front--fallback");
+        front.replaceChildren(frontImage);
+    }
+
+    media.append(back, front);
+    return media;
+}
+
+function renderBriefHeader(data, caseId) {
     const header = createElement("header", {
         className: "summary-brief-header"
     });
@@ -666,26 +790,7 @@ function renderBriefHeader(data) {
         }));
     }
 
-    const visual = createElement("div", {
-        className: "summary-brief-visual",
-        attributes: { "aria-hidden": "true" }
-    });
-
-    visual.innerHTML = `
-        <div class="summary-brief-board">
-            <span class="summary-brief-board-gear"></span>
-            <span class="summary-brief-board-pin"></span>
-            <span class="summary-brief-board-node summary-brief-board-node--a"></span>
-            <span class="summary-brief-board-node summary-brief-board-node--b"></span>
-            <span class="summary-brief-board-node summary-brief-board-node--c"></span>
-            <span class="summary-brief-board-node summary-brief-board-node--d"></span>
-            <span class="summary-brief-board-line summary-brief-board-line--a"></span>
-            <span class="summary-brief-board-line summary-brief-board-line--b"></span>
-            <span class="summary-brief-board-line summary-brief-board-line--c"></span>
-        </div>
-    `;
-
-    header.append(copy, visual);
+    header.append(copy, createBriefHeroVisual(caseId));
     return header;
 }
 
@@ -803,7 +908,7 @@ function renderBriefCards(pillars = []) {
     return grid;
 }
 
-function renderBriefProcess(steps = []) {
+function renderBriefProcess(steps = [], caseId) {
     if (!steps.length) return null;
 
     const section = createElement("div", {
@@ -828,18 +933,6 @@ function renderBriefProcess(steps = []) {
     const body = createElement("div", {
         className: "summary-brief-process-body"
     });
-
-    const media = createElement("div", {
-        className: "summary-brief-media",
-        attributes: { "aria-hidden": "true" }
-    });
-
-    media.innerHTML = `
-        <div class="summary-brief-media-back"></div>
-        <div class="summary-brief-media-front">
-            <span></span><span></span><span></span><span></span>
-        </div>
-    `;
 
     const stepsWrap = createElement("div", {
         className: "summary-brief-process-steps",
@@ -877,7 +970,7 @@ function renderBriefProcess(steps = []) {
         }
     });
 
-    body.append(media, stepsWrap);
+    body.append(createBriefMediaFrame(caseId), stepsWrap);
     section.append(header, body);
     return section;
 }
@@ -963,7 +1056,7 @@ function renderBriefMetrics(metrics = []) {
     return row;
 }
 
-function renderExecutiveBrief(section, data) {
+function renderExecutiveBrief(section, data, caseId) {
     const pillars = Array.isArray(data.pillars) ? data.pillars : [];
     const solution = getPillar(pillars, "solution");
     const impact = getPillar(pillars, "impact");
@@ -977,13 +1070,13 @@ function renderExecutiveBrief(section, data) {
         className: "case-study-container summary-container"
     });
 
-    container.append(renderBriefHeader(data));
+    container.append(renderBriefHeader(data, caseId));
 
     if (pillars.length) {
         container.append(renderBriefCards(pillars));
     }
 
-    const process = renderBriefProcess(solution?.steps || []);
+    const process = renderBriefProcess(solution?.steps || [], caseId);
     if (process) container.append(process);
 
     if (data.bottomLine) {
@@ -1086,12 +1179,13 @@ function renderSplit(section, data, variant) {
 
 export default {
 
-    render(section) {
+    render(section, context = {}) {
         const data = section.data || {};
         const variant = section.variant || "default";
+        const caseId = context.caseId || "";
 
         if (variant === "executive-brief") {
-            return renderExecutiveBrief(section, data);
+            return renderExecutiveBrief(section, data, caseId);
         }
 
         if (variant === "executive-overview") {

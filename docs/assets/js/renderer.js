@@ -63,6 +63,8 @@ export async function renderCaseStudy() {
 
         root.innerHTML = "";
 
+        const context = { caseId: id };
+
         for (const section of page.sections || []) {
             if (section.visible === false) continue;
 
@@ -73,7 +75,7 @@ export async function renderCaseStudy() {
                 continue;
             }
 
-            const element = component.render(section);
+            const element = component.render(section, context);
 
             if (element instanceof Node) {
                 root.appendChild(element);
