@@ -637,7 +637,7 @@ const BRIEF_ASSETS = {
 
 function caseAsset(caseId, filename) {
     if (!caseId || !filename) return "";
-    return `./docs/assets/images/${caseId}/${filename}`;
+    return `./docs/assets/images/sara/${caseId}/${filename}`;
 }
 
 function createBriefBoardFallback() {
