@@ -282,9 +282,47 @@ function renderPart(part) {
     return renderer(part);
 }
 
+function renderSaraNavLink(direction, targetId) {
+    if (!targetId) return null;
+
+    const isPrev = direction === "prev";
+
+    const link = createElement("a", {
+        className: `cs-hero-nav cs-hero-nav--${direction}`,
+        attributes: {
+            href: `case-study.html?id=${encodeURIComponent(targetId)}`,
+            "aria-label": isPrev ? "Previous Sāra" : "Next Sāra"
+        }
+    });
+
+    link.append(icon(
+        isPrev ? "chevron-left" : "chevron-right",
+        "cs-hero-nav-icon"
+    ));
+
+    return link;
+}
+
+function renderSaraNav(context = {}) {
+    const prev = renderSaraNavLink("prev", context.prevId);
+    const next = renderSaraNavLink("next", context.nextId);
+
+    if (!prev && !next) return null;
+
+    const nav = createElement("nav", {
+        className: "cs-hero-sara-nav",
+        attributes: { "aria-label": "Sāra case studies" }
+    });
+
+    if (prev) nav.append(prev);
+    if (next) nav.append(next);
+
+    return nav;
+}
+
 export default {
 
-    render(section) {
+    render(section, context = {}) {
 
         const variant = section.variant || "immersive";
         const parts = resolveParts(section);
@@ -348,6 +386,12 @@ export default {
         }
 
         heroSection.append(container);
+
+        const saraNav = renderSaraNav(context);
+        if (saraNav) {
+            heroSection.append(saraNav);
+        }
+
         return heroSection;
 
     }

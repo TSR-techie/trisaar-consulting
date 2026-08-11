@@ -1,4 +1,5 @@
 .cs-hero {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 2rem 2rem 2rem;
@@ -209,6 +210,64 @@
     background: var(--color-primary);
 }
 
+.cs-hero-sara-nav {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.cs-hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: auto;
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    transition: border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.cs-hero-nav:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.cs-hero-nav:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+.cs-hero-nav--prev {
+    left: 0.75rem;
+}
+
+.cs-hero-nav--next {
+    right: 0.75rem;
+}
+
+.cs-hero-nav-icon {
+    width: 1.15rem;
+    height: 1.15rem;
+    display: inline-flex;
+}
+
+.cs-hero-nav-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
 @media (max-width: 960px) {
     .cs-hero-grid {
         grid-template-columns: 1fr;
@@ -222,6 +281,14 @@
     .cs-hero-brief-list {
         text-align: left;
         align-items: flex-start;
+    }
+
+    .cs-hero-nav--prev {
+        left: 0.5rem;
+    }
+
+    .cs-hero-nav--next {
+        right: 0.5rem;
     }
 }
 
@@ -243,5 +310,21 @@
     .cs-hero-brief-row {
         grid-template-columns: 1fr;
         gap: 0.4rem;
+    }
+
+    .cs-hero-nav {
+        width: 2.5rem;
+        height: 2.5rem;
+        top: auto;
+        bottom: 1rem;
+        transform: none;
+    }
+
+    .cs-hero-nav--prev {
+        left: 1rem;
+    }
+
+    .cs-hero-nav--next {
+        right: 1rem;
     }
 }

@@ -7,6 +7,35 @@ function getCaseStudyId() {
     return id && /^[a-zA-Z0-9_-]+$/.test(id) ? id : "sara-0001";
 }
 
+function resolveNeighbors(caseId, cases = []) {
+    const index = cases.indexOf(caseId);
+
+    if (index === -1) {
+        return { prevId: null, nextId: null };
+    }
+
+    return {
+        prevId: index > 0 ? cases[index - 1] : null,
+        nextId: index < cases.length - 1 ? cases[index + 1] : null
+    };
+}
+
+async function loadSaraIndex() {
+    try {
+        const response = await fetch("./docs/assets/data/sara-index.json");
+
+        if (!response.ok) {
+            return [];
+        }
+
+        const data = await response.json();
+        return Array.isArray(data.cases) ? data.cases : [];
+    } catch (error) {
+        console.warn("Unable to load sara-index.json", error);
+        return [];
+    }
+}
+
 function renderError(root, message) {
     root.innerHTML = "";
 
@@ -49,13 +78,17 @@ export async function renderCaseStudy() {
     const id = getCaseStudyId();
 
     try {
-        const response = await fetch(`./docs/assets/data/${id}.json`);
+        const [caseResponse, cases] = await Promise.all([
+            fetch(`./docs/assets/data/${id}.json`),
+            loadSaraIndex()
+        ]);
 
-        if (!response.ok) {
-            throw new Error(`Unable to load case study "${id}" (${response.status}).`);
+        if (!caseResponse.ok) {
+            throw new Error(`Unable to load case study "${id}" (${caseResponse.status}).`);
         }
 
-        const page = await response.json();
+        const page = await caseResponse.json();
+        const { prevId, nextId } = resolveNeighbors(id, cases);
 
         if (page.meta?.title) {
             document.title = page.meta.title;
@@ -63,7 +96,7 @@ export async function renderCaseStudy() {
 
         root.innerHTML = "";
 
-        const context = { caseId: id };
+        const context = { caseId: id, prevId, nextId };
 
         for (const section of page.sections || []) {
             if (section.visible === false) continue;
