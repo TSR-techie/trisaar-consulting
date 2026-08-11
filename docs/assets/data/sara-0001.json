@@ -18,7 +18,7 @@
           "type": "taxonomy",
           "data": {
             "items": [
-              "Energy",
+              "Water Utility",
               "Network Feasibility",
               "Automation"
             ]
@@ -133,7 +133,7 @@
     {
       "id": "executive-summary",
       "component": "executiveSummary",
-      "variant": "executive-flow",
+      "variant": "executive-brief",
       "visible": true,
 
       "data": {

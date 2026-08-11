@@ -622,6 +622,381 @@ function renderExecutiveOverview(section, data) {
     return root;
 }
 
+const BRIEF_CARD_TARGETS = {
+    challenge: "#challenge",
+    solution: "#approach",
+    impact: "#outcomes",
+    glance: "#outcomes"
+};
+
+function renderBriefHeader(data) {
+    const header = createElement("header", {
+        className: "summary-brief-header"
+    });
+
+    const copy = createElement("div", {
+        className: "summary-brief-copy"
+    });
+
+    if (data.eyebrow) {
+        const eyebrow = createElement("div", {
+            className: "summary-brief-eyebrow"
+        });
+
+        eyebrow.append(
+            createElement("span", { className: "summary-brief-eyebrow-rule", attributes: { "aria-hidden": "true" } }),
+            createElement("span", { className: "cs-eyebrow", text: data.eyebrow }),
+            createElement("span", { className: "summary-brief-eyebrow-rule", attributes: { "aria-hidden": "true" } })
+        );
+
+        copy.append(eyebrow);
+    }
+
+    if (data.title) {
+        copy.append(createElement("h2", {
+            className: "cs-title summary-title",
+            text: data.title
+        }));
+    }
+
+    if (data.subtitle) {
+        copy.append(createElement("p", {
+            className: "cs-body summary-subtitle",
+            text: data.subtitle
+        }));
+    }
+
+    const visual = createElement("div", {
+        className: "summary-brief-visual",
+        attributes: { "aria-hidden": "true" }
+    });
+
+    visual.innerHTML = `
+        <div class="summary-brief-board">
+            <span class="summary-brief-board-gear"></span>
+            <span class="summary-brief-board-pin"></span>
+            <span class="summary-brief-board-node summary-brief-board-node--a"></span>
+            <span class="summary-brief-board-node summary-brief-board-node--b"></span>
+            <span class="summary-brief-board-node summary-brief-board-node--c"></span>
+            <span class="summary-brief-board-node summary-brief-board-node--d"></span>
+            <span class="summary-brief-board-line summary-brief-board-line--a"></span>
+            <span class="summary-brief-board-line summary-brief-board-line--b"></span>
+            <span class="summary-brief-board-line summary-brief-board-line--c"></span>
+        </div>
+    `;
+
+    header.append(copy, visual);
+    return header;
+}
+
+function renderBriefCardLink(target, featured = false) {
+    const link = createElement("a", {
+        className: featured
+            ? "summary-brief-card-link summary-brief-card-link--featured"
+            : "summary-brief-card-link",
+        attributes: { href: target }
+    });
+
+    link.append(document.createTextNode("Read more"));
+    link.append(createElement("span", {
+        attributes: { "aria-hidden": "true" },
+        text: " →"
+    }));
+
+    return link;
+}
+
+function renderBriefPillarCard(pillar, index) {
+    const key = pillar.key || `pillar-${index + 1}`;
+    const featured = key === "solution";
+
+    const card = createElement("article", {
+        className: `summary-brief-card summary-brief-card--${key}${featured ? " summary-brief-card--featured" : ""} cs-animate cs-animate-delay-${Math.min(index + 1, 3)}`
+    });
+
+    if (featured) {
+        card.append(createElement("div", {
+            className: "summary-brief-card-ribbon",
+            attributes: { "aria-hidden": "true" }
+        }));
+    }
+
+    if (pillar.icon) {
+        card.append(icon(pillar.icon, "summary-brief-card-icon"));
+    }
+
+    if (pillar.label) {
+        card.append(createElement("span", {
+            className: "summary-brief-card-label",
+            text: pillar.label
+        }));
+    }
+
+    if (pillar.title) {
+        card.append(createElement("h3", {
+            className: "summary-brief-card-title",
+            text: pillar.title
+        }));
+    }
+
+    if (pillar.body) {
+        card.append(createElement("p", {
+            className: "summary-brief-card-body",
+            text: pillar.body
+        }));
+    }
+
+    card.append(renderBriefCardLink(BRIEF_CARD_TARGETS[key] || "#challenge", featured));
+    return card;
+}
+
+function renderBriefGlanceCard(metrics = []) {
+    const card = createElement("article", {
+        className: "summary-brief-card summary-brief-card--glance cs-animate cs-animate-delay-3"
+    });
+
+    card.append(
+        icon("shield", "summary-brief-card-icon"),
+        createElement("span", {
+            className: "summary-brief-card-label",
+            text: "At a glance"
+        })
+    );
+
+    const list = createElement("ul", {
+        className: "summary-brief-glance-list"
+    });
+
+    metrics.forEach((metric) => {
+        const item = createElement("li", {
+            className: "summary-brief-glance-item"
+        });
+
+        item.append(
+            icon("check", "summary-brief-glance-icon"),
+            createElement("span", {
+                text: metricChecklistText(metric)
+            })
+        );
+
+        list.append(item);
+    });
+
+    card.append(list, renderBriefCardLink(BRIEF_CARD_TARGETS.glance));
+    return card;
+}
+
+function renderBriefCards(pillars = []) {
+    const grid = createElement("div", {
+        className: "summary-brief-cards"
+    });
+
+    pillars.forEach((pillar, index) => {
+        grid.append(renderBriefPillarCard(pillar, index));
+    });
+
+    const impact = getPillar(pillars, "impact");
+    if (Array.isArray(impact?.metrics) && impact.metrics.length) {
+        grid.append(renderBriefGlanceCard(impact.metrics));
+    }
+
+    return grid;
+}
+
+function renderBriefProcess(steps = []) {
+    if (!steps.length) return null;
+
+    const section = createElement("div", {
+        className: "summary-brief-process"
+    });
+
+    const header = createElement("div", {
+        className: "summary-brief-process-header"
+    });
+
+    header.append(
+        createElement("span", {
+            className: "summary-brief-process-eyebrow",
+            text: "How it works"
+        }),
+        createElement("h3", {
+            className: "summary-brief-process-title",
+            text: "From expert insight to repeatable decisions"
+        })
+    );
+
+    const body = createElement("div", {
+        className: "summary-brief-process-body"
+    });
+
+    const media = createElement("div", {
+        className: "summary-brief-media",
+        attributes: { "aria-hidden": "true" }
+    });
+
+    media.innerHTML = `
+        <div class="summary-brief-media-back"></div>
+        <div class="summary-brief-media-front">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    `;
+
+    const stepsWrap = createElement("div", {
+        className: "summary-brief-process-steps",
+        attributes: { role: "list" }
+    });
+
+    steps.forEach((step, index) => {
+        const item = createElement("div", {
+            className: "summary-brief-process-step",
+            attributes: { role: "listitem" }
+        });
+
+        if (step.icon) {
+            item.append(icon(step.icon, "summary-brief-process-icon"));
+        }
+
+        item.append(
+            createElement("span", {
+                className: "summary-brief-process-index",
+                text: String(index + 1)
+            }),
+            createElement("span", {
+                className: "summary-brief-process-text",
+                text: step.text || step
+            })
+        );
+
+        stepsWrap.append(item);
+
+        if (index < steps.length - 1) {
+            stepsWrap.append(createElement("span", {
+                className: "summary-brief-process-arrow",
+                attributes: { "aria-hidden": "true" }
+            }));
+        }
+    });
+
+    body.append(media, stepsWrap);
+    section.append(header, body);
+    return section;
+}
+
+function renderBriefBottomLine(bottomLine = {}) {
+    const label = bottomLine.label || "Bottom line";
+
+    const bar = createElement("div", {
+        className: "summary-bottomline summary-bottomline--brief"
+    });
+
+    const main = createElement("div", {
+        className: "summary-bottomline-main"
+    });
+
+    const copy = createElement("div", {
+        className: "summary-bottomline-copy"
+    });
+
+    copy.append(
+        createElement("span", {
+            className: "summary-bottomline-label",
+            text: label
+        }),
+        renderBottomLineStatement(bottomLine)
+    );
+
+    main.append(
+        icon(bottomLine.icon || "star", "summary-bottomline-icon"),
+        copy
+    );
+
+    bar.append(main);
+
+    if (bottomLine.cta?.label && bottomLine.cta?.target) {
+        const cta = createElement("a", {
+            className: "summary-bottomline-cta summary-bottomline-cta--outline",
+            attributes: { href: bottomLine.cta.target }
+        });
+
+        cta.append(document.createTextNode(`${bottomLine.cta.label} →`));
+        bar.append(cta);
+    }
+
+    return bar;
+}
+
+function renderBriefMetrics(metrics = []) {
+    if (!metrics.length) return null;
+
+    const row = createElement("div", {
+        className: "summary-brief-metrics"
+    });
+
+    metrics.forEach((metric) => {
+        const item = createElement("div", {
+            className: "summary-brief-metric"
+        });
+
+        item.append(
+            icon(metric.icon || "outcome", "summary-brief-metric-icon")
+        );
+
+        const copy = createElement("div", {
+            className: "summary-brief-metric-copy"
+        });
+
+        copy.append(
+            createElement("strong", {
+                className: "summary-brief-metric-value",
+                text: metric.value
+            }),
+            createElement("span", {
+                className: "summary-brief-metric-label",
+                text: metric.label
+            })
+        );
+
+        item.append(copy);
+        row.append(item);
+    });
+
+    return row;
+}
+
+function renderExecutiveBrief(section, data) {
+    const pillars = Array.isArray(data.pillars) ? data.pillars : [];
+    const solution = getPillar(pillars, "solution");
+    const impact = getPillar(pillars, "impact");
+
+    const root = createElement("section", {
+        className: "cs-section summary summary--executive-brief cs-animate",
+        id: section.id
+    });
+
+    const container = createElement("div", {
+        className: "case-study-container summary-container"
+    });
+
+    container.append(renderBriefHeader(data));
+
+    if (pillars.length) {
+        container.append(renderBriefCards(pillars));
+    }
+
+    const process = renderBriefProcess(solution?.steps || []);
+    if (process) container.append(process);
+
+    if (data.bottomLine) {
+        container.append(renderBriefBottomLine(data.bottomLine));
+    }
+
+    const metrics = renderBriefMetrics(impact?.metrics || []);
+    if (metrics) container.append(metrics);
+
+    root.append(container);
+    return root;
+}
+
 function renderExecutiveFlow(section, data, variant) {
     const root = createElement("section", {
         className: `cs-section summary summary--${variant} cs-animate`,
@@ -714,6 +1089,10 @@ export default {
     render(section) {
         const data = section.data || {};
         const variant = section.variant || "default";
+
+        if (variant === "executive-brief") {
+            return renderExecutiveBrief(section, data);
+        }
 
         if (variant === "executive-overview") {
             return renderExecutiveOverview(section, data);
