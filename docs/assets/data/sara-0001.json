@@ -132,21 +132,141 @@
 
     {
       "id": "executive-summary",
-      "component": "summary",
-      "variant": "split",
+      "component": "executiveSummary",
+      "variant": "executive-flow",
       "visible": true,
 
       "data": {
         "eyebrow": "Executive Summary",
-        "title": "A decision engine for network feasibility.",
-        "paragraphs": [
-          "Network feasibility assessments previously depended on a small group of specialists who carried the logic, assumptions, and edge cases in their heads. That made every evaluation slow, inconsistent, and difficult to scale.",
-          "We designed an Excel-first toolkit powered by Office Scripts that encodes the feasibility workflow into a reusable decision-support process, so teams can evaluate options quickly without waiting for scarce expert bandwidth."
+        "title": "From expert bottleneck to a repeatable decision engine.",
+        "subtitle": "We transformed a specialist-dependent, manual feasibility process into an automated toolkit that delivers fast, consistent, and auditable results.",
+
+        "pillars": [
+          {
+            "key": "challenge",
+            "label": "Challenge",
+            "icon": "people",
+            "title": "Feasibility lived as tribal knowledge.",
+            "body": "Critical network decisions were bottlenecked by specialist availability. Assumptions varied by person, documentation was thin, and repeating an analysis meant rebuilding context from scratch.",
+            "points": [
+              {
+                "icon": "duration",
+                "text": "Expert-dependent reviews created multi-day turnaround times"
+              },
+              {
+                "icon": "scales",
+                "text": "Inconsistent criteria made outcomes hard to compare"
+              },
+              {
+                "icon": "person",
+                "text": "No durable workflow for non-specialists to run first-pass assessments"
+              }
+            ]
+          },
+          {
+            "key": "solution",
+            "label": "Solution",
+            "icon": "gear",
+            "title": "A structured workflow, automated for scale.",
+            "body": "We codified expert judgment into an Excel-first toolkit with Office Scripts automation—making the process transparent, repeatable, and easy to use across the team.",
+            "steps": [
+              {
+                "icon": "flow",
+                "text": "Map decision logic & criteria"
+              },
+              {
+                "icon": "grid",
+                "text": "Build the Excel decision surface"
+              },
+              {
+                "icon": "code",
+                "text": "Automate with Office Scripts"
+              },
+              {
+                "icon": "shield",
+                "text": "Validate, stress-test & document"
+              }
+            ]
+          },
+          {
+            "key": "impact",
+            "label": "Impact",
+            "icon": "chart",
+            "title": "Faster decisions. Stronger outcomes.",
+            "body": "The toolkit removed the expert bottleneck and enabled teams to evaluate more scenarios, faster—with consistency and confidence.",
+            "metrics": [
+              {
+                "icon": "duration",
+                "value": "Days → Minutes",
+                "label": "Cycle time reduced"
+              },
+              {
+                "icon": "people",
+                "value": "100%",
+                "label": "Knowledge democratized"
+              },
+              {
+                "icon": "outcome",
+                "value": "More Scenarios",
+                "label": "Better decision quality"
+              },
+              {
+                "icon": "shield",
+                "value": "Auditable",
+                "label": "Consistent & repeatable"
+              }
+            ]
+          }
         ],
-        "highlights": [
-          "Codified expert judgment into structured, auditable steps",
-          "Reduced evaluation cycle time from days to minutes",
-          "Delivered as an MVP that teams can extend without rewriting the core logic"
+
+        "bottomLine": {
+          "label": "Bottom line",
+          "icon": "star",
+          "parts": [
+            {
+              "text": "A reusable decision-support engine that turns complex network feasibility into "
+            },
+            {
+              "text": "fast, consistent, and confident",
+              "emphasis": true
+            },
+            {
+              "text": " outcomes—at scale."
+            }
+          ],
+          "cta": {
+            "label": "Read full case study",
+            "target": "#challenge",
+            "icon": "document"
+          }
+        },
+
+        "meta": [
+          {
+            "label": "Industry",
+            "value": "Energy",
+            "icon": "industry"
+          },
+          {
+            "label": "Domain",
+            "value": "Network Feasibility",
+            "icon": "network"
+          },
+          {
+            "label": "Technology",
+            "value": "Excel • Office Scripts",
+            "icon": "technology"
+          },
+          {
+            "label": "Duration",
+            "value": "6 Weeks",
+            "icon": "duration"
+          },
+          {
+            "label": "Client",
+            "value": "Fortune 500",
+            "icon": "client"
+          }
         ]
       }
     },
