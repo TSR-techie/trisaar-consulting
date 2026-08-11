@@ -931,20 +931,63 @@ FOOTER
 
 }
 
-@media (max-width:768px){
+/* Tablet: use full container width — avoid narrow centered column */
+@media (max-width: 960px) {
 
-    .approach-grid{
-
-        margin-top:3rem;
-
+    .approach .section-heading {
+        max-width: none;
     }
 
-    .approach-step{
+    .approach-grid {
+        max-width: none;
+        margin-top: 3.5rem;
+        width: 100%;
+    }
 
-        padding-left:60px;
+    .approach-step p {
+        max-width: none;
+    }
 
-        margin-bottom:3rem;
+}
 
+/* Mobile: breathe — full width timeline, natural text wrap */
+@media (max-width: 720px) {
+
+    .approach-grid {
+        margin-top: 2.5rem;
+    }
+
+    .approach-grid::before {
+        left: 15px;
+    }
+
+    .approach-step {
+        padding-left: 3.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+
+    /* Hard <br> in markup compresses lines on narrow screens */
+    .approach br {
+        display: none;
+    }
+
+    .approach-step:hover {
+        transform: none;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .approach-step {
+        padding-left: 2.85rem;
+        margin-bottom: 2.25rem;
     }
 
 }
