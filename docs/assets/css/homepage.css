@@ -243,6 +243,32 @@
     .mini-cards { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 720px) {
+    .hero-content h1 {
+        font-size: clamp(2.5rem, 12vw, 3.8rem);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-content h2 {
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
+    }
+
+    .hero-content p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /*==========================================================
 CAPABILITIES
 ==========================================================*/
@@ -265,7 +291,7 @@ CAPABILITIES
 
 .capability-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3, minmax(0, 1fr));
     gap:2rem;
 }
 
@@ -282,6 +308,8 @@ CAPABILITIES
     transition:.3s;
 
     box-shadow:var(--shadow-sm);
+
+    min-width:0;
 
 }
 
@@ -329,7 +357,7 @@ CASE STUDIES
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3, minmax(0, 1fr));
 
     gap:2rem;
 
@@ -352,6 +380,8 @@ CASE STUDIES
     display:flex;
 
     flex-direction:column;
+
+    min-width:0;
 
 }
 
@@ -411,6 +441,10 @@ CASE STUDIES
 
     align-items:center;
 
+    flex-wrap:wrap;
+
+    gap:0.5rem 1rem;
+
     padding-top:1.5rem;
 
     border-top:1px solid var(--color-border);
@@ -439,7 +473,7 @@ TECHNOLOGY
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(4, minmax(0, 1fr));
 
     gap:2rem;
 
@@ -458,6 +492,8 @@ TECHNOLOGY
     box-shadow:var(--shadow-sm);
 
     transition:.3s;
+
+    min-width:0;
 
 }
 
@@ -499,6 +535,64 @@ TECHNOLOGY
 
     border-bottom:none;
 
+}
+
+/*==========================================================
+HOMEPAGE SECTIONS — RESPONSIVE (tablet / mobile)
+==========================================================*/
+
+@media (max-width: 960px) {
+    .capabilities,
+    .case-studies,
+    .technology,
+    .approach,
+    .contacts-cta {
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .capability-grid,
+    .case-grid,
+    .technology-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .section-heading {
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .capabilities,
+    .case-studies,
+    .technology,
+    .approach,
+    .contacts-cta {
+        padding: var(--space-7) var(--space-3);
+    }
+
+    .capability-grid,
+    .case-grid,
+    .technology-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .section-heading {
+        margin-bottom: 2.5rem;
+    }
+
+    .capability-card,
+    .case-card,
+    .technology-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .metric-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /*==========================================================
