@@ -286,19 +286,25 @@ function renderSaraNavLink(direction, targetId) {
     if (!targetId) return null;
 
     const isPrev = direction === "prev";
+    const label = isPrev ? "Previous Sāra" : "Next Sāra";
 
     const link = createElement("a", {
         className: `cs-hero-nav cs-hero-nav--${direction}`,
         attributes: {
             href: `case-study.html?id=${encodeURIComponent(targetId)}`,
-            "aria-label": isPrev ? "Previous Sāra" : "Next Sāra"
+            "aria-label": label,
+            title: label
         }
     });
 
-    link.append(icon(
-        isPrev ? "chevron-left" : "chevron-right",
-        "cs-hero-nav-icon"
-    ));
+    link.append(
+        icon(isPrev ? "chevron-left" : "chevron-right", "cs-hero-nav-icon"),
+        createElement("span", {
+            className: "cs-hero-nav-caption",
+            attributes: { "aria-hidden": "true" },
+            text: label
+        })
+    );
 
     return link;
 }
