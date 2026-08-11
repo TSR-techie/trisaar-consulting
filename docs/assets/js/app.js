@@ -27,11 +27,6 @@ const App = (() => {
                 });
             }
 
-            // Future modules
-            // TriSaar.Navigation.initialize();
-            // TriSaar.Animations.initialize();
-            // TriSaar.Dashboard.initialize();
-
             console.log("TriSaar ready.");
 
         }
