@@ -1,6 +1,24 @@
 import { createElement } from "../../js/utils.js";
 import { icon } from "../../js/icons.js";
 
+const FLOW_VARIANTS = new Set([
+    "executive-flow",
+    "executive-flow-light"
+]);
+
+function isLightFlow(variant) {
+    return variant === "executive-flow-light";
+}
+
+function metricChecklistText(metric = {}) {
+    const value = String(metric.value || "").trim();
+    const label = String(metric.label || "").trim();
+
+    if (!value) return label;
+    if (/^[\d.%+\-→\s]+$/.test(value) && label) return label;
+    return value;
+}
+
 function renderHeader(data) {
     const header = createElement("header", {
         className: "summary-header"
@@ -122,8 +140,32 @@ function renderMetrics(metrics = []) {
     return grid;
 }
 
-function renderPillar(pillar, index) {
+function renderChecklist(metrics = []) {
+    const list = createElement("ul", {
+        className: "summary-checklist"
+    });
+
+    metrics.forEach((metric) => {
+        const item = createElement("li", {
+            className: "summary-checklist-item"
+        });
+
+        item.append(
+            icon("check", "summary-checklist-icon"),
+            createElement("span", {
+                text: metricChecklistText(metric)
+            })
+        );
+
+        list.append(item);
+    });
+
+    return list;
+}
+
+function renderPillar(pillar, index, variant) {
     const key = pillar.key || `pillar-${index + 1}`;
+    const light = isLightFlow(variant);
 
     const article = createElement("article", {
         className: `summary-pillar summary-pillar--${key} cs-animate cs-animate-delay-${Math.min(index + 1, 3)}`
@@ -151,29 +193,35 @@ function renderPillar(pillar, index) {
         }));
     }
 
-    if (pillar.body) {
+    const showBody = !light || key !== "impact";
+
+    if (showBody && pillar.body) {
         article.append(createElement("p", {
             className: "summary-pillar-body",
             text: pillar.body
         }));
     }
 
-    if (Array.isArray(pillar.points) && pillar.points.length) {
-        article.append(renderPoints(pillar.points));
-    }
+    if (!light) {
+        if (Array.isArray(pillar.points) && pillar.points.length) {
+            article.append(renderPoints(pillar.points));
+        }
 
-    if (Array.isArray(pillar.steps) && pillar.steps.length) {
-        article.append(renderSteps(pillar.steps));
-    }
+        if (Array.isArray(pillar.steps) && pillar.steps.length) {
+            article.append(renderSteps(pillar.steps));
+        }
 
-    if (Array.isArray(pillar.metrics) && pillar.metrics.length) {
-        article.append(renderMetrics(pillar.metrics));
+        if (Array.isArray(pillar.metrics) && pillar.metrics.length) {
+            article.append(renderMetrics(pillar.metrics));
+        }
+    } else if (Array.isArray(pillar.metrics) && pillar.metrics.length) {
+        article.append(renderChecklist(pillar.metrics));
     }
 
     return article;
 }
 
-function renderFlow(pillars = []) {
+function renderFlow(pillars = [], variant) {
     const flow = createElement("div", {
         className: "summary-flow",
         attributes: { role: "list" }
@@ -185,7 +233,7 @@ function renderFlow(pillars = []) {
             attributes: { role: "listitem" }
         });
 
-        item.append(renderPillar(pillar, index));
+        item.append(renderPillar(pillar, index, variant));
 
         if (index < pillars.length - 1) {
             item.append(createElement("span", {
@@ -201,27 +249,7 @@ function renderFlow(pillars = []) {
     return flow;
 }
 
-function renderBottomLine(bottomLine = {}) {
-    const bar = createElement("div", {
-        className: "summary-bottomline"
-    });
-
-    const main = createElement("div", {
-        className: "summary-bottomline-main"
-    });
-
-    const badge = createElement("div", {
-        className: "summary-bottomline-badge"
-    });
-
-    badge.append(
-        icon(bottomLine.icon || "star", "summary-bottomline-icon"),
-        createElement("span", {
-            className: "summary-bottomline-label",
-            text: bottomLine.label || "Bottom line"
-        })
-    );
-
+function renderBottomLineStatement(bottomLine = {}) {
     const statement = createElement("p", {
         className: "summary-bottomline-text"
     });
@@ -237,12 +265,59 @@ function renderBottomLine(bottomLine = {}) {
         statement.textContent = bottomLine.text;
     }
 
-    main.append(badge, statement);
+    return statement;
+}
+
+function renderBottomLine(bottomLine = {}, variant) {
+    const light = isLightFlow(variant);
+    const label = bottomLine.label || "Bottom line";
+
+    const bar = createElement("div", {
+        className: "summary-bottomline"
+    });
+
+    const main = createElement("div", {
+        className: "summary-bottomline-main"
+    });
+
+    const badge = createElement("div", {
+        className: "summary-bottomline-badge"
+    });
+
+    badge.append(icon(bottomLine.icon || "star", "summary-bottomline-icon"));
+
+    const statement = renderBottomLineStatement(bottomLine);
+
+    if (light) {
+        const copy = createElement("div", {
+            className: "summary-bottomline-copy"
+        });
+
+        copy.append(
+            createElement("span", {
+                className: "summary-bottomline-label",
+                text: label
+            }),
+            statement
+        );
+
+        main.append(badge, copy);
+    } else {
+        badge.append(createElement("span", {
+            className: "summary-bottomline-label",
+            text: label
+        }));
+
+        main.append(badge, statement);
+    }
+
     bar.append(main);
 
     if (bottomLine.cta?.label && bottomLine.cta?.target) {
         const cta = createElement("a", {
-            className: "btn btn-primary summary-bottomline-cta",
+            className: light
+                ? "summary-bottomline-cta summary-bottomline-cta--link"
+                : "btn btn-primary summary-bottomline-cta",
             attributes: { href: bottomLine.cta.target }
         });
 
@@ -251,6 +326,15 @@ function renderBottomLine(bottomLine = {}) {
         }
 
         cta.append(document.createTextNode(bottomLine.cta.label));
+
+        if (light) {
+            cta.append(createElement("span", {
+                className: "summary-cta-chevron",
+                attributes: { "aria-hidden": "true" },
+                text: ">"
+            }));
+        }
+
         bar.append(cta);
     }
 
@@ -288,9 +372,9 @@ function renderMeta(meta = []) {
     return row;
 }
 
-function renderExecutiveFlow(section, data) {
+function renderExecutiveFlow(section, data, variant) {
     const root = createElement("section", {
-        className: "cs-section summary summary--executive-flow cs-animate",
+        className: `cs-section summary summary--${variant} cs-animate`,
         id: section.id
     });
 
@@ -301,11 +385,11 @@ function renderExecutiveFlow(section, data) {
     container.append(renderHeader(data));
 
     if (Array.isArray(data.pillars) && data.pillars.length) {
-        container.append(renderFlow(data.pillars));
+        container.append(renderFlow(data.pillars, variant));
     }
 
     if (data.bottomLine) {
-        container.append(renderBottomLine(data.bottomLine));
+        container.append(renderBottomLine(data.bottomLine, variant));
     }
 
     if (Array.isArray(data.meta) && data.meta.length) {
@@ -381,8 +465,8 @@ export default {
         const data = section.data || {};
         const variant = section.variant || "default";
 
-        if (variant === "executive-flow") {
-            return renderExecutiveFlow(section, data);
+        if (FLOW_VARIANTS.has(variant)) {
+            return renderExecutiveFlow(section, data, variant);
         }
 
         return renderSplit(section, data, variant);

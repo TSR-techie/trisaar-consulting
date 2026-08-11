@@ -498,3 +498,265 @@
         animation: none;
     }
 }
+
+/* ==========================================================
+   Executive Flow Light variant
+========================================================== */
+
+.summary--executive-flow-light {
+    background: var(--color-surface);
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+}
+
+.summary--executive-flow-light .summary-container {
+    max-width: var(--container-wide-width);
+}
+
+.summary--executive-flow-light .summary-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.summary--executive-flow-light .summary-title {
+    max-width: 28ch;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-4);
+    font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+    line-height: 1.15;
+}
+
+.summary--executive-flow-light .summary-subtitle {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-body);
+}
+
+.summary--executive-flow-light .summary-flow {
+    position: relative;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+.summary--executive-flow-light .summary-flow::before {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 1.25rem;
+    left: 16%;
+    right: 16%;
+    height: 1px;
+    background: var(--color-border);
+    z-index: 0;
+}
+
+.summary--executive-flow-light .summary-pillar {
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-3);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.summary--executive-flow-light .summary-pillar-top {
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.summary--executive-flow-light .summary-pillar-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+}
+
+.summary--executive-flow-light .summary-pillar-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.summary--executive-flow-light .summary-pillar-title {
+    font-size: var(--text-lg);
+    max-width: 18ch;
+}
+
+.summary--executive-flow-light .summary-pillar-body {
+    max-width: 28ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.summary--executive-flow-light .summary-flow-arrow {
+    background: var(--color-surface);
+    color: var(--color-primary);
+    border: 1px solid var(--color-border);
+    box-shadow: none;
+    top: 0.85rem;
+}
+
+.summary--executive-flow-light .summary-flow-item:nth-child(2) .summary-flow-arrow {
+    color: #16A34A;
+}
+
+.summary--executive-flow-light .summary-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin: var(--space-2) auto 0;
+    text-align: left;
+    max-width: 18rem;
+}
+
+.summary--executive-flow-light .summary-checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    line-height: 1.45;
+    color: var(--color-heading);
+}
+
+.summary--executive-flow-light .summary-checklist-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.15rem;
+    color: #16A34A;
+    flex-shrink: 0;
+}
+
+.summary--executive-flow-light .summary-checklist-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.summary--executive-flow-light .summary-bottomline {
+    align-items: center;
+    gap: var(--space-5);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    box-shadow: none;
+}
+
+.summary--executive-flow-light .summary-bottomline-main {
+    align-items: center;
+    gap: var(--space-4);
+    flex: 1;
+}
+
+.summary--executive-flow-light .summary-bottomline-badge {
+    align-self: center;
+}
+
+.summary--executive-flow-light .summary-bottomline-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0.45rem;
+}
+
+.summary--executive-flow-light .summary-bottomline-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.summary--executive-flow-light .summary-bottomline-label {
+    color: var(--color-primary);
+    font-size: var(--text-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.summary--executive-flow-light .summary-bottomline-text {
+    font-size: var(--text-sm);
+    line-height: 1.55;
+}
+
+.summary--executive-flow-light .summary-bottomline-cta--link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    white-space: nowrap;
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.summary--executive-flow-light .summary-bottomline-cta--link:hover {
+    color: var(--color-primary-hover);
+}
+
+.summary--executive-flow-light .summary-cta-chevron {
+    font-weight: var(--font-bold);
+}
+
+.summary--executive-flow-light .summary-meta {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    padding: var(--space-4) 0;
+}
+
+.summary--executive-flow-light .summary-meta-label {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.68rem;
+}
+
+@media (min-width: 1101px) {
+    .summary--executive-flow-light .summary-flow::before {
+        display: block;
+    }
+}
+
+@media (max-width: 1100px) {
+    .summary--executive-flow-light .summary-flow::before {
+        display: none;
+    }
+
+    .summary--executive-flow-light .summary-pillar,
+    .summary--executive-flow-light .summary-pillar-top {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .summary--executive-flow-light .summary-pillar-body {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: none;
+    }
+
+    .summary--executive-flow-light .summary-checklist {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .summary--executive-flow-light .summary-bottomline-cta--link {
+        width: auto;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 560px) {
+    .summary--executive-flow-light {
+        padding-top: var(--space-7);
+        padding-bottom: var(--space-7);
+    }
+}

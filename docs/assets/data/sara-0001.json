@@ -133,7 +133,7 @@
     {
       "id": "executive-summary",
       "component": "executiveSummary",
-      "variant": "executive-flow",
+      "variant": "executive-flow-light",
       "visible": true,
 
       "data": {
