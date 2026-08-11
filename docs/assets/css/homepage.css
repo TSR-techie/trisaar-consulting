@@ -545,7 +545,6 @@ HOMEPAGE SECTIONS — RESPONSIVE (tablet / mobile)
     .capabilities,
     .case-studies,
     .technology,
-    .approach,
     .contacts-cta {
         padding: var(--space-8) var(--space-4);
     }
@@ -566,7 +565,6 @@ HOMEPAGE SECTIONS — RESPONSIVE (tablet / mobile)
     .capabilities,
     .case-studies,
     .technology,
-    .approach,
     .contacts-cta {
         padding: var(--space-7) var(--space-3);
     }
@@ -931,8 +929,12 @@ FOOTER
 
 }
 
-/* Tablet: use full container width — avoid narrow centered column */
+/* Approach responsive — must come AFTER base .approach padding */
 @media (max-width: 960px) {
+
+    .approach {
+        padding: var(--space-8) 0;
+    }
 
     .approach .section-heading {
         max-width: none;
@@ -944,32 +946,39 @@ FOOTER
         width: 100%;
     }
 
+    .approach-step {
+        padding-left: 3.5rem;
+    }
+
     .approach-step p {
         max-width: none;
     }
 
 }
 
-/* Mobile: breathe — full width timeline, natural text wrap */
 @media (max-width: 720px) {
+
+    .approach {
+        padding: var(--space-7) 0;
+    }
 
     .approach-grid {
         margin-top: 2.5rem;
     }
 
     .approach-grid::before {
-        left: 15px;
+        left: 13px;
     }
 
     .approach-step {
-        padding-left: 3.25rem;
+        padding-left: 2.5rem;
         margin-bottom: 2.5rem;
     }
 
     .step-number {
-        width: 32px;
-        height: 32px;
-        font-size: 0.8rem;
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
     }
 
     /* Hard <br> in markup compresses lines on narrow screens */
@@ -986,7 +995,7 @@ FOOTER
 @media (max-width: 400px) {
 
     .approach-step {
-        padding-left: 2.85rem;
+        padding-left: 2.25rem;
         margin-bottom: 2.25rem;
     }
 
