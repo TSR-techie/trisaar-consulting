@@ -1,0 +1,428 @@
+{
+  "schemaVersion": "1.0",
+
+  "meta": {
+    "id": "sara-0002",
+    "title": "Commercial Credit Underwriting Engine | TriSaar"
+  },
+
+  "sections": [
+    {
+      "id": "hero",
+      "component": "hero",
+      "variant": "immersive",
+      "visible": true,
+
+      "parts": [
+        {
+          "type": "taxonomy",
+          "data": {
+            "items": [
+              "Commercial Banking",
+              "Credit Underwriting",
+              "Risk Modeling"
+            ]
+          }
+        },
+        {
+          "type": "identity",
+          "variant": "dualTone",
+          "data": {
+            "text": "Sāra 0002 · सार ०००२"
+          }
+        },
+        {
+          "type": "title",
+          "data": {
+            "text": "Commercial Credit Underwriting Engine"
+          }
+        },
+        {
+          "type": "subtitle",
+          "data": {
+            "text": "Streamlining middle-market commercial loan approvals from manual spreadsheet reviews into an automated risk scoring system."
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "items": [
+              {
+                "label": "Read Case Study",
+                "type": "primary",
+                "target": "#executive-summary",
+                "icon": "book"
+              },
+              {
+                "label": "View Repository",
+                "type": "secondary",
+                "target": "https://github.com/tsr-techie/trisaar-consulting",
+                "icon": "github"
+              }
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "text": "An automated risk-scoring framework that integrated financial statement parsing with regulatory stress-testing to accelerate loan origination."
+          },
+          "visible": true
+        },
+        {
+          "type": "brief",
+          "variant": "rail",
+          "data": {
+            "title": "Case Brief",
+            "fields": [
+              {
+                "label": "Client",
+                "value": "Global Regional Bank",
+                "icon": "client"
+              },
+              {
+                "label": "Duration",
+                "value": "8 Weeks",
+                "icon": "duration"
+              },
+              {
+                "label": "Outcome",
+                "icon": "outcome",
+                "values": [
+                  "Weeks → Hours",
+                  "Zero Audit Exceptions",
+                  "75% Manual Effort Cut"
+                ]
+              },
+              {
+                "label": "Technology",
+                "value": "Python • Power BI",
+                "icon": "technology"
+              },
+              {
+                "label": "Dataset",
+                "value": "Anonymized Portfolio",
+                "icon": "dataset"
+              },
+              {
+                "label": "Confidentiality",
+                "value": "Public (Sanitized)",
+                "icon": "confidentiality"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "publication",
+      "component": "publication",
+      "variant": "rule",
+      "visible": true,
+
+      "data": {
+        "label": "Sāra Publication",
+        "edition": "Public Edition",
+        "version": "1.0",
+        "published": "Aug 2026",
+        "readTime": "10 min read"
+      }
+    },
+
+    {
+      "id": "executive-summary",
+      "component": "executiveSummary",
+      "variant": "executive-flow-lite",
+      "visible": true,
+
+      "data": {
+        "eyebrow": "Executive Summary",
+        "title": "From manual audit friction to a high-speed risk engine.",
+        "subtitle": "We transformed a fragmented commercial credit evaluation pipeline into an automated intelligence engine delivering standardized, audit-ready decisions.",
+
+        "pillars": [
+          {
+            "key": "challenge",
+            "label": "Challenge",
+            "icon": "people",
+            "title": "Underwriting stuck in disparate spreadsheets.",
+            "body": "Commercial loan officers spent over 60% of their time manually re-keying balance sheets and running customized risk models, creating severe backlogs and inconsistent risk scoring.",
+            "points": [
+              {
+                "icon": "duration",
+                "text": "Manual data extraction delayed approvals by up to three weeks"
+              },
+              {
+                "icon": "scales",
+                "text": "Discrepancies in ratio calculations across regional underwriting pods"
+              },
+              {
+                "icon": "person",
+                "text": "High operational overhead during quarterly deal volume spikes"
+              }
+            ]
+          },
+          {
+            "key": "solution",
+            "label": "Solution",
+            "icon": "gear",
+            "title": "Standardized extraction and dynamic risk rules.",
+            "body": "We engineered a unified risk scoring pipeline combining automated financial parsing, real-time stress testing, and interactive reporting for credit committees.",
+            "steps": [
+              {
+                "icon": "flow",
+                "text": "Standardize credit ratio definitions"
+              },
+              {
+                "icon": "grid",
+                "text": "Construct automated data extraction tools"
+              },
+              {
+                "icon": "code",
+                "text": "Deploy Python risk-scoring algorithms"
+              },
+              {
+                "icon": "shield",
+                "text": "Establish audit logs & compliance checks"
+              }
+            ]
+          },
+          {
+            "key": "impact",
+            "label": "Impact",
+            "icon": "chart",
+            "title": "Accelerated origination. Standardized risk.",
+            "body": "The solution dramatically shortened turnarounds while empowering risk officers to stress-test portfolios against macroeconomic shifts instantly.",
+            "metrics": [
+              {
+                "icon": "duration",
+                "value": "Weeks → Hours",
+                "label": "Turnaround time reduced"
+              },
+              {
+                "icon": "people",
+                "value": "75%",
+                "label": "Manual data entry cut"
+              },
+              {
+                "icon": "outcome",
+                "value": "3x Volume",
+                "label": "Deal throughput capacity"
+              },
+              {
+                "icon": "shield",
+                "value": "100%",
+                "label": "Audit trail compliance"
+              }
+            ]
+          }
+        ],
+
+        "bottomLine": {
+          "label": "Bottom line",
+          "icon": "star",
+          "parts": [
+            {
+              "text": "A robust credit underwriting engine that converts fragmented financial statements into "
+            },
+            {
+              "text": "rapid, compliant, and defensible",
+              "emphasis": true
+            },
+            {
+              "text": " lending decisions—at enterprise scale."
+            }
+          ],
+          "cta": {
+            "label": "Read full case study",
+            "target": "#challenge",
+            "icon": "document"
+          }
+        },
+
+        "meta": [
+          {
+            "label": "Industry",
+            "value": "Financial Services",
+            "icon": "industry"
+          },
+          {
+            "label": "Domain",
+            "value": "Credit Underwriting",
+            "icon": "network"
+          },
+          {
+            "label": "Technology",
+            "value": "Python • Power BI",
+            "icon": "technology"
+          },
+          {
+            "label": "Duration",
+            "value": "8 Weeks",
+            "icon": "duration"
+          },
+          {
+            "label": "Client",
+            "value": "Global Regional Bank",
+            "icon": "client"
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "challenge",
+      "component": "challenge",
+      "variant": "challenge-friction-base",
+      "visible": true,
+
+      "data": {
+        "eyebrow": "Challenge",
+        "title": "Underwriting stuck in disparate spreadsheets.",
+        "body": "Commercial loan officers spent over 60% of their time manually re-keying balance sheets and running customized risk models, creating severe backlogs and inconsistent risk scoring.",
+
+        "core": {
+          "icon": "warning",
+          "label": "The Core Challenge",
+          "body": "Approvals stalled because financial data lived in silos, scoring was manual, and no single view of risk existed."
+        },
+
+        "points": [
+          {
+            "icon": "dataset",
+            "title": "Fragmented statements",
+            "body": "Balance sheets and supporting files lived in different sources and formats, making consolidation slow and error-prone."
+          },
+          {
+            "icon": "workstation",
+            "title": "Manual re-keying",
+            "body": "Officers retyped figures into customized models, relying on individual knowledge instead of a shared workflow."
+          },
+          {
+            "icon": "scales",
+            "title": "Inconsistent scoring",
+            "body": "Ratio definitions and risk criteria varied by regional underwriting pod, making outcomes hard to compare."
+          },
+          {
+            "icon": "duration",
+            "title": "Volume spikes",
+            "body": "Quarterly deal surges created severe backlogs and stretched already manual review cycles."
+          }
+        ],
+
+        "impact": {
+          "icon": "quote",
+          "label": "The Impact",
+          "body": "Longer origination cycles, inconsistent risk calls, and heavy dependence on manual effort.",
+          "metrics": [
+            {
+              "icon": "duration",
+              "value": "Up to 3 weeks",
+              "label": "to complete data extraction"
+            },
+            {
+              "icon": "person",
+              "value": "60%+",
+              "label": "of officer time on re-keying"
+            },
+            {
+              "icon": "spreadsheet",
+              "value": "Disparate",
+              "label": "workbooks per region"
+            },
+            {
+              "icon": "warning",
+              "value": "High",
+              "label": "risk of scoring discrepancies"
+            }
+          ]
+        }
+      }
+    },
+
+    {
+      "id": "approach",
+      "component": "approach",
+      "variant": "numbered",
+      "visible": true,
+
+      "data": {
+        "eyebrow": "Approach",
+        "title": "From manual spreadsheets to an automated intelligence engine.",
+        "intro": "We harmonized disparate underwriting criteria into a centralized risk framework, then built automated extraction and risk-scoring modules so underwriters could focus on deal structuring.",
+        "steps": [
+          {
+            "title": "Standardize credit ratio definitions",
+            "body": "Collaborated with senior risk officers to unify cash flow, coverage ratio, and leverage definitions across all commercial lending divisions."
+          },
+          {
+            "title": "Construct automated data extraction tools",
+            "body": "Built parsing utilities to automatically ingest borrower financial statements, tax filings, and bank statements directly into unified data models."
+          },
+          {
+            "title": "Deploy Python risk-scoring algorithms",
+            "body": "Programmed multi-factor credit risk scoring engines incorporating industry benchmarks, debt service coverage, and macroeconomic sensitivity."
+          },
+          {
+            "title": "Establish audit logs & compliance checks",
+            "body": "Integrated automated audit trails and rule validation to ensure full compliance with internal credit policies and regulatory standards."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "outcomes",
+      "component": "outcomes",
+      "variant": "strip",
+      "visible": true,
+
+      "data": {
+        "eyebrow": "Outcomes",
+        "title": "Faster decisions, lower risk, scale-ready origination.",
+        "metrics": [
+          {
+            "value": "Weeks → Hours",
+            "label": "Origination turnaround",
+            "note": "Deal evaluations no longer suffer from manual extraction bottlenecks."
+          },
+          {
+            "value": "Unified Engine",
+            "label": "Delivery model",
+            "note": "Deployed a modular underwriting platform seamlessly integrated with existing BI dashboards."
+          },
+          {
+            "value": "Standard Risk",
+            "label": "Decision consistency",
+            "note": "Risk models and policy rules are codified central sources of truth."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "next-step",
+      "component": "cta",
+      "variant": "centered",
+      "visible": true,
+
+      "data": {
+        "title": "Need an automated risk engine for your lending operations?",
+        "body": "We help financial institutions streamline complex analytical workflows into standardized, auditable software tools; driving throughput while maintaining strict risk controls.",
+        "actions": [
+          {
+            "label": "Start a Conversation",
+            "type": "primary",
+            "target": "contact.html"
+          },
+          {
+            "label": "View More Work",
+            "type": "secondary",
+            "target": "index.html#case-studies"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -113,43 +113,19 @@
 
 @media (max-width: 992px) {
 
-    /* Hero stacks vertically */
+    /* Hero stacks vertically (homepage also defines this) */
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
-    }
-
-    /* Two-column layout for cards */
-    .services-grid,
-    .case-study-grid,
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 
 }
 
 @media (max-width: 768px) {
 
-    /* All cards become single column */
-    .services-grid,
-    .case-study-grid,
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
     /* Hero spacing */
     .hero-grid {
         gap: var(--space-6);
-    }
-
-    /* Navbar */
-    .navbar {
-        height: 72px;
-    }
-
-    /* Temporary until hamburger menu is added */
-    .nav-links {
-        display: none;
     }
 
 }
@@ -168,36 +144,13 @@
 }
 
 /* ==========================================================
-   Navigation
+   Navigation (legacy helpers — primary styles in components.css)
 ========================================================== */
-
-.navbar {
-    height: 80px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .nav-logo {
     font-size: var(--text-xl);
     font-weight: var(--font-bold);
     color: var(--color-heading);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: var(--space-6);
-}
-
-.nav-links a {
-    font-weight: var(--font-medium);
-    color: var(--color-body);
-}
-
-.nav-links a:hover {
-    color: var(--color-primary);
 }
 
 /* ==========================================================
