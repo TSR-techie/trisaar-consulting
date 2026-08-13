@@ -133,7 +133,7 @@
     {
       "id": "executive-summary",
       "component": "executiveSummary",
-      "variant": "executive-overview",
+      "variant": "executive-brief",
       "visible": true,
 
       "data": {
@@ -274,7 +274,7 @@
     {
       "id": "challenge",
       "component": "challenge",
-      "variant": "challenge-frictionModern",
+      "variant": "challenge-frictionColored",
       "visible": true,
 
       "data": {
