@@ -274,18 +274,70 @@
     {
       "id": "challenge",
       "component": "challenge",
-      "variant": "callout",
+      "variant": "challenge-frictionMap",
       "visible": true,
 
       "data": {
-        "eyebrow": "The Challenge",
-        "title": "Feasibility lived as tribal knowledge.",
-        "body": "Critical network decisions were bottlenecked by specialist availability. Assumptions varied by person, documentation was thin, and repeating an analysis meant rebuilding context from scratch.",
-        "bullets": [
-          "Expert-dependent reviews created multi-day turnaround times",
-          "Inconsistent criteria made outcomes hard to compare across scenarios",
-          "No durable workflow existed for non-specialists to run first-pass assessments"
-        ]
+        "eyebrow": "Challenge",
+        "title": "Complex network. Limited visibility. Critical decisions at risk.",
+        "body": "The client needed to evaluate multiple transmission paths across a large network of substations to identify feasible greenfield opportunities. The existing approach was manual, time-consuming, and prone to oversight.",
+
+        "core": {
+          "icon": "warning",
+          "label": "The Core Challenge",
+          "body": "Critical decisions were delayed due to fragmented data, manual effort, and limited visibility."
+        },
+
+        "points": [
+          {
+            "icon": "dataset",
+            "title": "Fragmented data",
+            "body": "Network data was scattered across multiple sources and formats, making consolidation slow and error-prone."
+          },
+          {
+            "icon": "workstation",
+            "title": "Manual & repetitive",
+            "body": "Path mapping and feasibility checks were done manually, relying on a single expert and spreadsheets."
+          },
+          {
+            "icon": "visibility-off",
+            "title": "Limited visibility",
+            "body": "No unified view of capacity usage and constraints across paths led to blind spots and missed opportunities."
+          },
+          {
+            "icon": "duration",
+            "title": "Time-consuming",
+            "body": "Evaluating multiple scenarios took days, delaying decision-making and opportunity assessment."
+          }
+        ],
+
+        "impact": {
+          "icon": "quote",
+          "label": "The Impact",
+          "body": "Slower evaluations, missed opportunities, and higher dependency on manual effort.",
+          "metrics": [
+            {
+              "icon": "duration",
+              "value": "2–3 Days",
+              "label": "to evaluate scenarios"
+            },
+            {
+              "icon": "person",
+              "value": "1 Expert",
+              "label": "as single point of knowledge"
+            },
+            {
+              "icon": "spreadsheet",
+              "value": "100+",
+              "label": "spreadsheets for tracking & mapping"
+            },
+            {
+              "icon": "warning",
+              "value": "High",
+              "label": "risk of oversight & inaccuracies"
+            }
+          ]
+        }
       }
     },
 

@@ -274,18 +274,70 @@
     {
       "id": "challenge",
       "component": "challenge",
-      "variant": "callout",
+      "variant": "challenge-simple",
       "visible": true,
 
       "data": {
-        "eyebrow": "The Challenge",
+        "eyebrow": "Challenge",
         "title": "Underwriting stuck in disparate spreadsheets.",
         "body": "Commercial loan officers spent over 60% of their time manually re-keying balance sheets and running customized risk models, creating severe backlogs and inconsistent risk scoring.",
-        "bullets": [
-          "Manual data extraction delayed approvals by up to three weeks",
-          "Discrepancies in ratio calculations across regional underwriting pods",
-          "High operational overhead during quarterly deal volume spikes"
-        ]
+
+        "core": {
+          "icon": "warning",
+          "label": "The Core Challenge",
+          "body": "Approvals stalled because financial data lived in silos, scoring was manual, and no single view of risk existed."
+        },
+
+        "points": [
+          {
+            "icon": "dataset",
+            "title": "Fragmented statements",
+            "body": "Balance sheets and supporting files lived in different sources and formats, making consolidation slow and error-prone."
+          },
+          {
+            "icon": "workstation",
+            "title": "Manual re-keying",
+            "body": "Officers retyped figures into customized models, relying on individual knowledge instead of a shared workflow."
+          },
+          {
+            "icon": "scales",
+            "title": "Inconsistent scoring",
+            "body": "Ratio definitions and risk criteria varied by regional underwriting pod, making outcomes hard to compare."
+          },
+          {
+            "icon": "duration",
+            "title": "Volume spikes",
+            "body": "Quarterly deal surges created severe backlogs and stretched already manual review cycles."
+          }
+        ],
+
+        "impact": {
+          "icon": "quote",
+          "label": "The Impact",
+          "body": "Longer origination cycles, inconsistent risk calls, and heavy dependence on manual effort.",
+          "metrics": [
+            {
+              "icon": "duration",
+              "value": "Up to 3 weeks",
+              "label": "to complete data extraction"
+            },
+            {
+              "icon": "person",
+              "value": "60%+",
+              "label": "of officer time on re-keying"
+            },
+            {
+              "icon": "spreadsheet",
+              "value": "Disparate",
+              "label": "workbooks per region"
+            },
+            {
+              "icon": "warning",
+              "value": "High",
+              "label": "risk of scoring discrepancies"
+            }
+          ]
+        }
       }
     },
 

@@ -1,8 +1,12 @@
-.challenge {
+/* ==========================================================
+   Challenge — challenge-simple
+========================================================== */
+
+.challenge--challenge-simple {
     background: var(--surface-0);
 }
 
-.challenge-callout {
+.challenge--challenge-simple .challenge-callout {
     max-width: 48rem;
     padding: var(--space-7);
     border: 1px solid var(--color-border);
@@ -10,12 +14,347 @@
     background: var(--color-surface);
 }
 
-.challenge--callout .cs-title {
+.challenge--challenge-simple .cs-title {
     max-width: none;
 }
 
 @media (max-width: 600px) {
-    .challenge-callout {
+    .challenge--challenge-simple .challenge-callout {
+        padding: var(--space-5);
+    }
+}
+
+/* ==========================================================
+   Challenge — challenge-frictionMap
+========================================================== */
+
+.challenge--challenge-frictionMap {
+    background: var(--color-surface);
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+}
+
+.challenge-map-container {
+    max-width: var(--container-wide-width);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.challenge-map-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(14rem, 0.7fr);
+    gap: var(--space-7);
+    align-items: center;
+}
+
+.challenge-map-eyebrow .cs-eyebrow {
+    margin-bottom: 0;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.challenge-map-title {
+    max-width: 18ch;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-4);
+    font-size: clamp(1.85rem, 3.4vw, 2.7rem);
+    line-height: 1.15;
+}
+
+.challenge-map-body {
+    max-width: 42rem;
+    font-size: var(--text-base);
+    line-height: 1.7;
+}
+
+.challenge-map-visual {
+    justify-self: end;
+    width: min(100%, 22rem);
+}
+
+.challenge-map-visual-image,
+.challenge-map-visual-fallback {
+    width: 100%;
+    aspect-ratio: 1.28 / 1;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-md);
+    object-fit: cover;
+}
+
+.challenge-map-visual-fallback {
+    display: grid;
+    place-items: center;
+    padding: var(--space-4);
+}
+
+.challenge-map-network {
+    width: 100%;
+    height: 100%;
+}
+
+.challenge-map-grid {
+    display: grid;
+    grid-template-columns: minmax(13rem, 1.15fr) repeat(4, minmax(0, 1fr));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-surface);
+}
+
+.challenge-map-core,
+.challenge-map-point {
+    position: relative;
+    padding: var(--space-5) var(--space-5) var(--space-6);
+    min-width: 0;
+}
+
+.challenge-map-point + .challenge-map-point {
+    border-left: 1px solid var(--color-border);
+}
+
+.challenge-map-core {
+    background: #FFF5F5;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.challenge-map-core-icon,
+.challenge-map-point-icon,
+.challenge-map-metric-icon,
+.challenge-map-impact-quote {
+    display: inline-flex;
+    color: var(--color-primary);
+}
+
+.challenge-map-core-icon svg,
+.challenge-map-point-icon svg,
+.challenge-map-metric-icon svg,
+.challenge-map-impact-quote svg,
+.challenge-map-core-arrow svg {
+    width: 1.55rem;
+    height: 1.55rem;
+}
+
+.challenge-map-core-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+}
+
+.challenge-map-core-body,
+.challenge-map-point-body {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--color-body);
+}
+
+.challenge-map-core-arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    z-index: 1;
+    width: 1.85rem;
+    height: 1.85rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 0 4px var(--color-surface);
+}
+
+.challenge-map-core-arrow svg {
+    width: 0.95rem;
+    height: 0.95rem;
+}
+
+.challenge-map-point-title {
+    margin: var(--space-3) 0 var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-heading);
+}
+
+.challenge-map-point-title::after {
+    content: "";
+    display: block;
+    width: 2.25rem;
+    height: 2px;
+    margin-top: 0.45rem;
+    background: var(--color-primary);
+}
+
+.challenge-map-impact {
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.95fr) minmax(0, 1.35fr);
+    gap: var(--space-6);
+    align-items: center;
+    padding: var(--space-5) var(--space-6);
+    border-radius: var(--radius-lg);
+    background: #FFF5F5;
+}
+
+.challenge-map-impact-copy {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    min-width: 0;
+}
+
+.challenge-map-impact-quote {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.challenge-map-impact-quote svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.challenge-map-impact-label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+}
+
+.challenge-map-impact-body {
+    font-size: var(--text-base);
+    line-height: 1.55;
+    color: var(--color-heading);
+}
+
+.challenge-map-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.challenge-map-metric {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    min-width: 0;
+    padding: 0 var(--space-4);
+}
+
+.challenge-map-metric + .challenge-map-metric {
+    border-left: 1px solid #FECACA;
+}
+
+.challenge-map-metric-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.challenge-map-metric-value {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+.challenge-map-metric-label {
+    font-size: var(--text-sm);
+    line-height: 1.4;
+    color: var(--color-muted);
+}
+
+@media (max-width: 1100px) {
+    .challenge-map-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .challenge-map-core {
+        grid-column: 1 / -1;
+    }
+
+    .challenge-map-core-arrow {
+        display: none;
+    }
+
+    .challenge-map-point {
+        border-left: 0;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .challenge-map-point:nth-child(even) {
+        border-right: 1px solid var(--color-border);
+    }
+
+    .challenge-map-impact {
+        grid-template-columns: 1fr;
+    }
+
+    .challenge-map-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-4) 0;
+    }
+
+    .challenge-map-metric:nth-child(3),
+    .challenge-map-metric:nth-child(4) {
+        border-left: 0;
+    }
+
+    .challenge-map-metric:nth-child(3) {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .challenge-map-header {
+        grid-template-columns: 1fr;
+    }
+
+    .challenge-map-visual {
+        justify-self: stretch;
+        width: min(100%, 22rem);
+    }
+
+    .challenge-map-title {
+        max-width: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .challenge-map-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .challenge-map-point:nth-child(odd) {
+        border-right: 0;
+    }
+
+    .challenge-map-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .challenge-map-metric,
+    .challenge-map-metric + .challenge-map-metric {
+        border-left: 0;
+        padding: var(--space-3) 0;
+        border-top: 1px solid #FECACA;
+    }
+
+    .challenge-map-metric:first-child {
+        border-top: 0;
+        padding-top: 0;
+    }
+
+    .challenge-map-impact {
         padding: var(--space-5);
     }
 }
