@@ -274,7 +274,7 @@
     {
       "id": "challenge",
       "component": "challenge",
-      "variant": "challenge-frictionMap",
+      "variant": "challenge-frictionColored",
       "visible": true,
 
       "data": {
