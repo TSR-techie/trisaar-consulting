@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
 
   "meta": {
-    "id": "sara-0002",
+    "id": "sara-0003",
     "title": "Commercial Credit Underwriting Engine | TriSaar"
   },
 
@@ -274,7 +274,7 @@
     {
       "id": "challenge",
       "component": "challenge",
-      "variant": "challenge-frictionModern",
+      "variant": "challenge-friction-modern",
       "visible": true,
 
       "data": {

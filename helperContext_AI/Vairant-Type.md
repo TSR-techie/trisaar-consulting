@@ -16,11 +16,11 @@ executive-brief
 
 challenge-simple
 
-challenge-frictionMap
+challenge-friction-base
 
-challenge-frictionModern
+challenge-friction-modern
 
-challenge-frictionColored
+challenge-friction-colored
 
 
 

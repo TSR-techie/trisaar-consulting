@@ -488,7 +488,7 @@ function renderModernImpact(data) {
 
 function renderFrictionModern(section, data) {
     const root = createElement("section", {
-        className: "cs-section challenge challenge--challenge-frictionModern cs-animate",
+        className: "cs-section challenge challenge--challenge-friction-modern cs-animate",
         id: section.id
     });
 
@@ -690,7 +690,7 @@ function renderColoredImpact(data) {
 
 function renderFrictionColored(section, data) {
     const root = createElement("section", {
-        className: "cs-section challenge challenge--challenge-frictionColored cs-animate",
+        className: "cs-section challenge challenge--challenge-friction-colored cs-animate",
         id: section.id
     });
 
@@ -751,7 +751,7 @@ function renderFrictionColored(section, data) {
 
 function renderFrictionMap(section, data, caseId) {
     const root = createElement("section", {
-        className: "cs-section challenge challenge--challenge-frictionMap cs-animate",
+        className: "cs-section challenge challenge--challenge-friction-base cs-animate",
         id: section.id
     });
 
@@ -806,15 +806,15 @@ export default {
         const variant = resolveVariant(section.variant);
         const caseId = context.caseId || "";
 
-        if (variant === "challenge-frictionMap") {
+        if (variant === "challenge-friction-base") {
             return renderFrictionMap(section, data, caseId);
         }
 
-        if (variant === "challenge-frictionModern") {
+        if (variant === "challenge-friction-modern") {
             return renderFrictionModern(section, data);
         }
 
-        if (variant === "challenge-frictionColored") {
+        if (variant === "challenge-friction-colored") {
             return renderFrictionColored(section, data);
         }
 
