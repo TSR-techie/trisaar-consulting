@@ -344,7 +344,7 @@
     {
       "id": "solution",
       "component": "solution",
-      "variant": "solution-control-hub",
+      "variant": "solution-decision-engine",
       "visible": true,
 
       "data": {
@@ -363,6 +363,7 @@
             "icon": "flow",
             "title": "Map the decision logic",
             "body": "Worked with domain experts to capture feasibility criteria, dependencies, and exception paths in a form that could be reviewed and tested.",
+            "weight": 40,
             "points": [
               "Captured expert heuristics",
               "Defined feasibility criteria",
@@ -373,6 +374,7 @@
             "icon": "grid",
             "title": "Build the Excel decision surface",
             "body": "Designed a familiar spreadsheet interface for inputs, scenario comparison, and clear output states — without forcing users into a new platform.",
+            "weight": 35,
             "points": [
               "Structured data inputs & validation",
               "Path enumeration & evaluation",
@@ -383,6 +385,7 @@
             "icon": "code",
             "title": "Automate with Office Scripts",
             "body": "Encoded repeatable calculations and validation checks so the same evaluation path could run consistently in minutes.",
+            "weight": 5,
             "points": [
               "Data refresh & preprocessing",
               "Scenario execution automation",
@@ -393,6 +396,7 @@
             "icon": "shield",
             "title": "Validate with synthetic recreation",
             "body": "Recreated representative scenarios to prove the toolkit matched expert outcomes before rolling it into day-to-day use.",
+            "weight": 20,
             "points": [
               "Cross-checks with expert results",
               "Stress testing & edge cases",
@@ -405,9 +409,21 @@
           "icon": "outcome",
           "label": "The Outcome",
           "items": [
-            "Days → Minutes",
-            "Expert bottleneck eliminated",
-            "Knowledge democratized across the team"
+            {
+              "icon": "duration",
+              "title": "Days → Minutes",
+              "body": "Faster evaluations at scale."
+            },
+            {
+              "icon": "person",
+              "title": "Expert bottleneck eliminated",
+              "body": "Decisions no longer dependent on one expert."
+            },
+            {
+              "icon": "people",
+              "title": "Knowledge democratized",
+              "body": "Teams empowered with a repeatable process."
+            }
           ]
         },
 

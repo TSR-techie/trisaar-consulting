@@ -363,6 +363,7 @@
             "icon": "flow",
             "title": "Standardize credit ratio definitions",
             "body": "Collaborated with senior risk officers to unify cash flow, coverage ratio, and leverage definitions across all commercial lending divisions.",
+            "weight": 24,
             "points": [
               "Unified cash flow definitions",
               "Aligned coverage and leverage rules",
@@ -373,6 +374,7 @@
             "icon": "grid",
             "title": "Construct automated data extraction tools",
             "body": "Built parsing utilities to automatically ingest borrower financial statements, tax filings, and bank statements directly into unified data models.",
+            "weight": 28,
             "points": [
               "Statement and filing ingestion",
               "Normalized borrower data models",
@@ -383,6 +385,7 @@
             "icon": "code",
             "title": "Deploy Python risk-scoring algorithms",
             "body": "Programmed multi-factor credit risk scoring engines incorporating industry benchmarks, debt service coverage, and macroeconomic sensitivity.",
+            "weight": 28,
             "points": [
               "Multi-factor risk scoring",
               "Industry benchmark checks",
@@ -393,6 +396,7 @@
             "icon": "shield",
             "title": "Establish audit logs & compliance checks",
             "body": "Integrated automated audit trails and rule validation to ensure full compliance with internal credit policies and regulatory standards.",
+            "weight": 20,
             "points": [
               "Automated audit trails",
               "Policy rule validation",
@@ -405,9 +409,21 @@
           "icon": "outcome",
           "label": "The Outcome",
           "items": [
-            "Weeks → Hours",
-            "Manual data entry cut",
-            "Audit-ready lending decisions"
+            {
+              "icon": "duration",
+              "title": "Weeks → Hours",
+              "body": "Faster origination at scale."
+            },
+            {
+              "icon": "person",
+              "title": "Manual data entry cut",
+              "body": "Officers spend less time re-keying statements."
+            },
+            {
+              "icon": "people",
+              "title": "Audit-ready lending decisions",
+              "body": "Teams share a repeatable, compliant process."
+            }
           ]
         },
 
