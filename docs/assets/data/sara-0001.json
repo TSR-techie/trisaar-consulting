@@ -465,29 +465,127 @@
     {
       "id": "impact",
       "component": "impact",
-      "variant": "impact-simple",
+      "variant": "impact-bridge",
       "visible": true,
 
       "data": {
         "eyebrow": "Impact",
         "title": "Faster, clearer, repeatable feasibility calls.",
+        "titleHighlight": "feasibility calls.",
+        "intro": "The toolkit transformed a manual, expert-dependent process into a scalable decision engine.",
+        "orbit": {
+          "icon": "outcome",
+          "label": "Business Impact",
+          "body": "What changed for the business.",
+          "tagline": "A more efficient, scalable way to make decisions.",
+          "showKpi": true,
+          "showPercent": false
+        },
+        "bridge": {
+          "quote": "Better decisions create bigger opportunities."
+        },
+        "glance": {
+          "icon": "outcome",
+          "label": "The Impact",
+          "items": [
+            {
+              "icon": "duration",
+              "title": "Evaluation turnaround",
+              "text": "Improved from days to minutes."
+            },
+            {
+              "icon": "people",
+              "title": "Expert bottleneck eliminated",
+              "text": "Decisions no longer dependent on one expert."
+            },
+            {
+              "icon": "lightbulb",
+              "title": "Decision logic democratized",
+              "text": "Teams empowered with a repeatable process."
+            },
+            {
+              "icon": "star",
+              "text": "A usable core workflow teams can extend without a rebuild."
+            }
+          ]
+        },
         "metrics": [
           {
+            "icon": "duration",
             "value": "Days → Minutes",
             "label": "Evaluation turnaround",
-            "note": "First-pass feasibility no longer waits on specialist availability."
+            "note": "First-pass feasibility no longer waits on specialist availability.",
+            "weight": 38,
+            "orbit": true,
+            "bridgeSlot": "top",
+            "tag": {
+              "icon": "trend-up",
+              "text": "10x Faster"
+            }
           },
           {
+            "icon": "rocket",
             "value": "MVP",
             "label": "Delivery model",
-            "note": "Shipped a usable core workflow teams can extend without a rebuild."
+            "note": "Shipped a usable core workflow teams can extend without a rebuild.",
+            "weight": 32,
+            "orbit": true,
+            "bridgeSlot": "end",
+            "tag": {
+              "icon": "shield",
+              "text": "Proven & Reliable"
+            }
           },
           {
+            "icon": "people",
             "value": "Shared logic",
             "label": "Decision consistency",
-            "note": "Criteria and assumptions live in the toolkit, not only in people's heads."
+            "note": "Criteria and assumptions live in the toolkit, not only in people's heads.",
+            "weight": 30,
+            "orbit": true,
+            "bridgeSlot": "start",
+            "tag": {
+              "icon": "people",
+              "text": "Team Empowered"
+            }
+          },
+          {
+            "icon": "outcome",
+            "value": "Better decisions",
+            "label": "Decision quality",
+            "note": "Consistent, auditable outcomes drive stronger business decisions.",
+            "tag": {
+              "icon": "check",
+              "text": "Higher Confidence"
+            }
           }
-        ]
+        ],
+        "kpis": [
+          {
+            "icon": "duration",
+            "value": "2-3 Days",
+            "label": "Typical evaluation time reduced."
+          },
+          {
+            "icon": "person",
+            "value": "1 Expert",
+            "label": "Dependence reduced to shared ownership."
+          },
+          {
+            "icon": "spreadsheet",
+            "value": "100+",
+            "label": "Spreadsheets consolidated."
+          },
+          {
+            "icon": "shield",
+            "value": "High → Low",
+            "label": "Risk of oversight and inaccuracies."
+          }
+        ],
+        "summary": {
+          "icon": "chart",
+          "text": "More scenarios evaluated. Faster decisions. Stronger business outcomes."
+        }
       }
     },
 

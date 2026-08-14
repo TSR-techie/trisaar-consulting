@@ -471,23 +471,118 @@
       "data": {
         "eyebrow": "Impact",
         "title": "Faster decisions, lower risk, scale-ready origination.",
+        "titleHighlight": "origination.",
+        "intro": "The engine transformed a manual, officer-dependent process into a scalable underwriting system.",
+        "orbit": {
+          "icon": "outcome",
+          "label": "Business Impact",
+          "body": "What changed for the business.",
+          "tagline": "A more efficient, scalable way to make decisions.",
+          "showKpi": false,
+          "showPercent": false
+        },
+        "bridge": {
+          "quote": "Better decisions create bigger opportunities."
+        },
+        "glance": {
+          "icon": "outcome",
+          "label": "Impact at a glance",
+          "items": [
+            {
+              "icon": "chart",
+              "text": "Origination turnaround improved from weeks to hours."
+            },
+            {
+              "icon": "duration",
+              "text": "Manual extraction bottlenecks removed from deal evaluation."
+            },
+            {
+              "icon": "people",
+              "text": "Risk models and policy rules live as a shared source of truth."
+            },
+            {
+              "icon": "star",
+              "text": "A modular underwriting engine teams can extend without a rebuild."
+            }
+          ]
+        },
         "metrics": [
           {
+            "icon": "duration",
             "value": "Weeks → Hours",
             "label": "Origination turnaround",
-            "note": "Deal evaluations no longer suffer from manual extraction bottlenecks."
+            "note": "Deal evaluations no longer suffer from manual extraction bottlenecks.",
+            "weight": 38,
+            "orbit": true,
+            "bridgeSlot": "top",
+            "tag": {
+              "icon": "trend-up",
+              "text": "Faster Cycle"
+            }
           },
           {
+            "icon": "rocket",
             "value": "Unified Engine",
             "label": "Delivery model",
-            "note": "Deployed a modular underwriting platform seamlessly integrated with existing BI dashboards."
+            "note": "Deployed a modular underwriting platform seamlessly integrated with existing BI dashboards.",
+            "weight": 32,
+            "orbit": true,
+            "bridgeSlot": "end",
+            "tag": {
+              "icon": "shield",
+              "text": "Proven & Reliable"
+            }
           },
           {
+            "icon": "people",
             "value": "Standard Risk",
             "label": "Decision consistency",
-            "note": "Risk models and policy rules are codified central sources of truth."
+            "note": "Risk models and policy rules are codified central sources of truth.",
+            "weight": 30,
+            "orbit": true,
+            "bridgeSlot": "start",
+            "tag": {
+              "icon": "people",
+              "text": "Team Empowered"
+            }
+          },
+          {
+            "icon": "outcome",
+            "value": "Audit-ready",
+            "label": "Decision quality",
+            "note": "Consistent, documented scoring drives stronger credit decisions.",
+            "tag": {
+              "icon": "check",
+              "text": "Higher Confidence"
+            }
           }
-        ]
+        ],
+        "kpis": [
+          {
+            "icon": "duration",
+            "value": "Weeks → Hours",
+            "label": "Typical origination cycle reduced."
+          },
+          {
+            "icon": "person",
+            "value": "1 Officer",
+            "label": "Dependence reduced to shared ownership."
+          },
+          {
+            "icon": "spreadsheet",
+            "value": "100+",
+            "label": "Manual workbooks consolidated."
+          },
+          {
+            "icon": "shield",
+            "value": "High → Low",
+            "label": "Risk of inconsistent scoring."
+          }
+        ],
+        "summary": {
+          "icon": "chart",
+          "text": "Faster origination. Standardized risk. Stronger lending outcomes."
+        }
       }
     },
 
