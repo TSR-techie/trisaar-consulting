@@ -247,6 +247,11 @@ function renderIndustryChips(cases, selected) {
     return row;
 }
 
+function cardImageSrc(item) {
+    if (!item?.id) return "";
+    return `./docs/assets/images/sara/${item.id}/index-card.png`;
+}
+
 function renderCard(item) {
     const href = `case-study.html?id=${encodeURIComponent(item.id)}`;
     const card = createElement("a", {
@@ -257,7 +262,7 @@ function renderCard(item) {
     const media = createElement("div", { className: "case-index-card-media" });
     const img = createElement("img", {
         attributes: {
-            src: item.image || "",
+            src: cardImageSrc(item),
             alt: "",
             loading: "lazy"
         }
