@@ -28,7 +28,7 @@
           "type": "identity",
           "variant": "dualTone",
           "data": {
-            "text": "Sāra 0002 · सार ०००२"
+            "text": "Sāra 0004 · सार ०००४"
           }
         },
         {
@@ -344,7 +344,7 @@
     {
       "id": "solution",
       "component": "solution",
-      "variant": "solution-simple",
+      "variant": "solution-decision-engine",
       "visible": true,
 
       "data": {
@@ -465,7 +465,7 @@
     {
       "id": "impact",
       "component": "impact",
-      "variant": "impact-simple",
+      "variant": "impact-bridge",
       "visible": true,
 
       "data": {

@@ -344,7 +344,7 @@
     {
       "id": "solution",
       "component": "solution",
-      "variant": "solution-simple",
+      "variant": "solution-decision-path",
       "visible": true,
 
       "data": {
@@ -465,7 +465,7 @@
     {
       "id": "impact",
       "component": "impact",
-      "variant": "impact-simple",
+      "variant": "impact-scorecard",
       "visible": true,
 
       "data": {
