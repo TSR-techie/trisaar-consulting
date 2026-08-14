@@ -11,19 +11,28 @@ executive-brief
 
 
 
+
 **The Challenge**
 
 challenge-simple
 
-challenge-friction-base
+challenge-frictionMap
 
-challenge-friction-modern
+challenge-frictionModern
 
-challenge-friction-colored
-
-
+challenge-frictionColored
 
 
-**The Solution**
+
+
+
+**Approach/Solution**
 
 solution-simple
+
+solution-decision-path
+
+solution-control-hub
+
+solution-decision-engine
+

@@ -344,31 +344,105 @@
     {
       "id": "solution",
       "component": "solution",
-      "variant": "solution-simple",
+      "variant": "solution-control-hub",
       "visible": true,
 
       "data": {
         "eyebrow": "Solution",
         "title": "From informal judgment to a structured workflow.",
         "intro": "We translated domain expertise into a transparent decision model, then automated the repetitive layers so analysts could focus on interpretation instead of reconstruction.",
+
+        "hub": {
+          "icon": "puzzle",
+          "label": "Our Approach",
+          "body": "A repeatable framework that turns complex networks into confident decisions."
+        },
+
         "steps": [
           {
+            "icon": "flow",
             "title": "Map the decision logic",
-            "body": "Worked with domain experts to capture feasibility criteria, dependencies, and exception paths in a form that could be reviewed and tested."
+            "body": "Worked with domain experts to capture feasibility criteria, dependencies, and exception paths in a form that could be reviewed and tested.",
+            "points": [
+              "Captured expert heuristics",
+              "Defined feasibility criteria",
+              "Documented assumptions & rules"
+            ]
           },
           {
+            "icon": "grid",
             "title": "Build the Excel decision surface",
-            "body": "Designed a familiar spreadsheet interface for inputs, scenario comparison, and clear output states — without forcing users into a new platform."
+            "body": "Designed a familiar spreadsheet interface for inputs, scenario comparison, and clear output states — without forcing users into a new platform.",
+            "points": [
+              "Structured data inputs & validation",
+              "Path enumeration & evaluation",
+              "Feasibility scoring & capacity checks"
+            ]
           },
           {
+            "icon": "code",
             "title": "Automate with Office Scripts",
-            "body": "Encoded repeatable calculations and validation checks so the same evaluation path could run consistently in minutes."
+            "body": "Encoded repeatable calculations and validation checks so the same evaluation path could run consistently in minutes.",
+            "points": [
+              "Data refresh & preprocessing",
+              "Scenario execution automation",
+              "Results generation & formatting"
+            ]
           },
           {
+            "icon": "shield",
             "title": "Validate with synthetic recreation",
-            "body": "Recreated representative scenarios to prove the toolkit matched expert outcomes before rolling it into day-to-day use."
+            "body": "Recreated representative scenarios to prove the toolkit matched expert outcomes before rolling it into day-to-day use.",
+            "points": [
+              "Cross-checks with expert results",
+              "Stress testing & edge cases",
+              "User guide & documentation"
+            ]
           }
-        ]
+        ],
+
+        "outcome": {
+          "icon": "outcome",
+          "label": "The Outcome",
+          "items": [
+            "Days → Minutes",
+            "Expert bottleneck eliminated",
+            "Knowledge democratized across the team"
+          ]
+        },
+
+        "enablers": {
+          "icon": "gear",
+          "label": "Key Enablers",
+          "intro": "Tools and practices that powered the solution.",
+          "items": [
+            {
+              "icon": "spreadsheet",
+              "title": "Microsoft Excel",
+              "body": "Modeling & Analysis"
+            },
+            {
+              "icon": "code",
+              "title": "Office Scripts",
+              "body": "Automation"
+            },
+            {
+              "icon": "check",
+              "title": "Data Validation",
+              "body": "Accuracy & Integrity"
+            },
+            {
+              "icon": "people",
+              "title": "SME Collaboration",
+              "body": "Expert Knowledge"
+            },
+            {
+              "icon": "document",
+              "title": "Documentation",
+              "body": "Knowledge Transfer"
+            }
+          ]
+        }
       }
     },
 
