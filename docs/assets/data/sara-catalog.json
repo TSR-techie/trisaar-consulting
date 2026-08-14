@@ -1,0 +1,64 @@
+{
+  "cases": [
+    {
+      "id": "sara-0001",
+      "number": "0001",
+      "label": "Sāra 0001",
+      "title": "Infrastructure Network Feasibility Toolkit",
+      "summary": "A reusable decision-support solution that replaced manual dependency on domain experts with a structured workflow for evaluating network feasibility.",
+      "image": "./docs/assets/images/sara/sara-0001/executive-brief-media-front.png",
+      "industry": "Energy & Utilities",
+      "duration": "6 Weeks",
+      "durationWeeks": 6,
+      "publishedDate": "2025-03-12",
+      "technologies": ["Excel", "Office Scripts"],
+      "capabilities": ["Analytics", "Automation"],
+      "topics": ["Network Feasibility", "Water Utility"]
+    },
+    {
+      "id": "sara-0002",
+      "number": "0002",
+      "label": "Sāra 0002",
+      "title": "Commercial Credit Underwriting Engine",
+      "summary": "An automated risk-scoring framework that integrated financial statement parsing with regulatory stress-testing to accelerate loan origination.",
+      "image": "./docs/assets/images/sara/sara-0002/executive-brief-media-front.png",
+      "industry": "Financial Services",
+      "duration": "8 Weeks",
+      "durationWeeks": 8,
+      "publishedDate": "2025-06-18",
+      "technologies": ["Python", "Power BI"],
+      "capabilities": ["Analytics", "Automation", "AI"],
+      "topics": ["Credit Underwriting", "Risk Modeling"]
+    },
+    {
+      "id": "sara-0003",
+      "number": "0003",
+      "label": "Sāra 0003",
+      "title": "Commercial Credit Underwriting Engine",
+      "summary": "An automated risk-scoring framework that integrated financial statement parsing with regulatory stress-testing to accelerate loan origination.",
+      "image": "./docs/assets/images/sara/sara-0002/executive-brief-media-front.png",
+      "industry": "Financial Services",
+      "duration": "8 Weeks",
+      "durationWeeks": 8,
+      "publishedDate": "2025-09-04",
+      "technologies": ["Python", "Power BI"],
+      "capabilities": ["Analytics", "Automation"],
+      "topics": ["Credit Underwriting", "Risk Modeling"]
+    },
+    {
+      "id": "sara-0004",
+      "number": "0004",
+      "label": "Sāra 0004",
+      "title": "Commercial Credit Underwriting Engine",
+      "summary": "An automated risk-scoring framework that integrated financial statement parsing with regulatory stress-testing to accelerate loan origination.",
+      "image": "./docs/assets/images/sara/sara-0004/executive-brief-media-front.png",
+      "industry": "Financial Services",
+      "duration": "8 Weeks",
+      "durationWeeks": 8,
+      "publishedDate": "2026-01-22",
+      "technologies": ["Python", "Power BI"],
+      "capabilities": ["Analytics", "AI"],
+      "topics": ["Credit Underwriting", "Risk Modeling"]
+    }
+  ]
+}
