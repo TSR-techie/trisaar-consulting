@@ -463,13 +463,13 @@
     },
 
     {
-      "id": "outcomes",
-      "component": "outcomes",
-      "variant": "strip",
+      "id": "impact",
+      "component": "impact",
+      "variant": "impact-simple",
       "visible": true,
 
       "data": {
-        "eyebrow": "Outcomes",
+        "eyebrow": "Impact",
         "title": "Faster decisions, lower risk, scale-ready origination.",
         "metrics": [
           {

@@ -3,7 +3,7 @@ import Publication from "../modules/publication/publication.js";
 import ExecutiveSummary from "../modules/executive-summary/executiveSummary.js";
 import Challenge from "../modules/challenge/challenge.js";
 import Solution from "../modules/solution/solution.js";
-import Outcomes from "../modules/outcomes/outcomes.js";
+import Impact from "../modules/impact/impact.js";
 import Cta from "../modules/cta/cta.js";
 
 export const ComponentRegistry = {
@@ -12,6 +12,6 @@ export const ComponentRegistry = {
     executiveSummary: ExecutiveSummary,
     challenge: Challenge,
     solution: Solution,
-    outcomes: Outcomes,
+    impact: Impact,
     cta: Cta
 };
