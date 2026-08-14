@@ -342,13 +342,13 @@
     },
 
     {
-      "id": "approach",
-      "component": "approach",
-      "variant": "numbered",
+      "id": "solution",
+      "component": "solution",
+      "variant": "solution-simple",
       "visible": true,
 
       "data": {
-        "eyebrow": "Approach",
+        "eyebrow": "Solution",
         "title": "From informal judgment to a structured workflow.",
         "intro": "We translated domain expertise into a transparent decision model, then automated the repetitive layers so analysts could focus on interpretation instead of reconstruction.",
         "steps": [

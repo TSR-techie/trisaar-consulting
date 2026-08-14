@@ -11,7 +11,6 @@ executive-brief
 
 
 
-
 **The Challenge**
 
 challenge-simple
@@ -25,10 +24,6 @@ challenge-friction-colored
 
 
 
+**The Solution**
 
-
-
-
-
-
-
+solution-simple

@@ -342,13 +342,13 @@
     },
 
     {
-      "id": "approach",
-      "component": "approach",
-      "variant": "numbered",
+      "id": "solution",
+      "component": "solution",
+      "variant": "solution-simple",
       "visible": true,
 
       "data": {
-        "eyebrow": "Approach",
+        "eyebrow": "Solution",
         "title": "From manual spreadsheets to an automated intelligence engine.",
         "intro": "We harmonized disparate underwriting criteria into a centralized risk framework, then built automated extraction and risk-scoring modules so underwriters could focus on deal structuring.",
         "steps": [
