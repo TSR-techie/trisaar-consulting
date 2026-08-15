@@ -1,5 +1,6 @@
 import { createElement } from "./utils.js";
 import { icon } from "./icons.js";
+import { applyCaseIndexSeo } from "./seo.js";
 
 const DEFAULT_FILTERS = {
     q: "",
@@ -445,6 +446,7 @@ async function init() {
 
     try {
         const cases = await loadCatalog();
+        applyCaseIndexSeo(cases);
         renderPage(root, cases, readFiltersFromUrl());
     } catch (error) {
         root.replaceChildren(createElement("p", {

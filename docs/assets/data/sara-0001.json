@@ -3,7 +3,22 @@
 
   "meta": {
     "id": "sara-0001",
-    "title": "Infrastructure Network Feasibility Toolkit | TriSaar"
+    "title": "Infrastructure Network Feasibility Toolkit | TriSaar Consulting",
+    "description": "Sāra 0001 case study: an Excel and Office Scripts toolkit that turns water-utility network feasibility from expert tribal knowledge into a repeatable decision engine.",
+    "keywords": [
+      "Water Utility",
+      "Network Feasibility",
+      "Excel",
+      "Office Scripts",
+      "Automation",
+      "Energy & Utilities",
+      "Decision Support"
+    ],
+    "author": "TriSaar Consulting",
+    "themeColor": "#B91C1C",
+    "canonical": "https://tsr-techie.github.io/trisaar-consulting/case-study.html?id=sara-0001",
+    "ogImage": "https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png",
+    "robots": "index, follow"
   },
 
   "sections": [

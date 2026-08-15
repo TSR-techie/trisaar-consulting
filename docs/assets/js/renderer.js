@@ -1,5 +1,6 @@
 import { ComponentRegistry } from "./component-registry.js";
 import { createElement } from "./utils.js";
+import { applyCaseStudySeo } from "./seo.js";
 
 function getCaseStudyId() {
     const params = new URLSearchParams(window.location.search);
@@ -90,9 +91,7 @@ export async function renderCaseStudy() {
         const page = await caseResponse.json();
         const { prevId, nextId } = resolveNeighbors(id, cases);
 
-        if (page.meta?.title) {
-            document.title = page.meta.title;
-        }
+        applyCaseStudySeo(page, id);
 
         root.innerHTML = "";
 

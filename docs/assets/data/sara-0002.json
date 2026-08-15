@@ -3,7 +3,23 @@
 
   "meta": {
     "id": "sara-0002",
-    "title": "Commercial Credit Underwriting Engine | TriSaar"
+    "title": "Commercial Credit Underwriting Engine | Sāra 0002 | TriSaar Consulting",
+    "description": "Sāra 0002 case study in financial services: an automated credit underwriting engine that scores middle-market loans with financial-statement parsing and regulatory stress tests.",
+    "keywords": [
+      "Commercial Banking",
+      "Credit Underwriting",
+      "Risk Modeling",
+      "Python",
+      "Power BI",
+      "Financial Services",
+      "Automation",
+      "AI"
+    ],
+    "author": "TriSaar Consulting",
+    "themeColor": "#B91C1C",
+    "canonical": "https://tsr-techie.github.io/trisaar-consulting/case-study.html?id=sara-0002",
+    "ogImage": "https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png",
+    "robots": "index, follow"
   },
 
   "sections": [

@@ -64,6 +64,18 @@
 
   },
 
+  "meta": {
+    "id": "sara-0001",
+    "title": "Infrastructure Network Feasibility Toolkit | TriSaar Consulting",
+    "description": "",
+    "keywords": [],
+    "author": "TriSaar Consulting",
+    "themeColor": "#B91C1C",
+    "canonical": "https://tsr-techie.github.io/trisaar-consulting/case-study.html?id=sara-0001",
+    "ogImage": "https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png",
+    "robots": "index, follow"
+  },
+
   "seo": {
 
     "title": "",
@@ -72,11 +84,15 @@
 
     "keywords": [],
 
+    "author": "TriSaar Consulting",
+
+    "themeColor": "#B91C1C",
+
     "canonical": "",
 
     "ogImage": "",
 
-    "robots": "index,follow"
+    "robots": "index, follow"
 
   },
 
