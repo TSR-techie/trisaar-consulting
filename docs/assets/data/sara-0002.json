@@ -1,19 +1,20 @@
 {
   "schemaVersion": "1.0",
-
   "meta": {
     "id": "sara-0002",
-    "title": "Commercial Credit Underwriting Engine | Sāra 0002 | TriSaar Consulting",
-    "description": "Sāra 0002 case study in financial services: an automated credit underwriting engine that scores middle-market loans with financial-statement parsing and regulatory stress tests.",
+    "title": "Workload Rebalancing Dashboard | Sāra 0002 | TriSaar Consulting",
+    "description": "Sāra 0002 case study in Insurance: an Excel and VBA workload rebalancing dashboard that gives operations leaders a self-service view of account-level effort, capacity and workload imbalance across offices.",
     "keywords": [
-      "Commercial Banking",
-      "Credit Underwriting",
-      "Risk Modeling",
-      "Python",
-      "Power BI",
-      "Financial Services",
+      "Insurance",
+      "Insurance Underwriting",
+      "Workload Rebalancing",
+      "Workload Distribution",
+      "Workforce Analytics",
+      "Capacity Planning",
+      "Excel",
+      "VBA",
       "Automation",
-      "AI"
+      "Business Intelligence"
     ],
     "author": "TriSaar Consulting",
     "themeColor": "#B91C1C",
@@ -21,22 +22,20 @@
     "ogImage": "https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png",
     "robots": "index, follow"
   },
-
   "sections": [
     {
       "id": "hero",
       "component": "hero",
       "variant": "immersive",
       "visible": true,
-
       "parts": [
         {
           "type": "taxonomy",
           "data": {
             "items": [
-              "Commercial Banking",
-              "Credit Underwriting",
-              "Risk Modeling"
+              "Insurance",
+              "Workload Distribution",
+              "Workforce Analytics"
             ]
           }
         },
@@ -44,19 +43,19 @@
           "type": "identity",
           "variant": "dualTone",
           "data": {
-            "text": "Sāra 0002 · सार ०००२"
+            "text": "Sāra 0002 · सार ०००2"
           }
         },
         {
           "type": "title",
           "data": {
-            "text": "Commercial Credit Underwriting Engine"
+            "text": "Workload Rebalancing Dashboard"
           }
         },
         {
           "type": "subtitle",
           "data": {
-            "text": "Streamlining middle-market commercial loan approvals from manual spreadsheet reviews into an automated risk scoring system."
+            "text": "A self-service Excel and VBA dashboard that gives operations leaders a live view of workload, capacity and account-level effort across offices."
           }
         },
         {
@@ -75,25 +74,11 @@
                 "target": "https://github.com/tsr-techie/trisaar-consulting",
                 "icon": "github"
               }
-            ]
-          }
-        },
-        {
-          "type": "description",
-          "data": {
-            "text": "An automated risk-scoring framework that integrated financial statement parsing with regulatory stress-testing to accelerate loan origination."
-          },
-          "visible": true
-        },
-        {
-          "type": "brief",
-          "variant": "rail",
-          "data": {
-            "title": "Case Brief",
+            ],
             "fields": [
               {
                 "label": "Client",
-                "value": "Global Regional Bank",
+                "value": "Large Insurance Underwriter",
                 "icon": "client"
               },
               {
@@ -105,24 +90,74 @@
                 "label": "Outcome",
                 "icon": "outcome",
                 "values": [
-                  "Weeks → Hours",
-                  "Zero Audit Exceptions",
-                  "75% Manual Effort Cut"
+                  "15 offices → 1 dashboard",
+                  "Scenario-based rebalancing",
+                  "Reactive → Proactive"
                 ]
               },
               {
                 "label": "Technology",
-                "value": "Python • Power BI",
+                "value": "Excel • VBA",
                 "icon": "technology"
               },
               {
                 "label": "Dataset",
-                "value": "Anonymized Portfolio",
+                "value": "Unavailable",
                 "icon": "dataset"
               },
               {
                 "label": "Confidentiality",
-                "value": "Public (Sanitized)",
+                "value": "Sensitive (PII)",
+                "icon": "confidentiality"
+              }
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "text": "Workload management tool that helps leaders identify pressure points, test allocation scenarios, and rebalance work before teams become overloaded."
+          },
+          "visible": true
+        },
+        {
+          "type": "brief",
+          "variant": "rail",
+          "data": {
+            "title": "Case Brief",
+            "fields": [
+              {
+                "label": "Client",
+                "value": "Large Insurance Underwriter",
+                "icon": "client"
+              },
+              {
+                "label": "Duration",
+                "value": "8 Weeks",
+                "icon": "duration"
+              },
+              {
+                "label": "Outcome",
+                "icon": "outcome",
+                "values": [
+                  "15 offices → 1 dashboard",
+                  "Self-service rebalancing",
+                  "Proactive, not reactive"
+                ]
+              },
+              {
+                "label": "Technology",
+                "value": "Excel • VBA",
+                "icon": "technology"
+              },
+              {
+                "label": "Dataset",
+                "value": "Unavailable",
+                "icon": "dataset"
+              },
+              {
+                "label": "Confidentiality",
+                "value": "Sensitive (PII)",
                 "icon": "confidentiality"
               }
             ]
@@ -130,52 +165,47 @@
         }
       ]
     },
-
     {
       "id": "publication",
       "component": "publication",
       "variant": "rule",
       "visible": true,
-
       "data": {
         "label": "Sāra Publication",
         "edition": "Public Edition",
         "version": "1.0",
         "published": "Aug 2026",
-        "readTime": "10 min read"
+        "readTime": "15 min read"
       }
     },
-
     {
       "id": "executive-summary",
       "component": "executiveSummary",
       "variant": "executive-flow-lite",
       "visible": true,
-
       "data": {
         "eyebrow": "Executive Summary",
-        "title": "From manual audit friction to a high-speed risk engine.",
-        "subtitle": "We transformed a fragmented commercial credit evaluation pipeline into an automated intelligence engine delivering standardized, audit-ready decisions.",
-
+        "title": "Turning account-level effort into a proactive management tool.",
+        "subtitle": "A self-service dashboard that helped operations leaders see where workload was building up, test rebalancing scenarios and act before someone became overloaded.",
         "pillars": [
           {
             "key": "challenge",
             "label": "Challenge",
             "icon": "people",
-            "title": "Underwriting stuck in disparate spreadsheets.",
-            "body": "Commercial loan officers spent over 60% of their time manually re-keying balance sheets and running customized risk models, creating severe backlogs and inconsistent risk scoring.",
+            "title": "Invisible workload imbalance driving burnout & attrition.",
+            "body": "Operations spanned over 15 offices and roughly 75 managers, executives and underwriters. But the workload was assigned informally, with no shared way to compare effort across people or operarions.",
             "points": [
               {
                 "icon": "duration",
-                "text": "Manual data extraction delayed approvals by up to three weeks"
+                "text": "No standardized measure of 'workload' existed across operations"
               },
               {
                 "icon": "scales",
-                "text": "Discrepancies in ratio calculations across regional underwriting pods"
+                "text": "No unified view per person or account"
               },
               {
                 "icon": "person",
-                "text": "High operational overhead during quarterly deal volume spikes"
+                "text": "Lack of early warning system to rebalance proactively"
               }
             ]
           },
@@ -183,24 +213,24 @@
             "key": "solution",
             "label": "Solution",
             "icon": "gear",
-            "title": "Standardized extraction and dynamic risk rules.",
-            "body": "We engineered a unified risk scoring pipeline combining automated financial parsing, real-time stress testing, and interactive reporting for credit committees.",
+            "title": "Self-service dashboard built for the Team that owns it.",
+            "body": "We designed and built a workload dashboard in Excel VBA, that draws on the client's existing capacity model & benchmarks at global and local level, gives managers a visual way to see and rebalance assignments.",
             "steps": [
               {
                 "icon": "flow",
-                "text": "Standardize credit ratio definitions"
+                "text": "Define balanced workload"
               },
               {
                 "icon": "grid",
-                "text": "Construct automated data extraction tools"
+                "text": "Tap existing capacity data"
               },
               {
                 "icon": "code",
-                "text": "Deploy Python risk-scoring algorithms"
+                "text": "Design & automate the dashboard"
               },
               {
                 "icon": "shield",
-                "text": "Establish audit logs & compliance checks"
+                "text": "Stress test with people & accounts"
               }
             ]
           },
@@ -208,46 +238,40 @@
             "key": "impact",
             "label": "Impact",
             "icon": "chart",
-            "title": "Accelerated origination. Standardized risk.",
-            "body": "The solution dramatically shortened turnarounds while empowering risk officers to stress-test portfolios against macroeconomic shifts instantly.",
+            "title": "Reactive firefighting to Proactive rebalancing.",
+            "body": "For the first time, operations leaders could see workload imbalance in one place, and act on it before it became a service or retention issue.",
             "metrics": [
               {
                 "icon": "duration",
-                "value": "Weeks → Hours",
-                "label": "Turnaround time reduced"
+                "value": "15 offices → 1 dashboard",
+                "label": "Unified operations view"
               },
               {
                 "icon": "people",
-                "value": "75%",
-                "label": "Manual data entry cut"
+                "value": "Reactive → Proactive",
+                "label": "Workload management shift"
               },
               {
                 "icon": "outcome",
-                "value": "3x Volume",
-                "label": "Deal throughput capacity"
-              },
-              {
-                "icon": "shield",
-                "value": "100%",
-                "label": "Audit trail compliance"
+                "value": "100% client owned",
+                "label": "No vendor dependency"
               }
             ]
           }
         ],
-
         "bottomLine": {
           "label": "Bottom line",
           "icon": "star",
           "parts": [
             {
-              "text": "A robust credit underwriting engine that converts fragmented financial statements into "
+              "text": "We didn't just flag where workload was imbalanced, we gave the client's own team a "
             },
             {
-              "text": "rapid, compliant, and defensible",
+              "text": "permanent, global and self-service",
               "emphasis": true
             },
             {
-              "text": " lending decisions—at enterprise scale."
+              "text": " way to see and fix it, turning a recurring pain point into an operating habit."
             }
           ],
           "cta": {
@@ -256,7 +280,6 @@
             "icon": "document"
           }
         },
-
         "meta": [
           {
             "label": "Industry",
@@ -265,12 +288,12 @@
           },
           {
             "label": "Domain",
-            "value": "Credit Underwriting",
+            "value": "Insurance Underwriting",
             "icon": "network"
           },
           {
             "label": "Technology",
-            "value": "Python • Power BI",
+            "value": "Excel • VBA",
             "icon": "technology"
           },
           {
@@ -280,225 +303,212 @@
           },
           {
             "label": "Client",
-            "value": "Global Regional Bank",
+            "value": "Large Insurance Underwriter",
             "icon": "client"
           }
         ]
       }
     },
-
     {
       "id": "challenge",
       "component": "challenge",
       "variant": "challenge-friction-base",
       "visible": true,
-
       "data": {
         "eyebrow": "Challenge",
-        "title": "Underwriting stuck in disparate spreadsheets.",
-        "body": "Commercial loan officers spent over 60% of their time manually re-keying balance sheets and running customized risk models, creating severe backlogs and inconsistent risk scoring.",
-
+        "title": "Workload was visible in pieces, but not as a management system.",
+        "body": "Operations spanned more than 15 offices and roughly 75 managers, executives and underwriters. Account ownership and expected effort existed in the underlying Excel model, but there was no simple, shared dashboard for operations leaders to see workload distribution, identify emerging pressure points or test how changes would affect capacity.",
         "core": {
           "icon": "warning",
           "label": "The Core Challenge",
-          "body": "Approvals stalled because financial data lived in silos, scoring was manual, and no single view of risk existed."
+          "body": "The data needed to manage workload already existed. The gap was turning account-level effort and working hours into a practical view that leaders could use to rebalance work."
         },
-
         "points": [
           {
             "icon": "dataset",
-            "title": "Fragmented statements",
-            "body": "Balance sheets and supporting files lived in different sources and formats, making consolidation slow and error-prone."
+            "title": "Effort varied by account and role",
+            "body": "Workload was not simply a count of accounts. Each account carried an expected working-hour requirement by role, creating different effort profiles across assignments."
           },
           {
-            "icon": "workstation",
-            "title": "Manual re-keying",
-            "body": "Officers retyped figures into customized models, relying on individual knowledge instead of a shared workflow."
+            "icon": "people",
+            "title": "Assignments drove capacity",
+            "body": "The model needed to connect each account's required effort with the people and roles working on it to understand the resulting workload."
           },
           {
             "icon": "scales",
-            "title": "Inconsistent scoring",
-            "body": "Ratio definitions and risk criteria varied by regional underwriting pod, making outcomes hard to compare."
+            "title": "No easy scenario view",
+            "body": "Operations leaders needed to test changes—not just observe the current state. Adding or removing people and accounts could materially change the workload balance."
           },
           {
             "icon": "duration",
-            "title": "Volume spikes",
-            "body": "Quarterly deal surges created severe backlogs and stretched already manual review cycles."
+            "title": "Rebalancing was reactive",
+            "body": "Without a practical management view, workload could build up before leaders had a clear way to identify where intervention was needed."
           }
         ],
-
         "impact": {
           "icon": "quote",
-          "label": "The Impact",
-          "body": "Longer origination cycles, inconsistent risk calls, and heavy dependence on manual effort.",
+          "label": "The Business Impact",
+          "body": "Leaders had less visibility into emerging overload and fewer practical ways to evaluate alternative workload allocations before acting.",
           "metrics": [
             {
+              "icon": "people",
+              "value": "15+",
+              "label": "offices to compare"
+            },
+            {
               "icon": "duration",
-              "value": "Up to 3 weeks",
-              "label": "to complete data extraction"
+              "value": "Account-level",
+              "label": "effort complexity by role"
             },
             {
-              "icon": "person",
-              "value": "60%+",
-              "label": "of officer time on re-keying"
-            },
-            {
-              "icon": "spreadsheet",
-              "value": "Disparate",
-              "label": "workbooks per region"
+              "icon": "scales",
+              "value": "Limited visibility",
+              "label": "in rebalancing scenarios"
             },
             {
               "icon": "warning",
-              "value": "High",
-              "label": "risk of scoring discrepancies"
+              "value": "Reactive",
+              "label": "workload management"
             }
           ]
         }
       }
     },
-
     {
       "id": "solution",
       "component": "solution",
       "variant": "solution-decision-path",
       "visible": true,
-
       "data": {
         "eyebrow": "Solution",
-        "title": "From manual spreadsheets to an automated intelligence engine.",
-        "intro": "We harmonized disparate underwriting criteria into a centralized risk framework, then built automated extraction and risk-scoring modules so underwriters could focus on deal structuring.",
-
+        "title": "From an existing Excel model to a self-service workload cockpit.",
+        "intro": "Rather than replacing the client's existing Excel model, we used it as the engine for a management dashboard. VBA processed the model's account-level effort, role requirements and assignments, then translated the results into a visual interface where operations leaders could inspect workload and test rebalancing scenarios.",
         "hub": {
           "icon": "puzzle",
           "label": "Our Approach",
-          "body": "A repeatable framework that turns fragmented underwriting into confident lending decisions."
+          "body": "Turn existing capacity data into a practical decision tool without forcing the team onto a new platform."
         },
-
         "steps": [
           {
-            "icon": "flow",
-            "title": "Standardize credit ratio definitions",
-            "body": "Collaborated with senior risk officers to unify cash flow, coverage ratio, and leverage definitions across all commercial lending divisions.",
-            "weight": 24,
+            "icon": "dataset",
+            "title": "Model workload at account level",
+            "body": "Used the existing Excel model to represent the working hours required for each account by role.",
+            "weight": 25,
             "points": [
-              "Unified cash flow definitions",
-              "Aligned coverage and leverage rules",
-              "Documented policy assumptions"
+              "Account-level effort requirements",
+              "Role-specific working hours",
+              "Current account ownership"
             ]
           },
           {
-            "icon": "grid",
-            "title": "Construct automated data extraction tools",
-            "body": "Built parsing utilities to automatically ingest borrower financial statements, tax filings, and bank statements directly into unified data models.",
-            "weight": 28,
+            "icon": "people",
+            "title": "Connect effort to assignments",
+            "body": "Linked the effort required by each account to the people and roles currently working on it, creating a workload view that reflected actual assignments.",
+            "weight": 25,
             "points": [
-              "Statement and filing ingestion",
-              "Normalized borrower data models",
-              "Reduced manual re-keying"
+              "People-to-account assignments",
+              "Role-level workload",
+              "Capacity distribution"
             ]
           },
           {
             "icon": "code",
-            "title": "Deploy Python risk-scoring algorithms",
-            "body": "Programmed multi-factor credit risk scoring engines incorporating industry benchmarks, debt service coverage, and macroeconomic sensitivity.",
-            "weight": 28,
+            "title": "Automate the dashboard with VBA",
+            "body": "Built VBA logic to process the Excel model and present the resulting workload information through a dashboard, keeping the workflow inside the team's existing environment.",
+            "weight": 25,
             "points": [
-              "Multi-factor risk scoring",
-              "Industry benchmark checks",
-              "Macroeconomic sensitivity tests"
+              "Automated model processing",
+              "Dashboard generation",
+              "Self-service refresh workflow"
             ]
           },
           {
-            "icon": "shield",
-            "title": "Establish audit logs & compliance checks",
-            "body": "Integrated automated audit trails and rule validation to ensure full compliance with internal credit policies and regulatory standards.",
-            "weight": 20,
+            "icon": "scales",
+            "title": "Enable scenario-based rebalancing",
+            "body": "Designed the tool so leaders could test changes to the operating model, including adding or removing people and accounts, and see how those changes affected workload distribution before making a decision.",
+            "weight": 25,
             "points": [
-              "Automated audit trails",
-              "Policy rule validation",
-              "Regulatory-ready documentation"
+              "Add or remove people",
+              "Add or remove accounts",
+              "Compare alternative allocations"
             ]
           }
         ],
-
         "outcome": {
           "icon": "outcome",
           "label": "The Outcome",
           "items": [
             {
-              "icon": "duration",
-              "title": "Weeks → Hours",
-              "body": "Faster origination at scale."
+              "icon": "chart",
+              "title": "One operating view",
+              "body": "Operations leaders could assess workload across offices from one dashboard."
             },
             {
-              "icon": "person",
-              "title": "Manual data entry cut",
-              "body": "Officers spend less time re-keying statements."
+              "icon": "scales",
+              "title": "Test before changing",
+              "body": "Leaders could evaluate alternative allocations before moving people or accounts."
             },
             {
               "icon": "people",
-              "title": "Audit-ready lending decisions",
-              "body": "Teams share a repeatable, compliant process."
+              "title": "Self-service ownership",
+              "body": "The solution remained within the team's existing Excel environment rather than creating vendor dependency."
             }
           ]
         },
-
         "enablers": {
           "icon": "gear",
           "label": "Key Enablers",
-          "intro": "Tools and practices that powered the solution.",
+          "intro": "The solution combined existing business logic with lightweight automation.",
           "items": [
             {
               "icon": "spreadsheet",
-              "title": "Financial statements",
-              "body": "Source data"
-            },
-            {
-              "icon": "code",
-              "title": "Python",
-              "body": "Risk scoring"
-            },
-            {
-              "icon": "check",
-              "title": "Policy rules",
-              "body": "Accuracy & integrity"
+              "title": "Existing Excel model",
+              "body": "Capacity & effort inputs"
             },
             {
               "icon": "people",
-              "title": "Risk officers",
-              "body": "Expert knowledge"
+              "title": "Account assignments",
+              "body": "Current workload ownership"
             },
             {
-              "icon": "document",
-              "title": "Audit logs",
-              "body": "Knowledge transfer"
+              "icon": "duration",
+              "title": "Role-based hours",
+              "body": "Effort calculation"
+            },
+            {
+              "icon": "code",
+              "title": "VBA",
+              "body": "Processing & automation"
+            },
+            {
+              "icon": "chart",
+              "title": "Excel dashboard",
+              "body": "Management visibility"
             }
           ]
         }
       }
     },
-
     {
       "id": "impact",
       "component": "impact",
       "variant": "impact-scorecard",
       "visible": true,
-
       "data": {
         "eyebrow": "Impact",
-        "title": "Faster decisions, lower risk, scale-ready origination.",
-        "titleHighlight": "origination.",
-        "intro": "The engine transformed a manual, officer-dependent process into a scalable underwriting system.",
+        "title": "See imbalance earlier. Test options. Rebalance before overload.",
+        "titleHighlight": "before overload.",
+        "intro": "The dashboard changed workload management from a reactive exercise into a repeatable decision process for operations leaders.",
         "orbit": {
           "icon": "outcome",
           "label": "Business Impact",
-          "body": "What changed for the business.",
-          "tagline": "A more efficient, scalable way to make decisions.",
+          "body": "What changed for operations leaders.",
+          "tagline": "A clearer, more proactive way to manage workload.",
           "showKpi": false,
           "showPercent": false
         },
         "bridge": {
-          "quote": "Better decisions create bigger opportunities."
+          "quote": "Better visibility makes better workload decisions possible."
         },
         "glance": {
           "icon": "outcome",
@@ -506,111 +516,112 @@
           "items": [
             {
               "icon": "chart",
-              "text": "Origination turnaround improved from weeks to hours."
+              "text": "Workload across 15+ offices became visible through one management dashboard."
             },
             {
               "icon": "duration",
-              "text": "Manual extraction bottlenecks removed from deal evaluation."
+              "text": "Account-level effort was considered by role rather than relying on account counts alone."
             },
             {
-              "icon": "people",
-              "text": "Risk models and policy rules live as a shared source of truth."
+              "icon": "scales",
+              "text": "Leaders could test adding or removing people and accounts before changing assignments."
             },
             {
               "icon": "star",
-              "text": "A modular underwriting engine teams can extend without a rebuild."
+              "text": "The solution stayed within the team's existing Excel environment and remained self-service."
             }
           ]
         },
         "metrics": [
           {
-            "icon": "duration",
-            "value": "Weeks → Hours",
-            "label": "Origination turnaround",
-            "note": "Deal evaluations no longer suffer from manual extraction bottlenecks.",
-            "weight": 38,
+            "icon": "people",
+            "value": "15+ Offices",
+            "label": "Unified workload view",
+            "note": "A single dashboard gave operations leaders visibility across the office network.",
+            "weight": 35,
             "orbit": true,
             "bridgeSlot": "top",
             "tag": {
-              "icon": "trend-up",
-              "text": "Faster Cycle"
+              "icon": "chart",
+              "text": "Global View"
             }
           },
           {
-            "icon": "rocket",
-            "value": "Unified Engine",
-            "label": "Delivery model",
-            "note": "Deployed a modular underwriting platform seamlessly integrated with existing BI dashboards.",
-            "weight": 32,
+            "icon": "duration",
+            "value": "Role-based",
+            "label": "Effort modelling",
+            "note": "Workload reflected account-level working-hour requirements by role.",
+            "weight": 30,
             "orbit": true,
             "bridgeSlot": "end",
             "tag": {
-              "icon": "shield",
-              "text": "Proven & Reliable"
+              "icon": "people",
+              "text": "More Granular"
             }
           },
           {
-            "icon": "people",
-            "value": "Standard Risk",
-            "label": "Decision consistency",
-            "note": "Risk models and policy rules are codified central sources of truth.",
-            "weight": 30,
+            "icon": "scales",
+            "value": "Scenario-ready",
+            "label": "Rebalancing decisions",
+            "note": "Leaders could test changes to people and accounts before implementing them.",
+            "weight": 35,
             "orbit": true,
             "bridgeSlot": "start",
             "tag": {
-              "icon": "people",
-              "text": "Team Empowered"
+              "icon": "trend-up",
+              "text": "Proactive"
             }
           },
           {
-            "icon": "outcome",
-            "value": "Audit-ready",
-            "label": "Decision quality",
-            "note": "Consistent, documented scoring drives stronger credit decisions.",
+            "icon": "evidence",
+            "value": "Evidence-based",
+            "label": "Rebalancing decisions",
+            "note": "Leaders make workload allocation decisions using a consistent view rather than relying on informal assessments",
+            "weight": 35,
+            "orbit": true,
+            "bridgeSlot": "start",
             "tag": {
-              "icon": "check",
-              "text": "Higher Confidence"
+              "icon": "dataset",
+              "text": "Data-backed"
             }
           }
         ],
         "kpis": [
           {
+            "icon": "people",
+            "value": "15+",
+            "label": "Offices represented in one workload view."
+          },
+          {
             "icon": "duration",
-            "value": "Weeks → Hours",
-            "label": "Typical origination cycle reduced."
+            "value": "Account × Role",
+            "label": "Workload model used to assess effort."
           },
           {
-            "icon": "person",
-            "value": "1 Officer",
-            "label": "Dependence reduced to shared ownership."
+            "icon": "scales",
+            "value": "What-if",
+            "label": "Scenario testing before reallocation."
           },
           {
-            "icon": "spreadsheet",
-            "value": "100+",
-            "label": "Manual workbooks consolidated."
-          },
-          {
-            "icon": "shield",
-            "value": "High → Low",
-            "label": "Risk of inconsistent scoring."
+            "icon": "code",
+            "value": "Excel + VBA",
+            "label": "Existing platform enhanced through automation."
           }
         ],
         "summary": {
           "icon": "chart",
-          "text": "Faster origination. Standardized risk. Stronger lending outcomes."
+          "text": "Earlier visibility. Better scenarios. Proactive workload rebalancing."
         }
       }
     },
-
     {
       "id": "next-step",
       "component": "cta",
       "variant": "centered",
       "visible": true,
-
       "data": {
-        "title": "Need an automated risk engine for your lending operations?",
-        "body": "We help financial institutions streamline complex analytical workflows into standardized, auditable software tools; driving throughput while maintaining strict risk controls.",
+        "title": "Could your team rebalance workload before it becomes a problem?",
+        "body": "TriSaar helps operations teams turn existing spreadsheets and business logic into practical analytics and automation tools that improve visibility, decision-making and day-to-day operations.",
         "actions": [
           {
             "label": "Start a Conversation",

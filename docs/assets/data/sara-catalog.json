@@ -18,15 +18,15 @@
       "id": "sara-0002",
       "number": "0002",
       "label": "Sāra 0002",
-      "title": "Commercial Credit Underwriting Engine",
-      "summary": "An automated risk-scoring framework that integrated financial statement parsing with regulatory stress-testing to accelerate loan origination.",
+      "title": "Workload Rebalancing Dashboard",
+      "summary": "A self-service Excel and VBA dashboard that gives operations leaders a live view of workload, capacity and account-level effort across offices.",
       "industry": "Financial Services",
       "duration": "8 Weeks",
       "durationWeeks": 8,
-      "publishedDate": "2025-06-18",
-      "technologies": ["Python", "Power BI"],
-      "capabilities": ["Analytics", "Automation", "AI"],
-      "topics": ["Credit Underwriting", "Risk Modeling"]
+      "publishedDate": "2026-08-16",
+      "technologies": ["Excel", "VBA"],
+      "capabilities": ["Analytics", "Automation"],
+      "topics": ["Insurance Underwriting", "Workforce Analytics"]
     },
     {
       "id": "sara-0003",
