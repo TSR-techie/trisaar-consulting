@@ -31,8 +31,8 @@ const GEOGRAPHY = [
 ];
 
 const INDUSTRY_ICONS = {
-    "Energy & Utilities": "industry",
-    "Financial Services": "scales",
+    "Energy & Utilities": "Energy & Utilities",
+    "Financial Services": "Financial Services",
     "Consumer Goods": "grid",
     Manufacturing: "gear"
 };

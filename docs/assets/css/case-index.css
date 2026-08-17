@@ -316,7 +316,7 @@
     align-items: center;
     gap: 0.55rem;
     flex-shrink: 0;
-    padding: 0.7rem 0.95rem;
+    padding: 0.7rem 0.95rem 0.4rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     background: #fff;
@@ -346,8 +346,8 @@
 }
 
 .case-index-chip-icon svg {
-    width: 1.05rem;
-    height: 1.05rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .case-index-toolbar {
