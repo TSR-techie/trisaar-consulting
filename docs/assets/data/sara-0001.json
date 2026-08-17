@@ -96,6 +96,11 @@
                 "icon": "client"
               },
               {
+                "label": "Country / Region",
+                "value": "USA · America",
+                "icon": "globe"
+              },
+              {
                 "label": "Duration",
                 "value": "6 Weeks",
                 "icon": "duration"

@@ -149,8 +149,121 @@
 
 .case-index-filter-controls {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.65rem;
+    align-items: start;
+}
+
+.case-index-dropdown {
+    position: relative;
+    min-width: 0;
+}
+
+.case-index-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: #fff;
+    color: var(--color-heading);
+    font: inherit;
+    cursor: pointer;
+    list-style: none;
+}
+
+.case-index-dropdown-toggle::-webkit-details-marker,
+.case-index-dropdown-toggle::marker {
+    display: none;
+    content: none;
+}
+
+.case-index-dropdown.is-active .case-index-dropdown-toggle,
+.case-index-dropdown[open] .case-index-dropdown-toggle {
+    border-color: var(--color-primary);
+}
+
+.case-index-dropdown-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.case-index-dropdown-caret {
+    flex: 0 0 auto;
+    color: var(--color-muted);
+    transform: rotate(180deg);
+    transition: transform 0.15s ease;
+}
+
+.case-index-dropdown-caret svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    display: block;
+}
+
+.case-index-dropdown[open] .case-index-dropdown-caret {
+    transform: rotate(0deg);
+}
+
+.case-index-dropdown-panel {
+    position: absolute;
+    z-index: 6;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    min-width: 100%;
+    width: max(100%, 15rem);
+    max-height: 18rem;
+    overflow: auto;
+    padding: 0.65rem 0.8rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.case-index-filter-controls .case-index-dropdown:last-child .case-index-dropdown-panel {
+    left: auto;
+    right: 0;
+}
+
+.case-index-dropdown-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-index-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.22rem 0;
+    color: var(--color-heading);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.case-index-check input {
+    flex: 0 0 auto;
+    margin: 0.18rem 0 0;
+    accent-color: var(--color-primary);
+}
+
+.case-index-check--region {
+    font-weight: var(--font-semibold);
+}
+
+.case-index-geo-group + .case-index-geo-group {
+    margin-top: 0.45rem;
+}
+
+.case-index-geo-children {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.35rem;
 }
 
 .case-index-select {
@@ -411,6 +524,10 @@
     .case-index-filter-controls {
         grid-column: 1 / -1;
     }
+
+    .case-index-filter-controls {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 720px) {
@@ -429,7 +546,10 @@
     }
 
     .case-index-select,
-    .case-index-sort .case-index-select {
+    .case-index-sort .case-index-select,
+    .case-index-dropdown-panel {
         width: 100%;
+        left: 0;
+        right: 0;
     }
 }

@@ -82,6 +82,11 @@
                 "icon": "client"
               },
               {
+                "label": "Country / Region",
+                "value": "USA · America",
+                "icon": "globe"
+              },
+              {
                 "label": "Duration",
                 "value": "8 Weeks",
                 "icon": "duration"
@@ -130,6 +135,11 @@
                 "label": "Client",
                 "value": "Large Insurance Underwriter",
                 "icon": "client"
+              },
+              {
+                "label": "Country / Region",
+                "value": "USA · America",
+                "icon": "globe"
               },
               {
                 "label": "Duration",
