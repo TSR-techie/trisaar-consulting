@@ -37,8 +37,25 @@ async function loadSaraIndex() {
     }
 }
 
+function takeCaseHeading(root) {
+    return root.querySelector("#case-study-heading")
+        || root.querySelector("h1.cs-hero-title")
+        || root.querySelector("h1");
+}
+
+function clearRootKeepHeading(root) {
+    const heading = takeCaseHeading(root);
+
+    Array.from(root.childNodes).forEach((child) => {
+        if (child !== heading) child.remove();
+    });
+
+    return heading;
+}
+
 function renderError(root, message) {
-    root.innerHTML = "";
+    const heading = takeCaseHeading(root);
+    clearRootKeepHeading(root);
 
     const error = createElement("section", {
         className: "case-study-error"
@@ -48,11 +65,16 @@ function renderError(root, message) {
         className: "case-study-container"
     });
 
+    const title = heading || createElement("h1", {
+        className: "case-study-error-title",
+        attributes: { id: "case-study-heading" }
+    });
+    title.className = "case-study-error-title";
+    title.id = "case-study-heading";
+    title.textContent = "Case study not found";
+
     container.append(
-        createElement("h1", {
-            className: "case-study-error-title",
-            text: "Case study not found"
-        }),
+        title,
         createElement("p", {
             className: "case-study-error-body",
             text: message
@@ -93,7 +115,7 @@ export async function renderCaseStudy() {
 
         applyCaseStudySeo(page, id);
 
-        root.innerHTML = "";
+        clearRootKeepHeading(root);
 
         const context = { caseId: id, prevId, nextId };
 

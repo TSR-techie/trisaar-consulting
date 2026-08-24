@@ -322,7 +322,28 @@ function markNavActive() {
     });
 }
 
-function renderHero(cases) {
+function takeIndexHeading(root) {
+    const heading = root.querySelector("#case-index-heading")
+        || root.querySelector("h1.case-index-title")
+        || root.querySelector("h1");
+
+    if (heading) heading.remove();
+    return heading;
+}
+
+function renderIndexTitle(heading) {
+    const title = heading || createElement("h1", {
+        className: "case-index-title",
+        attributes: { id: "case-index-heading" }
+    });
+
+    title.className = "case-index-title";
+    title.id = "case-index-heading";
+    title.innerHTML = 'Real Problems. Practical Solutions. <span class="impact-title-accent">Measurable Impact.</span>';
+    return title;
+}
+
+function renderHero(cases, heading) {
     const industries = uniqueSorted(cases.map((item) => item.industry));
     const capabilities = uniqueSorted(cases.flatMap((item) => item.capabilities || []));
     const hero = createElement("section", { className: "case-index-hero" });
@@ -331,10 +352,7 @@ function renderHero(cases) {
 
     copy.append(
         createElement("span", { className: "section-label", text: "Case Studies" }),
-        createElement("h1", {
-            className: "case-index-title",
-            html: 'Real Problems. Practical Solutions. <span class="impact-title-accent">Measurable Impact.</span>'
-        }),
+        renderIndexTitle(heading),
         createElement("p", {
             className: "case-index-lede",
             text: "Explore consulting engagements across analytics, automation, and AI. Filter by industry, duration, technology, and country to find work that maps to your challenge."
@@ -579,10 +597,11 @@ async function loadCatalog() {
 
 function renderPage(root, cases, filters) {
     const visible = sortCases(filterCases(cases, filters), filters.sort);
+    const heading = takeIndexHeading(root);
     root.replaceChildren();
 
     const shell = createElement("div", { className: "case-index-shell" });
-    shell.append(renderHero(cases));
+    shell.append(renderHero(cases, heading));
 
     const body = createElement("div", { className: "container case-index-body" });
     const form = renderFilters(cases, filters);
@@ -710,10 +729,12 @@ async function init() {
         applyCaseIndexSeo(cases);
         renderPage(root, cases, readFiltersFromUrl());
     } catch (error) {
-        root.replaceChildren(createElement("p", {
+        const heading = takeIndexHeading(root);
+        const message = createElement("p", {
             className: "container case-index-empty",
             text: "Case studies could not be loaded. Please refresh the page."
-        }));
+        });
+        root.replaceChildren(...[heading, message].filter(Boolean));
         console.error(error);
     }
 

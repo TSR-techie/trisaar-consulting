@@ -52,8 +52,18 @@ function renderTitle(part) {
 
     if (!text) return null;
 
+    const existing = document.getElementById("case-study-heading");
+
+    if (existing) {
+        existing.textContent = text;
+        existing.className = "cs-hero-title";
+        existing.id = "case-study-heading";
+        return existing;
+    }
+
     return createElement("h1", {
         className: "cs-hero-title",
+        attributes: { id: "case-study-heading" },
         text
     });
 }

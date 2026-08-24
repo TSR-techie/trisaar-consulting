@@ -109,8 +109,24 @@
     <div id="navbar"></div>
 
     <main id="case-study-root">
-        <!-- Entire page rendered here -->
+        <h1 id="case-study-heading" class="cs-hero-title">Case Study</h1>
     </main>
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var id = params.get("id");
+            var titles = {
+                "sara-0001": "Infrastructure Network Feasibility Toolkit",
+                "sara-0002": "Workload Rebalancing Dashboard",
+                "sara-0003": "Least-cost Network & Logistics Optimization",
+                "sara-0004": "Commercial Credit Underwriting Engine"
+            };
+            var heading = document.getElementById("case-study-heading");
+            if (heading && id && titles[id]) {
+                heading.textContent = titles[id];
+            }
+        })();
+    </script>
 
     <div id="consent-banner"></div>
     <div id="footer"></div>
