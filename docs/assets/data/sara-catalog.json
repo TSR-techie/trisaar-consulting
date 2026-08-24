@@ -52,15 +52,17 @@
       "id": "sara-0004",
       "number": "0004",
       "label": "Sāra 0004",
-      "title": "Commercial Credit Underwriting Engine",
-      "summary": "An automated risk-scoring framework that integrated financial statement parsing with regulatory stress-testing to accelerate loan origination.",
-      "industry": "Financial Services",
-      "duration": "8 Weeks",
-      "durationWeeks": 8,
-      "publishedDate": "2026-01-22",
-      "technologies": ["Python", "Power BI"],
-      "capabilities": ["Analytics", "AI"],
-      "topics": ["Credit Underwriting", "Risk Modeling"]
+      "title": "Interactive Sales Analytics Dashboard",
+      "summary": "A self-contained HTML dashboard that reads Excel data in-browser, renders KPI cards and charts with Chart.js, and supports live filtering across regions, products, and channels.",
+      "industry": "Consumer Goods",
+      "country": "USA",
+      "region": "America",
+      "duration": "4 Weeks",
+      "durationWeeks": 4,
+      "publishedDate": "2026-08-24",
+      "technologies": ["HTML", "Chart.js", "SheetJS"],
+      "capabilities": ["Analytics"],
+      "topics": ["Sales Analytics", "Business Intelligence"]
     }
   ]
 }

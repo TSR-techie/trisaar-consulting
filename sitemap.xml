@@ -39,9 +39,16 @@
 
     <url>
         <loc>https://tsr-techie.github.io/trisaar-consulting/case-study.html?id=sara-0004</loc>
-        <lastmod>2026-08-15</lastmod>
+        <lastmod>2026-08-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://tsr-techie.github.io/trisaar-consulting/samples/dashboard-04.html</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 
     <url>

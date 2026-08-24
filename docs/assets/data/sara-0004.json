@@ -1,19 +1,19 @@
 {
   "schemaVersion": "1.0",
-
   "meta": {
     "id": "sara-0004",
-    "title": "Commercial Credit Underwriting Engine | Sāra 0004 | TriSaar Consulting",
-    "description": "Sāra 0004 case study: an AI-enabled commercial credit underwriting engine that replaces manual spreadsheet reviews with automated risk scoring.",
+    "title": "Interactive Sales Analytics Dashboard | Sāra 0004 | TriSaar Consulting",
+    "description": "Sāra 0004 case study: a self-contained HTML dashboard that reads Excel data in-browser, renders KPI cards and charts with Chart.js, and supports live filtering across regions, products, and channels.",
     "keywords": [
-      "Commercial Banking",
-      "Credit Underwriting",
-      "Risk Modeling",
-      "Python",
-      "Power BI",
-      "Financial Services",
-      "Analytics",
-      "AI"
+      "Sales Analytics",
+      "Business Intelligence",
+      "Consumer Goods",
+      "Retail",
+      "HTML",
+      "Chart.js",
+      "SheetJS",
+      "Dashboard",
+      "Interactive Reporting"
     ],
     "author": "TriSaar Consulting",
     "themeColor": "#B91C1C",
@@ -21,22 +21,20 @@
     "ogImage": "https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png",
     "robots": "index, follow"
   },
-
   "sections": [
     {
       "id": "hero",
       "component": "hero",
       "variant": "immersive",
       "visible": true,
-
       "parts": [
         {
           "type": "taxonomy",
           "data": {
             "items": [
-              "Commercial Banking",
-              "Credit Underwriting",
-              "Risk Modeling"
+              "Consumer Goods",
+              "Retail",
+              "Business Intelligence"
             ]
           }
         },
@@ -50,13 +48,13 @@
         {
           "type": "title",
           "data": {
-            "text": "Commercial Credit Underwriting Engine"
+            "text": "Interactive Sales Analytics Dashboard"
           }
         },
         {
           "type": "subtitle",
           "data": {
-            "text": "Streamlining middle-market commercial loan approvals from manual spreadsheet reviews into an automated risk scoring system."
+            "text": "Transforming static spreadsheet reporting into an interactive, filterable dashboard that delivers real-time business insights in the browser."
           }
         },
         {
@@ -70,10 +68,10 @@
                 "icon": "book"
               },
               {
-                "label": "View Repository",
+                "label": "View Dashboard",
                 "type": "secondary",
-                "target": "https://github.com/tsr-techie/trisaar-consulting",
-                "icon": "github"
+                "target": "samples/dashboard-04.html",
+                "icon": "chart"
               }
             ]
           }
@@ -81,7 +79,7 @@
         {
           "type": "description",
           "data": {
-            "text": "An automated risk-scoring framework that integrated financial statement parsing with regulatory stress-testing to accelerate loan origination."
+            "text": "A self-contained HTML dashboard that reads Excel data in-browser, renders KPI cards and charts with Chart.js, and supports live filtering across regions, products, and channels."
           },
           "visible": true
         },
@@ -93,36 +91,36 @@
             "fields": [
               {
                 "label": "Client",
-                "value": "Global Regional Bank",
+                "value": "Retail Conglomerate",
                 "icon": "client"
               },
               {
                 "label": "Duration",
-                "value": "8 Weeks",
+                "value": "4 Weeks",
                 "icon": "duration"
               },
               {
                 "label": "Outcome",
                 "icon": "outcome",
                 "values": [
-                  "Weeks → Hours",
-                  "Zero Audit Exceptions",
-                  "75% Manual Effort Cut"
+                  "Static → Live Reports",
+                  "Quick Weekly Refresh",
+                  "3x Faster Insight"
                 ]
               },
               {
                 "label": "Technology",
-                "value": "Python • Power BI",
+                "value": "HTML • Chart.js • SheetJS",
                 "icon": "technology"
               },
               {
                 "label": "Dataset",
-                "value": "Anonymized Portfolio",
+                "value": "Sales Transactions (6 Months)",
                 "icon": "dataset"
               },
               {
                 "label": "Confidentiality",
-                "value": "Public (Sanitized)",
+                "value": "Public (Sample Data)",
                 "icon": "confidentiality"
               }
             ]
@@ -130,52 +128,47 @@
         }
       ]
     },
-
     {
       "id": "publication",
       "component": "publication",
       "variant": "rule",
       "visible": true,
-
       "data": {
         "label": "Sāra Publication",
         "edition": "Public Edition",
         "version": "1.0",
         "published": "Aug 2026",
-        "readTime": "10 min read"
+        "readTime": "8 min read"
       }
     },
-
     {
       "id": "executive-summary",
       "component": "executiveSummary",
-      "variant": "executive-brief",
+      "variant": "executive-overview",
       "visible": true,
-
       "data": {
         "eyebrow": "Executive Summary",
-        "title": "From manual audit friction to a high-speed risk engine.",
-        "subtitle": "We transformed a fragmented commercial credit evaluation pipeline into an automated intelligence engine delivering standardized, audit-ready decisions.",
-
+        "title": "From static spreadsheets to a live, interactive analytics experience.",
+        "subtitle": "We replaced weekly manual report generation with a self-contained dashboard that loads Excel data directly in the browser, delivering instant insights through KPI cards, trend charts, and pivot tables.",
         "pillars": [
           {
             "key": "challenge",
             "label": "Challenge",
             "icon": "people",
-            "title": "Underwriting stuck in disparate spreadsheets.",
-            "body": "Commercial loan officers spent over 60% of their time manually re-keying balance sheets and running customized risk models, creating severe backlogs and inconsistent risk scoring.",
+            "title": "Reporting trapped in static spreadsheets.",
+            "body": "Sales teams relied on manually updated Excel workbooks shared via email, with no interactive filtering, no visual trends, and no single view of performance across regions and products.",
             "points": [
               {
                 "icon": "duration",
-                "text": "Manual data extraction delayed approvals by up to three weeks"
+                "text": "Weekly reporting cycle meant data was always days stale"
               },
               {
-                "icon": "scales",
-                "text": "Discrepancies in ratio calculations across regional underwriting pods"
+                "icon": "spreadsheet",
+                "text": "No filtering or drill-down, each question required a new pivot table"
               },
               {
                 "icon": "person",
-                "text": "High operational overhead during quarterly deal volume spikes"
+                "text": "Regional managers couldn't self-serve their own views"
               }
             ]
           },
@@ -183,24 +176,24 @@
             "key": "solution",
             "label": "Solution",
             "icon": "gear",
-            "title": "Standardized extraction and dynamic risk rules.",
-            "body": "We engineered a unified risk scoring pipeline combining automated financial parsing, real-time stress testing, and interactive reporting for credit committees.",
+            "title": "A browser-based dashboard that reads Excel natively.",
+            "body": "We engineered a self-contained HTML dashboard using SheetJS for in-browser Excel parsing and Chart.js for visualization, with live filters for region, product, and channel.",
             "steps": [
               {
+                "icon": "grid",
+                "text": "Parse Excel data in-browser with SheetJS; no server needed"
+              },
+              {
+                "icon": "chart",
+                "text": "Render KPI cards, line charts, and bar charts with Chart.js"
+              },
+              {
                 "icon": "flow",
-                "text": "Standardize credit ratio definitions"
+                "text": "Build interactive region, product, and channel filters"
               },
               {
                 "icon": "grid",
-                "text": "Construct automated data extraction tools"
-              },
-              {
-                "icon": "code",
-                "text": "Deploy Python risk-scoring algorithms"
-              },
-              {
-                "icon": "shield",
-                "text": "Establish audit logs & compliance checks"
+                "text": "Generate pivot tables with row and column totals dynamically"
               }
             ]
           },
@@ -208,419 +201,221 @@
             "key": "impact",
             "label": "Impact",
             "icon": "chart",
-            "title": "Accelerated origination. Standardized risk.",
-            "body": "The solution dramatically shortened turnarounds while empowering risk officers to stress-test portfolios against macroeconomic shifts instantly.",
+            "title": "Instant insights. Zero server costs. Self-service analytics.",
+            "body": "The dashboard loads any Excel file with matching columns and renders a complete analytics view instantly; no backend, no data uploads, no infrastructure to maintain.",
             "metrics": [
               {
                 "icon": "duration",
-                "value": "Weeks → Hours",
-                "label": "Turnaround time reduced"
+                "value": "5 min",
+                "label": "Refresh vs weekly cycle"
               },
               {
                 "icon": "people",
-                "value": "75%",
-                "label": "Manual data entry cut"
+                "value": "100%",
+                "label": "Self-service adoption"
               },
               {
                 "icon": "outcome",
-                "value": "3x Volume",
-                "label": "Deal throughput capacity"
+                "value": "3x",
+                "label": "Faster time to insight"
               },
               {
                 "icon": "shield",
-                "value": "100%",
-                "label": "Audit trail compliance"
+                "value": "Zero",
+                "label": "Server infrastructure"
               }
             ]
           }
         ],
-
         "bottomLine": {
           "label": "Bottom line",
           "icon": "star",
           "parts": [
             {
-              "text": "A robust credit underwriting engine that converts fragmented financial statements into "
+              "text": "A browser-native sales analytics dashboard that converts Excel data into "
             },
             {
-              "text": "rapid, compliant, and defensible",
+              "text": "interactive, filterable, zero-infrastructure",
               "emphasis": true
             },
             {
-              "text": " lending decisions—at enterprise scale."
+              "text": " business intelligence - deployable in minutes."
             }
           ],
           "cta": {
-            "label": "Read full case study",
-            "target": "#challenge",
-            "icon": "document"
+            "label": "View live dashboard",
+            "target": "samples/dashboard-04.html",
+            "icon": "chart"
           }
         },
-
         "meta": [
           {
             "label": "Industry",
-            "value": "Financial Services",
+            "value": "Retail",
             "icon": "industry"
           },
           {
             "label": "Domain",
-            "value": "Credit Underwriting",
+            "value": "Business Intelligence",
             "icon": "network"
           },
           {
             "label": "Technology",
-            "value": "Python • Power BI",
+            "value": "HTML • Chart.js • SheetJS",
             "icon": "technology"
           },
           {
             "label": "Duration",
-            "value": "8 Weeks",
+            "value": "4 Weeks",
             "icon": "duration"
           },
           {
             "label": "Client",
-            "value": "Global Regional Bank",
+            "value": "Retail Conglomerate",
             "icon": "client"
           }
         ]
       }
     },
-
     {
       "id": "challenge",
       "component": "challenge",
-      "variant": "challenge-friction-colored",
+      "variant": "challenge-friction-modern",
       "visible": true,
-
       "data": {
         "eyebrow": "Challenge",
-        "title": "Underwriting stuck in disparate spreadsheets.",
-        "body": "Commercial loan officers spent over 60% of their time manually re-keying balance sheets and running customized risk models, creating severe backlogs and inconsistent risk scoring.",
-
+        "title": "Reporting trapped in static spreadsheets.",
+        "body": "Sales teams relied on manually updated Excel workbooks shared via email, with no interactive filtering, no visual trends, and no single view of performance across regions and products.",
         "core": {
           "icon": "warning",
           "label": "The Core Challenge",
-          "body": "Approvals stalled because financial data lived in silos, scoring was manual, and no single view of risk existed."
+          "body": "Business decisions were delayed because data lived in static spreadsheets that couldn't be filtered, visualized, or shared interactively — each question required a new manual report."
         },
-
         "points": [
           {
-            "icon": "dataset",
-            "title": "Fragmented statements",
-            "body": "Balance sheets and supporting files lived in different sources and formats, making consolidation slow and error-prone."
+            "icon": "duration",
+            "title": "Stale reporting",
+            "body": "Weekly reporting cycles meant leaders were always looking at data that was days old, making proactive decisions impossible."
+          },
+          {
+            "icon": "spreadsheet",
+            "title": "No interactivity",
+            "body": "Excel couldn't be filtered by region, product, or channel without building a new pivot table each time a question came up."
+          },
+          {
+            "icon": "person",
+            "title": "No self-service",
+            "body": "Regional managers couldn't answer basic questions about their own territories without requesting a custom report from the analytics team."
           },
           {
             "icon": "workstation",
-            "title": "Manual re-keying",
-            "body": "Officers retyped figures into customized models, relying on individual knowledge instead of a shared workflow."
-          },
-          {
-            "icon": "scales",
-            "title": "Inconsistent scoring",
-            "body": "Ratio definitions and risk criteria varied by regional underwriting pod, making outcomes hard to compare."
-          },
-          {
-            "icon": "duration",
-            "title": "Volume spikes",
-            "body": "Quarterly deal surges created severe backlogs and stretched already manual review cycles."
+            "title": "Manual overhead",
+            "body": "Staff spent hours each week rebuilding the same reports with updated data, leaving no time for deeper analysis."
           }
         ],
-
         "impact": {
           "icon": "quote",
           "label": "The Impact",
-          "body": "Longer origination cycles, inconsistent risk calls, and heavy dependence on manual effort.",
+          "body": "Delayed decisions, repetitive manual work, and an inability to explore data interactively.",
           "metrics": [
             {
               "icon": "duration",
-              "value": "Up to 3 weeks",
-              "label": "to complete data extraction"
+              "value": "Up to 7 days",
+              "label": "between data refreshes"
             },
             {
               "icon": "person",
-              "value": "60%+",
-              "label": "of officer time on re-keying"
+              "value": "5+ hrs/week",
+              "label": "spent on manual reporting"
             },
             {
               "icon": "spreadsheet",
-              "value": "Disparate",
-              "label": "workbooks per region"
+              "value": "Static",
+              "label": "workbooks with no filters"
             },
             {
               "icon": "warning",
               "value": "High",
-              "label": "risk of scoring discrepancies"
+              "label": "latency for ad-hoc questions"
             }
           ]
         }
       }
     },
-
     {
-      "id": "solution",
-      "component": "solution",
-      "variant": "solution-decision-engine",
+      "id": "approach",
+      "component": "approach",
+      "variant": "numbered",
       "visible": true,
-
       "data": {
-        "eyebrow": "Solution",
-        "title": "From manual spreadsheets to an automated intelligence engine.",
-        "intro": "We harmonized disparate underwriting criteria into a centralized risk framework, then built automated extraction and risk-scoring modules so underwriters could focus on deal structuring.",
-
-        "hub": {
-          "icon": "puzzle",
-          "label": "Our Approach",
-          "body": "A repeatable framework that turns fragmented underwriting into confident lending decisions."
-        },
-
+        "eyebrow": "Approach",
+        "title": "From static spreadsheets to an interactive browser-native dashboard.",
+        "intro": "We designed a self-contained HTML dashboard that reads Excel files directly in the browser, eliminating the need for any server infrastructure while delivering real-time filtering and visualization.",
         "steps": [
           {
-            "icon": "flow",
-            "title": "Standardize credit ratio definitions",
-            "body": "Collaborated with senior risk officers to unify cash flow, coverage ratio, and leverage definitions across all commercial lending divisions.",
-            "weight": 24,
-            "points": [
-              "Unified cash flow definitions",
-              "Aligned coverage and leverage rules",
-              "Documented policy assumptions"
-            ]
+            "title": "Design the dashboard architecture",
+            "body": "Defined the information hierarchy — KPI cards for at-a-glance metrics, trend charts for temporal patterns, bar charts for category comparisons, and pivot tables for detailed breakdowns."
           },
           {
-            "icon": "grid",
-            "title": "Construct automated data extraction tools",
-            "body": "Built parsing utilities to automatically ingest borrower financial statements, tax filings, and bank statements directly into unified data models.",
-            "weight": 28,
-            "points": [
-              "Statement and filing ingestion",
-              "Normalized borrower data models",
-              "Reduced manual re-keying"
-            ]
+            "title": "Implement in-browser Excel parsing",
+            "body": "Used SheetJS to read .xlsx files client-side, allowing users to load any Excel file with matching columns without uploading data to a server."
           },
           {
-            "icon": "code",
-            "title": "Deploy Python risk-scoring algorithms",
-            "body": "Programmed multi-factor credit risk scoring engines incorporating industry benchmarks, debt service coverage, and macroeconomic sensitivity.",
-            "weight": 28,
-            "points": [
-              "Multi-factor risk scoring",
-              "Industry benchmark checks",
-              "Macroeconomic sensitivity tests"
-            ]
+            "title": "Build interactive visualizations",
+            "body": "Engineered Chart.js line charts for revenue and profit trends, bar charts for regional and product breakdowns, and dynamic KPI cards with month-over-month deltas."
           },
           {
-            "icon": "shield",
-            "title": "Establish audit logs & compliance checks",
-            "body": "Integrated automated audit trails and rule validation to ensure full compliance with internal credit policies and regulatory standards.",
-            "weight": 20,
-            "points": [
-              "Automated audit trails",
-              "Policy rule validation",
-              "Regulatory-ready documentation"
-            ]
+            "title": "Add live filtering and pivot tables",
+            "body": "Implemented dropdown filters for region, product, and channel that re-render all charts and tables instantly, plus a dynamic pivot table with row and column totals."
           }
-        ],
-
-        "outcome": {
-          "icon": "outcome",
-          "label": "The Outcome",
-          "items": [
-            {
-              "icon": "duration",
-              "title": "Weeks → Hours",
-              "body": "Faster origination at scale."
-            },
-            {
-              "icon": "person",
-              "title": "Manual data entry cut",
-              "body": "Officers spend less time re-keying statements."
-            },
-            {
-              "icon": "people",
-              "title": "Audit-ready lending decisions",
-              "body": "Teams share a repeatable, compliant process."
-            }
-          ]
-        },
-
-        "enablers": {
-          "icon": "gear",
-          "label": "Key Enablers",
-          "intro": "Tools and practices that powered the solution.",
-          "items": [
-            {
-              "icon": "spreadsheet",
-              "title": "Financial statements",
-              "body": "Source data"
-            },
-            {
-              "icon": "code",
-              "title": "Python",
-              "body": "Risk scoring"
-            },
-            {
-              "icon": "check",
-              "title": "Policy rules",
-              "body": "Accuracy & integrity"
-            },
-            {
-              "icon": "people",
-              "title": "Risk officers",
-              "body": "Expert knowledge"
-            },
-            {
-              "icon": "document",
-              "title": "Audit logs",
-              "body": "Knowledge transfer"
-            }
-          ]
-        }
+        ]
       }
     },
-
     {
-      "id": "impact",
-      "component": "impact",
-      "variant": "impact-bridge",
+      "id": "outcomes",
+      "component": "outcomes",
+      "variant": "strip",
       "visible": true,
-
       "data": {
-        "eyebrow": "Impact",
-        "title": "Faster decisions, lower risk, scale-ready origination.",
-        "titleHighlight": "origination.",
-        "intro": "The engine transformed a manual, officer-dependent process into a scalable underwriting system.",
-        "orbit": {
-          "icon": "outcome",
-          "label": "Business Impact",
-          "body": "What changed for the business.",
-          "tagline": "A more efficient, scalable way to make decisions.",
-          "showKpi": false,
-          "showPercent": false
-        },
-        "bridge": {
-          "quote": "Better decisions create bigger opportunities."
-        },
-        "glance": {
-          "icon": "outcome",
-          "label": "Impact at a glance",
-          "items": [
-            {
-              "icon": "chart",
-              "text": "Origination turnaround improved from weeks to hours."
-            },
-            {
-              "icon": "duration",
-              "text": "Manual extraction bottlenecks removed from deal evaluation."
-            },
-            {
-              "icon": "people",
-              "text": "Risk models and policy rules live as a shared source of truth."
-            },
-            {
-              "icon": "star",
-              "text": "A modular underwriting engine teams can extend without a rebuild."
-            }
-          ]
-        },
+        "eyebrow": "Outcomes",
+        "title": "Instant insights. Zero infrastructure. Full self-service.",
         "metrics": [
           {
-            "icon": "duration",
-            "value": "Weeks → Hours",
-            "label": "Origination turnaround",
-            "note": "Deal evaluations no longer suffer from manual extraction bottlenecks.",
-            "weight": 38,
-            "orbit": true,
-            "bridgeSlot": "top",
-            "tag": {
-              "icon": "trend-up",
-              "text": "Faster Cycle"
-            }
+            "value": "5 min",
+            "label": "Refresh cycle",
+            "note": "Load updated Excel and the dashboard re-renders instantly — no more weekly waits."
           },
           {
-            "icon": "rocket",
-            "value": "Unified Engine",
-            "label": "Delivery model",
-            "note": "Deployed a modular underwriting platform seamlessly integrated with existing BI dashboards.",
-            "weight": 32,
-            "orbit": true,
-            "bridgeSlot": "end",
-            "tag": {
-              "icon": "shield",
-              "text": "Proven & Reliable"
-            }
+            "value": "Zero Server",
+            "label": "Infrastructure",
+            "note": "Self-contained HTML file with in-browser Excel parsing; no backend, no database, no hosting costs."
           },
           {
-            "icon": "people",
-            "value": "Standard Risk",
-            "label": "Decision consistency",
-            "note": "Risk models and policy rules are codified central sources of truth.",
-            "weight": 30,
-            "orbit": true,
-            "bridgeSlot": "start",
-            "tag": {
-              "icon": "people",
-              "text": "Team Empowered"
-            }
-          },
-          {
-            "icon": "outcome",
-            "value": "Audit-ready",
-            "label": "Decision quality",
-            "note": "Consistent, documented scoring drives stronger credit decisions.",
-            "tag": {
-              "icon": "check",
-              "text": "Higher Confidence"
-            }
+            "value": "3x Faster",
+            "label": "Time to insight",
+            "note": "Regional managers self-serve answers through interactive filters instead of requesting custom reports."
           }
-        ],
-        "kpis": [
-          {
-            "icon": "duration",
-            "value": "Weeks → Hours",
-            "label": "Typical origination cycle reduced."
-          },
-          {
-            "icon": "person",
-            "value": "1 Officer",
-            "label": "Dependence reduced to shared ownership."
-          },
-          {
-            "icon": "spreadsheet",
-            "value": "100+",
-            "label": "Manual workbooks consolidated."
-          },
-          {
-            "icon": "shield",
-            "value": "High → Low",
-            "label": "Risk of inconsistent scoring."
-          }
-        ],
-        "summary": {
-          "icon": "chart",
-          "text": "Faster origination. Standardized risk. Stronger lending outcomes."
-        }
+        ]
       }
     },
-
     {
       "id": "next-step",
       "component": "cta",
       "variant": "centered",
       "visible": true,
-
       "data": {
-        "title": "Need an automated risk engine for your lending operations?",
-        "body": "We help financial institutions streamline complex analytical workflows into standardized, auditable software tools; driving throughput while maintaining strict risk controls.",
+        "title": "Need an interactive dashboard for your business data?",
+        "body": "We help organizations transform static spreadsheet reporting into live, interactive dashboards that deliver instant insights, with zero server infrastructure and full self-service capabilities.",
         "actions": [
           {
-            "label": "Start a Conversation",
+            "label": "View Live Dashboard",
             "type": "primary",
-            "target": "contactus.html"
+            "target": "samples/dashboard-04.html"
           },
           {
-            "label": "View More Work",
+            "label": "Start a Conversation",
             "type": "secondary",
-            "target": "index.html#case-studies"
+            "target": "contact.html"
           }
         ]
       }
