@@ -33,8 +33,8 @@ const GEOGRAPHY = [
 const INDUSTRY_ICONS = {
     "Energy & Utilities": "Energy & Utilities",
     "Financial Services": "Financial Services",
-    "Consumer Goods": "grid",
-    Manufacturing: "gear"
+    "Consumer Goods": "Consumer Goods",
+    "Industrial Goods": "Industrial Goods"
 };
 
 function uniqueSorted(values) {
@@ -465,7 +465,7 @@ function renderIndustryChips(cases, selected) {
             }
         });
         button.append(
-            icon(INDUSTRY_ICONS[chip.label] || "industry", "case-index-chip-icon"),
+            icon(INDUSTRY_ICONS[chip.label] || "grid", "case-index-chip-icon"),
             createElement("span", { text: chip.label }),
             createElement("em", { text: String(chip.count) })
         );

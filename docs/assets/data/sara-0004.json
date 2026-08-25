@@ -243,7 +243,7 @@
             }
           ],
           "cta": {
-            "label": "View live dashboard",
+            "label": "View Dashboard",
             "target": "samples/dashboard-04.html",
             "icon": "chart"
           }
