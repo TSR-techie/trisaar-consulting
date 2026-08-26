@@ -3,7 +3,7 @@
   "meta": {
     "id": "sara-0004",
     "title": "Interactive Sales Analytics Dashboard | Sāra 0004 | TriSaar Consulting",
-    "description": "Sāra 0004 case study: a self-contained HTML dashboard that reads Excel data in-browser, renders KPI cards and charts with Chart.js, and supports live filtering across regions, products, and channels.",
+    "description": "Sāra 0004 case study: a self-contained browser-native sales analytics dashboard that reads Excel data locally, provides interactive KPI and chart views, and enables filtering across regions, products, and channels.",
     "keywords": [
       "Sales Analytics",
       "Business Intelligence",
@@ -54,7 +54,7 @@
         {
           "type": "subtitle",
           "data": {
-            "text": "Transforming static spreadsheet reporting into an interactive, filterable dashboard that delivers real-time business insights in the browser."
+            "text": "Transforming static spreadsheet reporting into an interactive, filterable dashboard for faster business insight."
           }
         },
         {
@@ -79,7 +79,7 @@
         {
           "type": "description",
           "data": {
-            "text": "A self-contained HTML dashboard that reads Excel data in-browser, renders KPI cards and charts with Chart.js, and supports live filtering across regions, products, and channels."
+            "text": "A self-contained HTML dashboard that reads Excel data in-browser, renders KPI cards, trends and category views, and lets users explore performance across regions, products and channels."
           },
           "visible": true
         },
@@ -149,26 +149,26 @@
       "data": {
         "eyebrow": "Executive Summary",
         "title": "From static spreadsheets to a live, interactive analytics experience.",
-        "subtitle": "We replaced weekly manual report generation with a self-contained dashboard that loads Excel data directly in the browser, delivering instant insights through KPI cards, trend charts, and pivot tables.",
+        "subtitle": "We transformed a recurring spreadsheet reporting process into a self-contained dashboard that loads Excel data directly in the browser and makes common performance questions easier to answer.",
         "pillars": [
           {
             "key": "challenge",
             "label": "Challenge",
             "icon": "people",
-            "title": "Reporting trapped in static spreadsheets.",
-            "body": "Sales teams relied on manually updated Excel workbooks shared via email, with no interactive filtering, no visual trends, and no single view of performance across regions and products.",
+            "title": "Reporting was trapped in static spreadsheets.",
+            "body": "Sales teams relied on manually updated Excel workbooks with limited ways to explore performance across regions, products and channels.",
             "points": [
               {
                 "icon": "duration",
-                "text": "Weekly reporting cycle meant data was always days stale"
+                "text": "Weekly reporting cycles left data days behind the current period"
               },
               {
                 "icon": "spreadsheet",
-                "text": "No filtering or drill-down, each question required a new pivot table"
+                "text": "New questions often required manual pivots or report changes"
               },
               {
                 "icon": "person",
-                "text": "Regional managers couldn't self-serve their own views"
+                "text": "Regional managers depended on the analytics team for tailored views"
               }
             ]
           },
@@ -176,24 +176,24 @@
             "key": "solution",
             "label": "Solution",
             "icon": "gear",
-            "title": "A browser-based dashboard that reads Excel natively.",
-            "body": "We engineered a self-contained HTML dashboard using SheetJS for in-browser Excel parsing and Chart.js for visualization, with live filters for region, product, and channel.",
+            "title": "A browser-native dashboard that reads Excel locally.",
+            "body": "We engineered a self-contained HTML dashboard using SheetJS for in-browser Excel parsing and Chart.js for interactive visualization.",
             "steps": [
               {
                 "icon": "grid",
-                "text": "Parse Excel data in-browser with SheetJS; no server needed"
+                "text": "Load Excel data directly in the browser with SheetJS"
               },
               {
                 "icon": "chart",
-                "text": "Render KPI cards, line charts, and bar charts with Chart.js"
+                "text": "Render trends, KPI cards & comparisons with Chart.js"
               },
               {
                 "icon": "flow",
-                "text": "Build interactive region, product, and channel filters"
+                "text": "Filter performance by region, product and channel"
               },
               {
                 "icon": "grid",
-                "text": "Generate pivot tables with row and column totals dynamically"
+                "text": "Generate dynamic pivot views for detailed analysis"
               }
             ]
           },
@@ -201,18 +201,18 @@
             "key": "impact",
             "label": "Impact",
             "icon": "chart",
-            "title": "Instant insights. Zero server costs. Self-service analytics.",
-            "body": "The dashboard loads any Excel file with matching columns and renders a complete analytics view instantly; no backend, no data uploads, no infrastructure to maintain.",
+            "title": "Faster refreshes. Easier exploration. Self-service analysis.",
+            "body": "Users can load an updated workbook and explore the resulting analytics without rebuilding a report or waiting for a new custom view.",
             "metrics": [
               {
                 "icon": "duration",
                 "value": "5 min",
-                "label": "Refresh vs weekly cycle"
+                "label": "Refresh workflow"
               },
               {
                 "icon": "people",
-                "value": "100%",
-                "label": "Self-service adoption"
+                "value": "Self-service",
+                "label": "Interactive exploration"
               },
               {
                 "icon": "outcome",
@@ -280,58 +280,58 @@
     {
       "id": "challenge",
       "component": "challenge",
-      "variant": "challenge-friction-modern",
+      "variant": "challenge-friction-colored",
       "visible": true,
       "data": {
         "eyebrow": "Challenge",
         "title": "Reporting trapped in static spreadsheets.",
-        "body": "Sales teams relied on manually updated Excel workbooks shared via email, with no interactive filtering, no visual trends, and no single view of performance across regions and products.",
+        "body": "Sales teams worked with manually updated Excel reports that were useful for recurring reporting but cumbersome when leaders wanted to explore performance by region, product or channel.",
         "core": {
           "icon": "warning",
           "label": "The Core Challenge",
-          "body": "Business decisions were delayed because data lived in static spreadsheets that couldn't be filtered, visualized, or shared interactively — each question required a new manual report."
+          "body": "The data existed, but answering a new business question often meant reworking the report rather than exploring the information directly."
         },
         "points": [
           {
             "icon": "duration",
-            "title": "Stale reporting",
-            "body": "Weekly reporting cycles meant leaders were always looking at data that was days old, making proactive decisions impossible."
+            "title": "Stale reporting cycles",
+            "body": "Weekly reporting meant users could be working from data that was several days behind the current period."
           },
           {
             "icon": "spreadsheet",
-            "title": "No interactivity",
-            "body": "Excel couldn't be filtered by region, product, or channel without building a new pivot table each time a question came up."
+            "title": "Limited exploration",
+            "body": "Changing the view by region, product or channel often required manual pivoting or a revised report."
           },
           {
             "icon": "person",
-            "title": "No self-service",
-            "body": "Regional managers couldn't answer basic questions about their own territories without requesting a custom report from the analytics team."
+            "title": "Dependence on analysts",
+            "body": "Regional managers could not always answer their own follow-up questions without requesting a tailored analysis."
           },
           {
             "icon": "workstation",
-            "title": "Manual overhead",
-            "body": "Staff spent hours each week rebuilding the same reports with updated data, leaving no time for deeper analysis."
+            "title": "Recurring manual overhead",
+            "body": "Teams spent time rebuilding familiar reporting views instead of using that time for deeper analysis."
           }
         ],
         "impact": {
           "icon": "quote",
-          "label": "The Impact",
-          "body": "Delayed decisions, repetitive manual work, and an inability to explore data interactively.",
+          "label": "The Business Impact",
+          "body": "The reporting process slowed access to insight, created repetitive manual work and made ad-hoc exploration harder than it needed to be.",
           "metrics": [
             {
               "icon": "duration",
               "value": "Up to 7 days",
-              "label": "between data refreshes"
+              "label": "between reporting refreshes"
             },
             {
               "icon": "person",
               "value": "5+ hrs/week",
-              "label": "spent on manual reporting"
+              "label": "manual reporting effort"
             },
             {
               "icon": "spreadsheet",
               "value": "Static",
-              "label": "workbooks with no filters"
+              "label": "reporting workbooks"
             },
             {
               "icon": "warning",
@@ -343,59 +343,245 @@
       }
     },
     {
-      "id": "approach",
-      "component": "approach",
-      "variant": "numbered",
+      "id": "solution",
+      "component": "solution",
+      "variant": "solution-decision-engine",
       "visible": true,
       "data": {
-        "eyebrow": "Approach",
-        "title": "From static spreadsheets to an interactive browser-native dashboard.",
-        "intro": "We designed a self-contained HTML dashboard that reads Excel files directly in the browser, eliminating the need for any server infrastructure while delivering real-time filtering and visualization.",
+        "eyebrow": "Solution",
+        "title": "A browser-native analytics dashboard built around the existing Excel workflow.",
+        "intro": "We kept Excel as the familiar data source while moving the reporting experience into a self-contained HTML dashboard. Data is parsed locally in the browser, transformed into reusable analytical views and refreshed through interactive controls.",
+        "hub": {
+          "icon": "puzzle",
+          "label": "Our Approach",
+          "body": "Separate the data source from the reporting experience: keep the client's familiar Excel input while creating a more flexible way to explore and communicate the data."
+        },
         "steps": [
           {
-            "title": "Design the dashboard architecture",
-            "body": "Defined the information hierarchy — KPI cards for at-a-glance metrics, trend charts for temporal patterns, bar charts for category comparisons, and pivot tables for detailed breakdowns."
+            "icon": "flow",
+            "title": "Design the information hierarchy",
+            "body": "Structured the dashboard around the questions leaders commonly ask, with KPI cards for headline performance, trend views for movement over time and category views for comparisons.",
+            "weight": 25,
+            "points": [
+              "Headline KPI cards",
+              "Revenue and profit trends",
+              "Regional and product comparisons"
+            ]
           },
           {
-            "title": "Implement in-browser Excel parsing",
-            "body": "Used SheetJS to read .xlsx files client-side, allowing users to load any Excel file with matching columns without uploading data to a server."
+            "icon": "grid",
+            "title": "Read Excel data in-browser",
+            "body": "Used SheetJS to parse compatible .xlsx files client-side, keeping the data-loading workflow lightweight and avoiding a backend data pipeline.",
+            "weight": 25,
+            "points": [
+              "Client-side Excel parsing",
+              "No data upload to a server",
+              "Reusable column-based input structure"
+            ]
           },
           {
+            "icon": "chart",
             "title": "Build interactive visualizations",
-            "body": "Engineered Chart.js line charts for revenue and profit trends, bar charts for regional and product breakdowns, and dynamic KPI cards with month-over-month deltas."
+            "body": "Used Chart.js to turn the workbook data into KPI cards, line charts and bar charts that update as users explore the data.",
+            "weight": 25,
+            "points": [
+              "Trend analysis",
+              "Regional breakdowns",
+              "Product and channel comparisons"
+            ]
           },
           {
-            "title": "Add live filtering and pivot tables",
-            "body": "Implemented dropdown filters for region, product, and channel that re-render all charts and tables instantly, plus a dynamic pivot table with row and column totals."
+            "icon": "sliders",
+            "title": "Add live filters and pivot views",
+            "body": "Added region, product and channel filters that update the dashboard views together, plus a dynamic pivot table for detailed breakdowns.",
+            "weight": 25,
+            "points": [
+              "Region filter",
+              "Product filter",
+              "Channel filter",
+              "Dynamic row and column totals"
+            ]
           }
-        ]
+        ],
+        "outcome": {
+          "icon": "outcome",
+          "label": "The Outcome",
+          "items": [
+            {
+              "icon": "duration",
+              "title": "Faster refresh",
+              "body": "Updated Excel data can be loaded into the dashboard without rebuilding the reporting views."
+            },
+            {
+              "icon": "people",
+              "title": "Self-service exploration",
+              "body": "Users can change common dimensions themselves instead of requesting a new report."
+            },
+            {
+              "icon": "chart",
+              "title": "One analytical view",
+              "body": "KPIs, trends, comparisons and detailed pivot views work together in one browser experience."
+            }
+          ]
+        },
+        "enablers": {
+          "icon": "gear",
+          "label": "Key Enablers",
+          "intro": "Lightweight browser technologies keep the solution portable and easy to deploy.",
+          "items": [
+            {
+              "icon": "spreadsheet",
+              "title": "Excel",
+              "body": "Source data"
+            },
+            {
+              "icon": "code",
+              "title": "HTML / CSS / JS",
+              "body": "Dashboard experience"
+            },
+            {
+              "icon": "dataset",
+              "title": "SheetJS",
+              "body": "Excel parsing"
+            },
+            {
+              "icon": "chart",
+              "title": "Chart.js",
+              "body": "Visualization"
+            },
+            {
+              "icon": "shield",
+              "title": "Client-side",
+              "body": "No backend required"
+            }
+          ]
+        }
       }
     },
     {
-      "id": "outcomes",
-      "component": "outcomes",
-      "variant": "strip",
+      "id": "impact",
+      "component": "impact",
+      "variant": "impact-bridge",
       "visible": true,
       "data": {
-        "eyebrow": "Outcomes",
-        "title": "Instant insights. Zero infrastructure. Full self-service.",
+        "eyebrow": "Impact",
+        "title": "Faster access to insight. Less reporting friction.",
+        "titleHighlight": "Less reporting friction.",
+        "intro": "The dashboard changes the reporting experience from a recurring static deliverable into an interactive analytical surface that users can explore themselves.",
+        "orbit": {
+          "icon": "outcome",
+          "label": "Business Impact",
+          "body": "What changed for reporting users.",
+          "tagline": "From recurring report consumption to interactive exploration.",
+          "showKpi": true,
+          "showPercent": false
+        },
+        "bridge": {
+          "quote": "The value is not another report; it is making the existing data easier to question."
+        },
+        "glance": {
+          "icon": "outcome",
+          "label": "Impact at a glance",
+          "items": [
+            {
+              "icon": "duration",
+              "title": "Refresh workflow",
+              "text": "Updated Excel data can be loaded into the dashboard without rebuilding the reporting experience."
+            },
+            {
+              "icon": "people",
+              "title": "Self-service analysis",
+              "text": "Users can explore regions, products and channels without requesting a new custom report."
+            },
+            {
+              "icon": "chart",
+              "title": "Faster insight",
+              "text": "Interactive KPI, trend and comparison views reduce the steps between data and an answer."
+            },
+            {
+              "icon": "shield",
+              "title": "Lightweight deployment",
+              "text": "The browser-native architecture avoids a dedicated backend or database for the dashboard."
+            }
+          ]
+        },
         "metrics": [
           {
+            "icon": "duration",
             "value": "5 min",
-            "label": "Refresh cycle",
-            "note": "Load updated Excel and the dashboard re-renders instantly — no more weekly waits."
+            "label": "Refresh workflow",
+            "note": "Updated Excel data can be loaded into the dashboard instead of rebuilding weekly report views.",
+            "weight": 30,
+            "orbit": true,
+            "bridgeSlot": "top",
+            "tag": {
+              "icon": "trend-up",
+              "text": "Faster Refresh"
+            }
           },
           {
-            "value": "Zero Server",
-            "label": "Infrastructure",
-            "note": "Self-contained HTML file with in-browser Excel parsing; no backend, no database, no hosting costs."
+            "icon": "people",
+            "value": "Self-service",
+            "label": "Data exploration",
+            "note": "Users can filter common dimensions without waiting for a custom analysis.",
+            "weight": 25,
+            "orbit": true,
+            "bridgeSlot": "end",
+            "tag": {
+              "icon": "people",
+              "text": "Explore"
+            }
           },
           {
-            "value": "3x Faster",
-            "label": "Time to insight",
-            "note": "Regional managers self-serve answers through interactive filters instead of requesting custom reports."
+            "icon": "outcome",
+            "value": "3x",
+            "label": "Faster time to insight",
+            "note": "Interactive views shorten the path from the underlying workbook to an answer.",
+            "weight": 25,
+            "orbit": true,
+            "bridgeSlot": "start",
+            "tag": {
+              "icon": "trend-up",
+              "text": "3x Faster"
+            }
+          },
+          {
+            "icon": "shield",
+            "value": "Zero",
+            "label": "Server infrastructure",
+            "note": "The dashboard parses and analyzes the Excel data in the browser.",
+            "tag": {
+              "icon": "check",
+              "text": "Browser-native"
+            }
           }
-        ]
+        ],
+        "kpis": [
+          {
+            "icon": "duration",
+            "value": "5 min",
+            "label": "Refresh workflow."
+          },
+          {
+            "icon": "people",
+            "value": "Self-service",
+            "label": "Interactive exploration."
+          },
+          {
+            "icon": "outcome",
+            "value": "3x",
+            "label": "Faster time to insight."
+          },
+          {
+            "icon": "shield",
+            "value": "Zero",
+            "label": "Server infrastructure."
+          }
+        ],
+        "summary": {
+          "icon": "chart",
+          "text": "Faster refreshes. Easier exploration. More accessible business insight."
+        }
       }
     },
     {
@@ -405,7 +591,7 @@
       "visible": true,
       "data": {
         "title": "Need an interactive dashboard for your business data?",
-        "body": "We help organizations transform static spreadsheet reporting into live, interactive dashboards that deliver instant insights, with zero server infrastructure and full self-service capabilities.",
+        "body": "We help organizations turn spreadsheet-based reporting into practical analytics experiences that make recurring questions easier to answer.",
         "actions": [
           {
             "label": "View Live Dashboard",
@@ -415,7 +601,7 @@
           {
             "label": "Start a Conversation",
             "type": "secondary",
-            "target": "contact.html"
+            "target": "contactus.html"
           }
         ]
       }
