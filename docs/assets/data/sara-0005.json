@@ -1,0 +1,615 @@
+{
+  "schemaVersion": "1.0",
+  "meta": {
+    "id": "sara-0005",
+    "title": "VBA to Office Scripts Migration | Sāra 0005 | TriSaar Consulting",
+    "description": "Sāra 0005 case study: migrating Excel report-generation automation from desktop-locked VBA macros to TypeScript-based Office Scripts for an asset management firm, enabling cross-platform execution on web, mobile and desktop, live SharePoint collaboration, and Power Automate orchestration.",
+    "keywords": [
+      "Investment Management",
+      "Asset Management",
+      "VBA to Office Scripts",
+      "Office Scripts",
+      "TypeScript",
+      "Power Automate",
+      "SharePoint",
+      "Excel Automation",
+      "Automation Migration",
+      "Modernization"
+    ],
+    "author": "TriSaar Consulting",
+    "themeColor": "#B91C1C",
+    "canonical": "https://tsr-techie.github.io/trisaar-consulting/case-study.html?id=sara-0005",
+    "ogImage": "https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png",
+    "robots": "index, follow"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "component": "hero",
+      "variant": "immersive",
+      "visible": true,
+      "parts": [
+        {
+          "type": "taxonomy",
+          "data": {
+            "items": [
+              "Investment Management",
+              "Automation Modernization",
+              "Office Scripts"
+            ]
+          }
+        },
+        {
+          "type": "identity",
+          "variant": "dualTone",
+          "data": {
+            "text": "Sāra 0005 · सार ०००५"
+          }
+        },
+        {
+          "type": "title",
+          "data": {
+            "text": "VBA to Office Scripts Migration"
+          }
+        },
+        {
+          "type": "subtitle",
+          "data": {
+            "text": "Modernizing Excel automation from desktop-locked VBA macros to cross-platform Office Scripts that run on web, mobile and desktop - with live SharePoint collaboration and Power Automate orchestration."
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "items": [
+              {
+                "label": "Read Case Study",
+                "type": "primary",
+                "target": "#executive-summary",
+                "icon": "book"
+              },
+              {
+                "label": "View Repository",
+                "type": "secondary",
+                "target": "https://github.com/tsr-techie/trisaar-consulting",
+                "icon": "github"
+              }
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "text": "A migration initiative that replaced legacy VBA macros with TypeScript-based Office Scripts, enabling report automation across web, mobile and desktop while keeping the Excel workbook live and shared on SharePoint."
+          },
+          "visible": true
+        },
+        {
+          "type": "brief",
+          "variant": "rail",
+          "data": {
+            "title": "Case Brief",
+            "fields": [
+              {
+                "label": "Client",
+                "value": "Asset Management Firm",
+                "icon": "client"
+              },
+              {
+                "label": "Country / Region",
+                "value": "India · Asia",
+                "icon": "globe"
+              },
+              {
+                "label": "Duration",
+                "value": "2 Weeks",
+                "icon": "duration"
+              },
+              {
+                "label": "Outcome",
+                "icon": "outcome",
+                "values": [
+                  "VBA → Office Scripts",
+                  "Desktop → Cross-platform",
+                  "Manual → Automated"
+                ]
+              },
+              {
+                "label": "Technology",
+                "value": "Excel • Office Scripts • Power Automate",
+                "icon": "technology"
+              },
+              {
+                "label": "Dataset",
+                "value": "Confidential",
+                "icon": "dataset"
+              },
+              {
+                "label": "Confidentiality",
+                "value": "Confidential",
+                "icon": "confidentiality"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "publication",
+      "component": "publication",
+      "variant": "rule",
+      "visible": true,
+      "data": {
+        "label": "Sāra Publication",
+        "edition": "Public Edition",
+        "version": "1.0",
+        "published": "Aug 2026",
+        "readTime": "10 min read"
+      }
+    },
+    {
+      "id": "executive-summary",
+      "component": "executiveSummary",
+      "variant": "executive-overview",
+      "visible": true,
+      "data": {
+        "eyebrow": "Executive Summary",
+        "title": "From desktop-locked macros to cross-platform automation.",
+        "subtitle": "We migrated the client's VBA-driven Excel reporting to TypeScript-based Office Scripts, enabling the same automation to run on web, mobile and desktop while keeping workbooks live on SharePoint and orchestrated through Power Automate.",
+        "pillars": [
+          {
+            "key": "challenge",
+            "label": "Challenge",
+            "icon": "people",
+            "title": "Excel automation was locked to the desktop.",
+            "body": "The client's reporting workflow relied on VBA macros embedded in Excel workbooks. While the macros functioned, they could only execute in desktop Excel. As the team adopted browser-based and mobile Excel, the macros became unusable, files were emailed back and forth, and macro security warnings created friction for end users.",
+            "points": [
+              {
+                "icon": "workstation",
+                "text": "VBA macros only executed in desktop Excel, blocking web and mobile users"
+              },
+              {
+                "icon": "shield",
+                "text": "Macro-enabled files triggered security warnings and IT restrictions"
+              },
+              {
+                "icon": "people",
+                "text": "Workbooks were emailed rather than shared, creating version-control issues"
+              }
+            ]
+          },
+          {
+            "key": "solution",
+            "label": "Solution",
+            "icon": "gear",
+            "title": "TypeScript-based Office Scripts for cross-platform automation.",
+            "body": "We audited the existing VBA macros, rewrote their logic in TypeScript-based Office Scripts, and hosted the workbooks on SharePoint so they remained live and shared. Power Automate was integrated to trigger scripts on schedule, enabling hands-free report generation.",
+            "steps": [
+              {
+                "icon": "flow",
+                "text": "Audit VBA macros & document logic"
+              },
+              {
+                "icon": "code",
+                "text": "Rewrite in Office Scripts (TypeScript)"
+              },
+              {
+                "icon": "cloud",
+                "text": "Host on SharePoint & enable live sharing"
+              },
+              {
+                "icon": "gear",
+                "text": "Integrate Power Automate for scheduling"
+              }
+            ]
+          },
+          {
+            "key": "impact",
+            "label": "Impact",
+            "icon": "chart",
+            "title": "Same automation. Any platform. Better security.",
+            "body": "The migration turned desktop-locked VBA macros into cross-platform Office Scripts that run from any device, stay live on SharePoint, and execute on schedule through Power Automate - with stronger security and no macro warnings.",
+            "metrics": [
+              {
+                "icon": "code",
+                "value": "15+",
+                "label": "Macros migrated to Office Scripts"
+              },
+              {
+                "icon": "devices",
+                "value": "3 Platforms",
+                "label": "Web, mobile & desktop enabled"
+              },
+              {
+                "icon": "gear",
+                "value": "Automated",
+                "label": "Reports run on schedule via Power Automate"
+              },
+              {
+                "icon": "duration",
+                "value": "Manual → Scheduled",
+                "label": "No one needs to open Excel"
+              }
+            ]
+          }
+        ],
+        "bottomLine": {
+          "label": "Bottom line",
+          "icon": "star",
+          "parts": [
+            {
+              "text": "A modern, cross-platform automation foundation that replaced desktop-locked VBA with "
+            },
+            {
+              "text": "TypeScript-based Office Scripts running on web, mobile and desktop",
+              "emphasis": true
+            },
+            {
+              "text": " - with live SharePoint collaboration and Power Automate orchestration."
+            }
+          ],
+          "cta": {
+            "label": "Read full case study",
+            "target": "#challenge",
+            "icon": "document"
+          }
+        },
+        "meta": [
+          {
+            "label": "Industry",
+            "value": "Financial Services",
+            "icon": "industry"
+          },
+          {
+            "label": "Domain",
+            "value": "Investment Management",
+            "icon": "network"
+          },
+          {
+            "label": "Technology",
+            "value": "Excel • Office Scripts • Power Automate",
+            "icon": "technology"
+          },
+          {
+            "label": "Duration",
+            "value": "2 Weeks",
+            "icon": "duration"
+          },
+          {
+            "label": "Client",
+            "value": "Asset Management Firm",
+            "icon": "client"
+          }
+        ]
+      }
+    },
+    {
+      "id": "challenge",
+      "component": "challenge",
+      "variant": "challenge-friction-modern",
+      "visible": true,
+      "data": {
+        "eyebrow": "Challenge",
+        "title": "Excel automation was locked to the desktop - and the desktop was becoming the bottleneck.",
+        "body": "The client's reporting workflow relied on VBA macros embedded in Excel workbooks to generate and format periodic reports. While the macros functioned reliably on desktop Excel, they could not run in Excel on the web or on mobile devices. As the team increasingly worked from browsers and phones, the macros became unusable, workbooks were emailed back and forth creating version conflicts, and macro-enabled files triggered security warnings that blocked adoption.",
+        "core": {
+          "icon": "warning",
+          "label": "The Core Challenge",
+          "body": "The automation was functional but locked to a single platform. As the team moved toward web and mobile Excel, VBA could not follow - and the desktop-only constraint was becoming an operational bottleneck."
+        },
+        "points": [
+          {
+            "icon": "workstation",
+            "title": "Desktop-only execution",
+            "body": "VBA macros only run in the desktop version of Excel. Team members working in browser-based or mobile Excel could not trigger the automation at all."
+          },
+          {
+            "icon": "people",
+            "title": "No live collaboration",
+            "body": "Workbooks were emailed between team members rather than shared, leading to conflicting versions and no single source of truth for the latest report."
+          },
+          {
+            "icon": "shield",
+            "title": "Security friction",
+            "body": "Macro-enabled workbooks (.xlsm) triggered security warnings and IT restrictions, making it harder for end users to open and trust the files."
+          },
+          {
+            "icon": "code",
+            "title": "Legacy maintenance burden",
+            "body": "VBA code was harder to maintain, debug and version-control. Smaller tasks that could benefit from automation were discouraged by the overhead of writing and distributing new macros."
+          }
+        ],
+        "impact": {
+          "icon": "quote",
+          "label": "The Business Impact",
+          "body": "Report generation depended on who had the desktop file, when they were online, and whether macros were enabled. The workflow was functional but fragile, and the team could not take advantage of web, mobile or SharePoint collaboration.",
+          "metrics": [
+            {
+              "icon": "workstation",
+              "value": "1 Platform",
+              "label": "desktop-only execution"
+            },
+            {
+              "icon": "people",
+              "value": "Email-based",
+              "label": "file sharing & versioning"
+            },
+            {
+              "icon": "shield",
+              "value": "High",
+              "label": "security friction for end users"
+            },
+            {
+              "icon": "code",
+              "value": "Legacy",
+              "label": "VBA codebase to maintain"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "solution",
+      "component": "solution",
+      "variant": "solution-control-hub",
+      "visible": true,
+      "data": {
+        "eyebrow": "Solution",
+        "title": "A cross-platform migration from VBA to Office Scripts.",
+        "intro": "We audited the client's existing VBA macros, rewrote their logic in TypeScript-based Office Scripts, and hosted the workbooks on SharePoint so they remained live and shared. Power Automate was integrated to trigger scripts on a schedule, enabling hands-free report generation without anyone needing to open Excel manually.",
+        "hub": {
+          "icon": "puzzle",
+          "label": "Our Approach",
+          "body": "Modernize the automation layer without disrupting the familiar Excel workflow - replace the macro engine, not the spreadsheet."
+        },
+        "steps": [
+          {
+            "icon": "flow",
+            "title": "Audit VBA macros & document logic",
+            "body": "Catalogued every macro, its inputs, outputs, dependencies and formatting rules so the migration could be planned with no logic lost in translation.",
+            "weight": 25,
+            "points": [
+              "Macro inventory & dependency mapping",
+              "Input/output documentation",
+              "Formatting & calculation rules captured"
+            ]
+          },
+          {
+            "icon": "code",
+            "title": "Rewrite in Office Scripts (TypeScript)",
+            "body": "Translated the VBA logic into TypeScript-based Office Scripts, leveraging the modern typed language for safer, more maintainable code that runs across all Excel surfaces.",
+            "weight": 25,
+            "points": [
+              "VBA logic translated to TypeScript",
+              "Type-safe, maintainable codebase",
+              "Cross-platform script execution"
+            ]
+          },
+          {
+            "icon": "cloud",
+            "title": "Host on SharePoint & enable sharing",
+            "body": "Moved the workbooks to SharePoint so the Excel file stayed live, shared and version-controlled. Multiple users could view and interact with the same file without emailing copies.",
+            "weight": 25,
+            "points": [
+              "Workbook hosted on SharePoint",
+              "Live multi-user collaboration",
+              "Single source of truth"
+            ]
+          },
+          {
+            "icon": "gear",
+            "title": "Integrate Power Automate for scheduling",
+            "body": "Connected the Office Scripts to Power Automate flows so report generation could run on a schedule or be triggered by events - no manual intervention required.",
+            "weight": 25,
+            "points": [
+              "Scheduled script execution",
+              "Event-based triggers",
+              "Hands-free report generation"
+            ]
+          }
+        ],
+        "outcome": {
+          "icon": "outcome",
+          "label": "The Outcome",
+          "items": [
+            {
+              "icon": "devices",
+              "title": "Cross-platform execution",
+              "body": "Scripts run on Excel for web, mobile and desktop - the same automation works everywhere."
+            },
+            {
+              "icon": "cloud",
+              "title": "Live SharePoint collaboration",
+              "body": "The workbook stays live and shared on SharePoint, eliminating version conflicts from emailed copies."
+            },
+            {
+              "icon": "gear",
+              "title": "Automated scheduling",
+              "body": "Power Automate triggers scripts on schedule, generating reports without anyone opening Excel manually."
+            }
+          ]
+        },
+        "enablers": {
+          "icon": "gear",
+          "label": "Key Enablers",
+          "intro": "The solution combined modern scripting with cloud collaboration and orchestration.",
+          "items": [
+            {
+              "icon": "spreadsheet",
+              "title": "Excel",
+              "body": "Familiar spreadsheet interface"
+            },
+            {
+              "icon": "code",
+              "title": "Office Scripts",
+              "body": "TypeScript-based automation"
+            },
+            {
+              "icon": "cloud",
+              "title": "SharePoint",
+              "body": "Live file sharing & collaboration"
+            },
+            {
+              "icon": "gear",
+              "title": "Power Automate",
+              "body": "Scheduling & orchestration"
+            },
+            {
+              "icon": "shield",
+              "title": "TypeScript",
+              "body": "Modern, typed & maintainable"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "impact",
+      "component": "impact",
+      "variant": "impact-value-orbit",
+      "visible": true,
+      "data": {
+        "eyebrow": "Impact",
+        "title": "Same automation, anywhere - with better security and zero manual steps.",
+        "titleHighlight": "anywhere.",
+        "intro": "The migration turned desktop-locked VBA macros into cross-platform Office Scripts that run from any device, stay live on SharePoint, and execute on schedule through Power Automate.",
+        "orbit": {
+          "icon": "outcome",
+          "label": "Business Impact",
+          "body": "What changed for the team.",
+          "tagline": "From desktop-only macros to cross-platform, scheduled automation.",
+          "showKpi": true,
+          "showPercent": false
+        },
+        "bridge": {
+          "quote": "Automation should not depend on which device you open Excel on."
+        },
+        "glance": {
+          "icon": "outcome",
+          "label": "Impact at a glance",
+          "items": [
+            {
+              "icon": "code",
+              "title": "15+ macros migrated",
+              "text": "All VBA macros were rewritten as TypeScript-based Office Scripts with no logic lost."
+            },
+            {
+              "icon": "devices",
+              "title": "Three platforms enabled",
+              "text": "The same scripts now run on Excel for web, mobile and desktop."
+            },
+            {
+              "icon": "cloud",
+              "title": "Live on SharePoint",
+              "text": "Workbooks stay shared and version-controlled, eliminating emailed copies."
+            },
+            {
+              "icon": "gear",
+              "title": "Scheduled by Power Automate",
+              "text": "Report generation runs on schedule without anyone opening Excel manually."
+            }
+          ]
+        },
+        "metrics": [
+          {
+            "icon": "code",
+            "value": "15+",
+            "label": "Macros migrated",
+            "note": "All VBA macros were translated to TypeScript-based Office Scripts.",
+            "weight": 35,
+            "orbit": true,
+            "bridgeSlot": "top",
+            "tag": {
+              "icon": "check",
+              "text": "Fully Migrated"
+            }
+          },
+          {
+            "icon": "devices",
+            "value": "3 Platforms",
+            "label": "Cross-platform access",
+            "note": "Scripts run on web, mobile and desktop - the same automation everywhere.",
+            "weight": 30,
+            "orbit": true,
+            "bridgeSlot": "end",
+            "tag": {
+              "icon": "trend-up",
+              "text": "Anywhere"
+            }
+          },
+          {
+            "icon": "gear",
+            "value": "Manual → Scheduled",
+            "label": "Report generation",
+            "note": "Reports now run on a schedule via Power Automate - no one needs to open Excel manually to trigger them.",
+            "weight": 35,
+            "orbit": true,
+            "bridgeSlot": "start",
+            "tag": {
+              "icon": "trend-up",
+              "text": "Automated"
+            }
+          },
+          {
+            "icon": "shield",
+            "value": "Stronger",
+            "label": "Security posture",
+            "note": "No macro-enabled files or security warnings - Office Scripts run within managed Microsoft 365 policies.",
+            "tag": {
+              "icon": "shield",
+              "text": "More Secure"
+            }
+          }
+        ],
+        "kpis": [
+          {
+            "icon": "code",
+            "value": "15+",
+            "label": "VBA macros migrated to Office Scripts."
+          },
+          {
+            "icon": "devices",
+            "value": "3",
+            "label": "Platforms enabled - web, mobile & desktop."
+          },
+          {
+            "icon": "gear",
+            "value": "Manual → Scheduled",
+            "label": "Report generation triggered by Power Automate, not manual effort."
+          },
+          {
+            "icon": "cloud",
+            "value": "100%",
+            "label": "Workbooks live and shared on SharePoint."
+          }
+        ],
+        "summary": {
+          "icon": "chart",
+          "text": "Cross-platform automation. Live SharePoint collaboration. Scheduled Power Automate execution."
+        }
+      }
+    },
+    {
+      "id": "next-step",
+      "component": "cta",
+      "variant": "centered",
+      "visible": true,
+      "data": {
+        "title": "Ready to move your Excel automation beyond the desktop?",
+        "body": "TriSaar helps teams modernize legacy VBA workflows into Office Scripts that run anywhere, stay live on SharePoint, and integrate with Power Automate for hands-free execution.",
+        "actions": [
+          {
+            "label": "Start a Conversation",
+            "type": "primary",
+            "target": "contactus.html"
+          },
+          {
+            "label": "View More Work",
+            "type": "secondary",
+            "target": "index.html#case-studies"
+          }
+        ]
+      }
+    }
+  ]
+}

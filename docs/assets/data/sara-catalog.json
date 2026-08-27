@@ -63,6 +63,22 @@
       "technologies": ["HTML", "Chart.js", "SheetJS"],
       "capabilities": ["Analytics"],
       "topics": ["Sales Analytics", "Business Intelligence"]
+    },
+    {
+      "id": "sara-0005",
+      "number": "0005",
+      "label": "Sāra 0005",
+      "title": "VBA to Office Scripts Migration",
+      "summary": "Migrating Excel automation from desktop-locked VBA macros to cross-platform Office Scripts with SharePoint and Power Automate.",
+      "industry": "Financial Services",
+      "country": "India",
+      "region": "Asia",
+      "duration": "2 Weeks",
+      "durationWeeks": 2,
+      "publishedDate": "2026-08-27",
+      "technologies": ["Excel", "Office Scripts", "Power Automate"],
+      "capabilities": ["Automation"],
+      "topics": ["Automation Migration", "SharePoint"]
     }
   ]
 }
