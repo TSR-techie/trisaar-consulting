@@ -1,10 +1,60 @@
 import { createElement } from "../../js/utils.js";
+import { icon } from "../../js/icons.js";
 
 const DOCUMENT_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>`;
 
+function saraLabel(id = "") {
+    const number = String(id).replace(/^sara-/i, "");
+    return number ? `Sāra ${number}` : "Sāra";
+}
+
+function renderSaraLink(direction, targetId) {
+    if (!targetId) return null;
+
+    const isPrev = direction === "prev";
+    const name = saraLabel(targetId);
+    const label = isPrev ? `Previous ${name}` : `Next ${name}`;
+
+    const link = createElement("a", {
+        className: `publication-sara-link publication-sara-link--${direction}`,
+        attributes: {
+            href: `case-study.html?id=${encodeURIComponent(targetId)}`,
+            "aria-label": label
+        }
+    });
+
+    const text = createElement("span", { text: label });
+    const chevron = icon(isPrev ? "chevron-left" : "chevron-right", "publication-sara-icon");
+
+    if (isPrev) {
+        link.append(chevron, text);
+    } else {
+        link.append(text, chevron);
+    }
+
+    return link;
+}
+
+function renderSaraNav(context = {}) {
+    const prev = renderSaraLink("prev", context.prevId);
+    const next = renderSaraLink("next", context.nextId);
+
+    if (!prev && !next) return null;
+
+    const nav = createElement("nav", {
+        className: "publication-sara-nav",
+        attributes: { "aria-label": "Sāra case studies" }
+    });
+
+    if (prev) nav.append(prev);
+    if (next) nav.append(next);
+
+    return nav;
+}
+
 export default {
 
-    render(section) {
+    render(section, context = {}) {
 
         const data = section.data || {};
         const variant = section.variant || "rule";
@@ -74,6 +124,11 @@ export default {
             });
 
             container.append(metaRow);
+        }
+
+        const saraNav = renderSaraNav(context);
+        if (saraNav) {
+            container.append(saraNav);
         }
 
         root.append(container);
