@@ -69,10 +69,10 @@
                 "icon": "book"
               },
               {
-                "label": "View Repository",
+                "label": "Consult Migration",
                 "type": "secondary",
-                "target": "https://github.com/tsr-techie/trisaar-consulting",
-                "icon": "github"
+                "target": "contactus.html",
+                "icon": "contact"
               }
             ]
           }

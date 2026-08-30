@@ -172,6 +172,19 @@
 }
 
 /* ==========================================
+   Homepage — no hash/snap scrolling
+========================================== */
+
+html.page-home {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+html.page-home .section {
+    scroll-snap-align: none;
+}
+
+/* ==========================================
    Standalone Landing Page
 ========================================== */
 

@@ -384,6 +384,52 @@ function renderHero(cases, heading) {
     return hero;
 }
 
+function activeFilterCount(filters) {
+    let count = 0;
+    if (String(filters.q || "").trim()) count += 1;
+    count += asList(filters.industry).length;
+    count += asList(filters.duration).length;
+    count += asList(filters.technology).length;
+    count += asList(filters.country).length;
+    return count;
+}
+
+function wrapFilterPanel(form, filters) {
+    const panel = createElement("div", { className: "case-index-filter-panel" });
+    const toggle = createElement("button", {
+        className: "case-index-filter-toggle",
+        attributes: {
+            type: "button",
+            "aria-expanded": "false",
+            "aria-controls": "case-index-filters"
+        }
+    });
+
+    toggle.append(
+        icon("gear", "case-index-filter-toggle-icon"),
+        createElement("span", { text: "Filters" })
+    );
+
+    const count = activeFilterCount(filters);
+    if (count) {
+        toggle.append(createElement("em", {
+            className: "case-index-filter-count",
+            text: String(count),
+            attributes: { "aria-label": `${count} active filters` }
+        }));
+    }
+
+    toggle.append(icon("chevron-up", "case-index-filter-caret"));
+
+    toggle.addEventListener("click", () => {
+        const open = panel.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(open));
+    });
+
+    panel.append(toggle, form);
+    return panel;
+}
+
 function renderFilters(cases, filters) {
     const bar = createElement("form", {
         className: "case-index-filters",
@@ -605,7 +651,7 @@ function renderPage(root, cases, filters) {
 
     const body = createElement("div", { className: "container case-index-body" });
     const form = renderFilters(cases, filters);
-    body.append(form, renderIndustryChips(cases, filters.industry), renderResults(visible, filters.sort));
+    body.append(wrapFilterPanel(form, filters), renderIndustryChips(cases, filters.industry), renderResults(visible, filters.sort));
     shell.append(body);
     root.append(shell);
 
