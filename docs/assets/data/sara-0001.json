@@ -3,7 +3,22 @@
 
   "meta": {
     "id": "sara-0001",
-    "title": "Infrastructure Network Feasibility Toolkit | TriSaar"
+    "title": "Infrastructure Network Feasibility Toolkit | TriSaar Consulting",
+    "description": "Sāra 0001 case study: an Excel and Office Scripts toolkit that turns water-utility network feasibility from expert tribal knowledge into a repeatable decision engine.",
+    "keywords": [
+      "Water Utility",
+      "Network Feasibility",
+      "Excel",
+      "Office Scripts",
+      "Automation",
+      "Energy & Utilities",
+      "Decision Support"
+    ],
+    "author": "TriSaar Consulting",
+    "themeColor": "#B91C1C",
+    "canonical": "https://tsr-techie.github.io/trisaar-consulting/case-study.html?id=sara-0001",
+    "ogImage": "https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png",
+    "robots": "index, follow"
   },
 
   "sections": [
@@ -79,6 +94,11 @@
                 "label": "Client",
                 "value": "Fortune 500",
                 "icon": "client"
+              },
+              {
+                "label": "Country / Region",
+                "value": "USA · America",
+                "icon": "globe"
               },
               {
                 "label": "Duration",
@@ -342,62 +362,250 @@
     },
 
     {
-      "id": "approach",
-      "component": "approach",
-      "variant": "numbered",
+      "id": "solution",
+      "component": "solution",
+      "variant": "solution-simple",
       "visible": true,
 
       "data": {
-        "eyebrow": "Approach",
+        "eyebrow": "Solution",
         "title": "From informal judgment to a structured workflow.",
         "intro": "We translated domain expertise into a transparent decision model, then automated the repetitive layers so analysts could focus on interpretation instead of reconstruction.",
+
+        "hub": {
+          "icon": "puzzle",
+          "label": "Our Approach",
+          "body": "A repeatable framework that turns complex networks into confident decisions."
+        },
+
         "steps": [
           {
+            "icon": "flow",
             "title": "Map the decision logic",
-            "body": "Worked with domain experts to capture feasibility criteria, dependencies, and exception paths in a form that could be reviewed and tested."
+            "body": "Worked with domain experts to capture feasibility criteria, dependencies, and exception paths in a form that could be reviewed and tested.",
+            "weight": 40,
+            "points": [
+              "Captured expert heuristics",
+              "Defined feasibility criteria",
+              "Documented assumptions & rules"
+            ]
           },
           {
+            "icon": "grid",
             "title": "Build the Excel decision surface",
-            "body": "Designed a familiar spreadsheet interface for inputs, scenario comparison, and clear output states — without forcing users into a new platform."
+            "body": "Designed a familiar spreadsheet interface for inputs, scenario comparison, and clear output states — without forcing users into a new platform.",
+            "weight": 35,
+            "points": [
+              "Structured data inputs & validation",
+              "Path enumeration & evaluation",
+              "Feasibility scoring & capacity checks"
+            ]
           },
           {
+            "icon": "code",
             "title": "Automate with Office Scripts",
-            "body": "Encoded repeatable calculations and validation checks so the same evaluation path could run consistently in minutes."
+            "body": "Encoded repeatable calculations and validation checks so the same evaluation path could run consistently in minutes.",
+            "weight": 5,
+            "points": [
+              "Data refresh & preprocessing",
+              "Scenario execution automation",
+              "Results generation & formatting"
+            ]
           },
           {
+            "icon": "shield",
             "title": "Validate with synthetic recreation",
-            "body": "Recreated representative scenarios to prove the toolkit matched expert outcomes before rolling it into day-to-day use."
+            "body": "Recreated representative scenarios to prove the toolkit matched expert outcomes before rolling it into day-to-day use.",
+            "weight": 20,
+            "points": [
+              "Cross-checks with expert results",
+              "Stress testing & edge cases",
+              "User guide & documentation"
+            ]
           }
-        ]
+        ],
+
+        "outcome": {
+          "icon": "outcome",
+          "label": "The Outcome",
+          "items": [
+            {
+              "icon": "duration",
+              "title": "Days → Minutes",
+              "body": "Faster evaluations at scale."
+            },
+            {
+              "icon": "person",
+              "title": "Expert bottleneck eliminated",
+              "body": "Decisions no longer dependent on one expert."
+            },
+            {
+              "icon": "people",
+              "title": "Knowledge democratized",
+              "body": "Teams empowered with a repeatable process."
+            }
+          ]
+        },
+
+        "enablers": {
+          "icon": "gear",
+          "label": "Key Enablers",
+          "intro": "Tools and practices that powered the solution.",
+          "items": [
+            {
+              "icon": "spreadsheet",
+              "title": "Microsoft Excel",
+              "body": "Modeling & Analysis"
+            },
+            {
+              "icon": "code",
+              "title": "Office Scripts",
+              "body": "Automation"
+            },
+            {
+              "icon": "check",
+              "title": "Data Validation",
+              "body": "Accuracy & Integrity"
+            },
+            {
+              "icon": "people",
+              "title": "SME Collaboration",
+              "body": "Expert Knowledge"
+            },
+            {
+              "icon": "document",
+              "title": "Documentation",
+              "body": "Knowledge Transfer"
+            }
+          ]
+        }
       }
     },
 
     {
-      "id": "outcomes",
-      "component": "outcomes",
-      "variant": "strip",
+      "id": "impact",
+      "component": "impact",
+      "variant": "impact-simple",
       "visible": true,
 
       "data": {
-        "eyebrow": "Outcomes",
+        "eyebrow": "Impact",
         "title": "Faster, clearer, repeatable feasibility calls.",
+        "titleHighlight": "feasibility calls.",
+        "intro": "The toolkit transformed a manual, expert-dependent process into a scalable decision engine.",
+        "orbit": {
+          "icon": "outcome",
+          "label": "Business Impact",
+          "body": "What changed for the business.",
+          "tagline": "A more efficient, scalable way to make decisions.",
+          "showKpi": true,
+          "showPercent": false
+        },
+        "bridge": {
+          "quote": "Better decisions create bigger opportunities."
+        },
+        "glance": {
+          "icon": "outcome",
+          "label": "The Impact",
+          "items": [
+            {
+              "icon": "duration",
+              "title": "Evaluation turnaround",
+              "text": "Improved from days to minutes."
+            },
+            {
+              "icon": "people",
+              "title": "Expert bottleneck eliminated",
+              "text": "Decisions no longer dependent on one expert."
+            },
+            {
+              "icon": "lightbulb",
+              "title": "Decision logic democratized",
+              "text": "Teams empowered with a repeatable process."
+            },
+            {
+              "icon": "star",
+              "text": "A usable core workflow teams can extend without a rebuild."
+            }
+          ]
+        },
         "metrics": [
           {
+            "icon": "duration",
             "value": "Days → Minutes",
             "label": "Evaluation turnaround",
-            "note": "First-pass feasibility no longer waits on specialist availability."
+            "note": "First-pass feasibility no longer waits on specialist availability.",
+            "weight": 38,
+            "orbit": true,
+            "bridgeSlot": "top",
+            "tag": {
+              "icon": "trend-up",
+              "text": "10x Faster"
+            }
           },
           {
+            "icon": "rocket",
             "value": "MVP",
             "label": "Delivery model",
-            "note": "Shipped a usable core workflow teams can extend without a rebuild."
+            "note": "Shipped a usable core workflow teams can extend without a rebuild.",
+            "weight": 32,
+            "orbit": true,
+            "bridgeSlot": "end",
+            "tag": {
+              "icon": "shield",
+              "text": "Proven & Reliable"
+            }
           },
           {
+            "icon": "people",
             "value": "Shared logic",
             "label": "Decision consistency",
-            "note": "Criteria and assumptions live in the toolkit, not only in people's heads."
+            "note": "Criteria and assumptions live in the toolkit, not only in people's heads.",
+            "weight": 30,
+            "orbit": true,
+            "bridgeSlot": "start",
+            "tag": {
+              "icon": "people",
+              "text": "Team Empowered"
+            }
+          },
+          {
+            "icon": "outcome",
+            "value": "Better decisions",
+            "label": "Decision quality",
+            "note": "Consistent, auditable outcomes drive stronger business decisions.",
+            "tag": {
+              "icon": "check",
+              "text": "Higher Confidence"
+            }
           }
-        ]
+        ],
+        "kpis": [
+          {
+            "icon": "duration",
+            "value": "2-3 Days",
+            "label": "Typical evaluation time reduced."
+          },
+          {
+            "icon": "person",
+            "value": "1 Expert",
+            "label": "Dependence reduced to shared ownership."
+          },
+          {
+            "icon": "spreadsheet",
+            "value": "100+",
+            "label": "Spreadsheets consolidated."
+          },
+          {
+            "icon": "shield",
+            "value": "High → Low",
+            "label": "Risk of oversight and inaccuracies."
+          }
+        ],
+        "summary": {
+          "icon": "chart",
+          "text": "More scenarios evaluated. Faster decisions. Stronger business outcomes."
+        }
       }
     },
 
@@ -414,7 +622,7 @@
           {
             "label": "Start a Conversation",
             "type": "primary",
-            "target": "contact.html"
+            "target": "contactus.html"
           },
           {
             "label": "View More Work",

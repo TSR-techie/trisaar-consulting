@@ -624,9 +624,9 @@ function renderExecutiveOverview(section, data) {
 
 const BRIEF_CARD_TARGETS = {
     challenge: "#challenge",
-    solution: "#approach",
-    impact: "#outcomes",
-    glance: "#outcomes"
+    solution: "#solution",
+    impact: "#impact",
+    glance: "#impact"
 };
 
 const BRIEF_ASSETS = {

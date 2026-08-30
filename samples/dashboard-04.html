@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+
+    <title>Interactive Sales Analytics Dashboard | TriSaar Consulting</title>
+
+    <meta name="description"
+          content="Interactive sales analytics dashboard showcasing KPI tracking, live filters, and Chart.js visualizations — a Sāra 0004 sample from TriSaar Consulting.">
+
+    <meta name="author" content="TriSaar Consulting">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#B91C1C">
+
+    <link rel="canonical"
+          href="https://tsr-techie.github.io/trisaar-consulting/samples/dashboard-04.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Interactive Sales Analytics Dashboard | TriSaar Consulting">
+    <meta property="og:description" content="Interactive sales analytics dashboard — KPI tracking, live filters, and Chart.js visualizations.">
+    <meta property="og:url" content="https://tsr-techie.github.io/trisaar-consulting/samples/dashboard-04.html">
+    <meta property="og:site_name" content="TriSaar Consulting">
+    <meta property="og:image"
+          content="https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png">
+
+    <link rel="icon" type="image/x-icon" href="./docs/assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./docs/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./docs/assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="./docs/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="./docs/assets/icons/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="docs/assets/css/variables.css">
+    <link rel="stylesheet" href="docs/assets/css/base.css">
+    <link rel="stylesheet" href="docs/assets/css/layout.css">
+    <link rel="stylesheet" href="docs/assets/css/components.css">
+    <link rel="stylesheet" href="docs/assets/css/homepage.css">
+    <link rel="stylesheet" href="docs/assets/css/consent.css">
+    <link rel="stylesheet" href="docs/assets/css/utilities.css">
+    <link rel="stylesheet" href="docs/assets/css/animations.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <style>
+    .dashboard-hero {
+        position: relative;
+        overflow: hidden;
+        background:
+            radial-gradient(circle at 80% 20%, rgba(220,38,38,.06), transparent 30%),
+            radial-gradient(circle at 10% 80%, rgba(220,38,38,.04), transparent 40%),
+            var(--color-background);
+        padding-top: var(--space-8);
+        padding-bottom: 0;
+    }
+
+    .dashboard-hero-content {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+        padding-bottom: var(--space-6);
+    }
+
+    .dashboard-hero-content h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        letter-spacing: -0.03em;
+        margin-bottom: var(--space-4);
+    }
+
+    .dashboard-hero-content p {
+        font-size: 1.1rem;
+        color: var(--color-muted);
+        max-width: 540px;
+        margin: 0 auto;
+    }
+
+    .dashboard-hero-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--space-5);
+    }
+
+    .section-label {
+        display: inline-block;
+        margin-bottom: var(--space-3);
+        color: var(--color-primary);
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .dashboard-wrapper {
+        max-width: var(--container-wide-width);
+        margin: 0 auto;
+        padding: 0 var(--container-padding) var(--space-10);
+    }
+
+    .dashboard-card-lg {
+        background: var(--color-white);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .dashboard-controls {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    .dot.red { background: #ef4444; }
+    .dot.yellow { background: #f59e0b; }
+    .dot.green { background: #22c55e; }
+
+    .dashboard-title {
+        font-size: 0.9rem;
+        color: var(--color-muted);
+        font-weight: 500;
+    }
+
+    .dashboard-body {
+        padding: var(--space-6);
+    }
+
+    .filter-bar {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+        flex-wrap: wrap;
+        margin-bottom: var(--space-6);
+    }
+
+    .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .filter-group label {
+        font-size: 0.8rem;
+        color: var(--color-muted);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .filter-group select {
+        font-family: var(--font-family-base);
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 0.55rem 1rem;
+        border-radius: var(--radius-sm);
+        background: var(--color-surface-dark);
+        color: var(--color-heading);
+        border: 1px solid var(--color-border);
+        cursor: pointer;
+        outline: none;
+        transition: border-color var(--transition-fast);
+    }
+    .filter-group select:focus { border-color: var(--color-primary); }
+
+    .filter-reset {
+        font-family: var(--font-family-base);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.55rem 1.2rem;
+        border-radius: var(--radius-sm);
+        background: transparent;
+        color: var(--color-muted);
+        border: 1px solid var(--color-border);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+    .filter-reset:hover {
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+
+    .metric-grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-4);
+        margin-bottom: var(--space-6);
+    }
+
+    .metric-card-lg,
+    .metric-card-lg {
+        background: var(--color-surface-dark);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        border: 1px solid transparent;
+        transition: border-color var(--transition-fast);
+        opacity: 0;
+        animation: dashboardFadeUp 0.5s forwards;
+    }
+    .metric-card-lg:hover,
+    .metric-card-lg:hover {
+        border-color: var(--color-border);
+    }
+    .metric-card-lg:nth-child(1),
+    .metric-card-lg:nth-child(1) { animation-delay: 0.05s; }
+    .metric-card-lg:nth-child(2),
+    .metric-card-lg:nth-child(2) { animation-delay: 0.12s; }
+    .metric-card-lg:nth-child(3),
+    .metric-card-lg:nth-child(3) { animation-delay: 0.19s; }
+    .metric-card-lg:nth-child(4),
+    .metric-card-lg:nth-child(4) { animation-delay: 0.26s; }
+
+    .metric-label-lg,
+    .metric-label-lg {
+        display: block;
+        color: var(--color-muted);
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 0.5rem;
+    }
+
+    .metric-card-lg h3,
+    .metric-card-lg h3 {
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .metric-card-lg small,
+    .metric-card-lg small {
+        color: var(--color-primary);
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    .metric-card-lg small.down,
+    .metric-card-lg small.down {
+        color: #991B1B;
+    }
+
+    .chart-grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-5);
+        margin-bottom: var(--space-6);
+    }
+
+    .chart-section {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-5);
+    }
+
+    .chart-section.full { grid-column: 1 / -1; }
+
+    .chart-section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: var(--space-4);
+    }
+
+    .chart-section-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-heading);
+    }
+
+    .chart-tag {
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 0.2rem 0.6rem;
+        border-radius: var(--radius-pill);
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .chart-canvas-wrap {
+        position: relative;
+        height: 280px;
+    }
+    .chart-canvas-wrap.tall { height: 320px; }
+
+    .table-section {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-5);
+        overflow: hidden;
+    }
+
+    .table-wrap { overflow-x: auto; }
+
+    .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.875rem;
+    }
+
+    .table-wrap thead th {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--color-muted);
+        padding: 0.75rem 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--color-border);
+    }
+
+    .table-wrap thead th.num { text-align: right; }
+
+    .table-wrap tbody td {
+        padding: 0.7rem 1rem;
+        border-bottom: 1px solid var(--color-border);
+        color: var(--color-heading);
+    }
+
+    .table-wrap tbody td.num {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        font-weight: 500;
+    }
+
+    .table-wrap tbody tr:last-child td { border-bottom: none; }
+    .table-wrap tbody tr:hover { background: var(--color-surface-dark); }
+
+    .dashboard-cta {
+        padding-block: var(--space-9);
+        background: var(--color-background);
+    }
+
+    .dashboard-cta-card {
+        background: var(--color-white);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        padding: var(--space-8);
+        text-align: center;
+        box-shadow: var(--shadow-md);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .dashboard-cta-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 4px;
+        background: var(--color-primary);
+    }
+
+    .dashboard-cta-card h2 {
+        margin-bottom: var(--space-4);
+    }
+
+    .dashboard-cta-card p {
+        max-width: 540px;
+        margin: 0 auto var(--space-5);
+        color: var(--color-muted);
+    }
+
+    .dashboard-cta-actions {
+        display: flex;
+        gap: var(--space-4);
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 960px) {
+        .metric-grid-4 { grid-template-columns: repeat(2, 1fr); }
+        .chart-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+        .dashboard-hero-content h1 { font-size: 2rem; }
+        .dashboard-body { padding: var(--space-4); }
+    }
+
+    @media (max-width: 520px) {
+        .metric-grid-4 { grid-template-columns: 1fr; }
+        .filter-bar { flex-direction: column; align-items: stretch; }
+        .filter-group { justify-content: space-between; }
+    }
+
+    @keyframes dashboardFadeUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .metric-card-lg,
+        .metric-card-lg { animation: none; opacity: 1; }
+    }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <main>
+<section class="dashboard-hero" id="dashboard">
+    <div class="container-wide">
+        <div class="dashboard-hero-content">
+            <span class="section-label">BUSINESS PERFORMANCE DASHBOARD</span>
+            <h1>Sales Analytics Dashboard</h1>
+            <p>
+                An interactive dashboard demonstrating real-time data visualization —
+                built with the same analytics capabilities TriSaar delivers to clients.
+            </p>
+            <div class="dashboard-hero-actions">
+                <a href="case-study.html?id=sara-0004" class="btn btn-secondary">Back to case study</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================= Dashboard ========================= -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-card-lg">
+
+        <div class="dashboard-header">
+            <div class="dashboard-controls">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <span class="dashboard-title">Business Performance Dashboard</span>
+        </div>
+
+        <div class="dashboard-body">
+
+            <!-- Filters -->
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="regionFilter">Region</label>
+                    <select id="regionFilter"><option value="">All</option></select>
+                </div>
+                <div class="filter-group">
+                    <label for="productFilter">Product</label>
+                    <select id="productFilter"><option value="">All</option></select>
+                </div>
+                <div class="filter-group">
+                    <label for="channelFilter">Channel</label>
+                    <select id="channelFilter"><option value="">All</option></select>
+                </div>
+                <button class="filter-reset" id="resetFilters">Reset</button>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="metric-grid-4" id="kpiGrid"></div>
+
+            <!-- Charts -->
+            <div class="chart-grid-2">
+                <div class="chart-section full">
+                    <div class="chart-section-header">
+                        <span class="chart-section-title">Revenue & Profit by Month</span>
+                        <span class="chart-tag">Line</span>
+                    </div>
+                    <div class="chart-canvas-wrap tall"><canvas id="trendChart"></canvas></div>
+                </div>
+                <div class="chart-section">
+                    <div class="chart-section-header">
+                        <span class="chart-section-title">Revenue by Region</span>
+                        <span class="chart-tag">Bar</span>
+                    </div>
+                    <div class="chart-canvas-wrap"><canvas id="regionChart"></canvas></div>
+                </div>
+                <div class="chart-section">
+                    <div class="chart-section-header">
+                        <span class="chart-section-title">Revenue by Product</span>
+                        <span class="chart-tag">Bar</span>
+                    </div>
+                    <div class="chart-canvas-wrap"><canvas id="productChart"></canvas></div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-section">
+                <div class="chart-section-header" style="margin-bottom: 1rem;">
+                    <span class="chart-section-title">Sales by Region × Product</span>
+                    <span class="chart-tag">Pivot</span>
+                </div>
+                <div class="table-wrap" id="tableWrap"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ========================= CTA ========================= -->
+<section class="dashboard-cta">
+    <div class="container">
+        <div class="dashboard-cta-card">
+            <span class="section-label">LET'S BUILD SOMETHING IMPACTFUL</span>
+            <h2>Want a dashboard like this for your business?</h2>
+            <p>
+                Whether you're looking to modernize reporting, streamline operations,
+                or implement AI-driven workflows, let's discuss how TriSaar Consulting can help.
+            </p>
+            <div class="dashboard-cta-actions">
+                <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+                <a href="case-study.html?id=sara-0004" class="btn btn-secondary">Back to case study</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <div id="consent-banner"></div>
+    <div id="footer"></div>
+
+    <script src="docs/assets/js/core.js"></script>
+    <script src="docs/assets/js/config.js"></script>
+    <script src="docs/assets/js/components.js"></script>
+    <script src="docs/assets/js/consent-storage.js"></script>
+    <script src="docs/assets/js/tracking-manager.js"></script>
+    <script src="docs/assets/js/analytics.js"></script>
+    <script src="docs/assets/js/clarity.js"></script>
+    <script src="docs/assets/js/consent.js"></script>
+    <script src="docs/assets/js/app.js"></script>
+
+<script>
+// ============================================================
+//  Static Data (embedded — no external file needed)
+// ============================================================
+const RAW_DATA = [
+    {Month:"Jan 2025",Region:"North",Product:"Laptop",Channel:"Online",UnitsSold:112,UnitPrice:65000,Revenue:7280000,Cost:5034000,Profit:2246000},
+    {Month:"Jan 2025",Region:"North",Product:"Laptop",Channel:"Retail",UnitsSold:24,UnitPrice:65000,Revenue:1560000,Cost:1053000,Profit:507000},
+    {Month:"Jan 2025",Region:"North",Product:"Laptop",Channel:"Partner",UnitsSold:198,UnitPrice:65000,Revenue:12870000,Cost:8968000,Profit:3902000},
+    {Month:"Jan 2025",Region:"North",Product:"Phone",Channel:"Online",UnitsSold:131,UnitPrice:32000,Revenue:4192000,Cost:2766000,Profit:1426000},
+    {Month:"Jan 2025",Region:"North",Product:"Phone",Channel:"Retail",UnitsSold:84,UnitPrice:32000,Revenue:2688000,Cost:1774000,Profit:914000},
+    {Month:"Jan 2025",Region:"North",Product:"Phone",Channel:"Partner",UnitsSold:126,UnitPrice:32000,Revenue:4032000,Cost:2661000,Profit:1371000},
+    {Month:"Jan 2025",Region:"North",Product:"Tablet",Channel:"Online",UnitsSold:161,UnitPrice:18000,Revenue:2898000,Cost:1859000,Profit:1039000},
+    {Month:"Jan 2025",Region:"North",Product:"Tablet",Channel:"Retail",UnitsSold:62,UnitPrice:18000,Revenue:1116000,Cost:737000,Profit:379000},
+    {Month:"Jan 2025",Region:"North",Product:"Tablet",Channel:"Partner",UnitsSold:167,UnitPrice:18000,Revenue:3006000,Cost:1984000,Profit:1022000},
+    {Month:"Jan 2025",Region:"North",Product:"Monitor",Channel:"Online",UnitsSold:197,UnitPrice:12000,Revenue:2364000,Cost:1540000,Profit:824000},
+    {Month:"Jan 2025",Region:"North",Product:"Monitor",Channel:"Retail",UnitsSold:44,UnitPrice:12000,Revenue:528000,Cost:335000,Profit:193000},
+    {Month:"Jan 2025",Region:"North",Product:"Monitor",Channel:"Partner",UnitsSold:168,UnitPrice:12000,Revenue:2016000,Cost:1330000,Profit:686000},
+    {Month:"Jan 2025",Region:"North",Product:"Headphones",Channel:"Online",UnitsSold:189,UnitPrice:3500,Revenue:661500,Cost:402000,Profit:259500},
+    {Month:"Jan 2025",Region:"North",Product:"Headphones",Channel:"Retail",UnitsSold:78,UnitPrice:3500,Revenue:273000,Cost:167000,Profit:106000},
+    {Month:"Jan 2025",Region:"North",Product:"Headphones",Channel:"Partner",UnitsSold:143,UnitPrice:3500,Revenue:500500,Cost:305000,Profit:195500},
+    {Month:"Jan 2025",Region:"North",Product:"Keyboard",Channel:"Online",UnitsSold:184,UnitPrice:1800,Revenue:331200,Cost:199000,Profit:132200},
+    {Month:"Jan 2025",Region:"North",Product:"Keyboard",Channel:"Retail",UnitsSold:97,UnitPrice:1800,Revenue:174600,Cost:107000,Profit:67600},
+    {Month:"Jan 2025",Region:"North",Product:"Keyboard",Channel:"Partner",UnitsSold:112,UnitPrice:1800,Revenue:201600,Cost:121000,Profit:80600},
+    {Month:"Jan 2025",Region:"South",Product:"Laptop",Channel:"Online",UnitsSold:145,UnitPrice:65000,Revenue:9425000,Cost:6520000,Profit:2905000},
+    {Month:"Jan 2025",Region:"South",Product:"Laptop",Channel:"Retail",UnitsSold:31,UnitPrice:65000,Revenue:2015000,Cost:1390000,Profit:625000},
+    {Month:"Jan 2025",Region:"South",Product:"Laptop",Channel:"Partner",UnitsSold:178,UnitPrice:65000,Revenue:11570000,Cost:8054000,Profit:3516000},
+    {Month:"Jan 2025",Region:"South",Product:"Phone",Channel:"Online",UnitsSold:167,UnitPrice:32000,Revenue:5344000,Cost:3527000,Profit:1817000},
+    {Month:"Jan 2025",Region:"South",Product:"Phone",Channel:"Retail",UnitsSold:55,UnitPrice:32000,Revenue:1760000,Cost:1162000,Profit:598000},
+    {Month:"Jan 2025",Region:"South",Product:"Phone",Channel:"Partner",UnitsSold:134,UnitPrice:32000,Revenue:4288000,Cost:2830000,Profit:1458000},
+    {Month:"Jan 2025",Region:"South",Product:"Tablet",Channel:"Online",UnitsSold:122,UnitPrice:18000,Revenue:2196000,Cost:1405000,Profit:791000},
+    {Month:"Jan 2025",Region:"South",Product:"Tablet",Channel:"Retail",UnitsSold:89,UnitPrice:18000,Revenue:1602000,Cost:1025000,Profit:577000},
+    {Month:"Jan 2025",Region:"South",Product:"Tablet",Channel:"Partner",UnitsSold:155,UnitPrice:18000,Revenue:2790000,Cost:1786000,Profit:1004000},
+    {Month:"Jan 2025",Region:"South",Product:"Monitor",Channel:"Online",UnitsSold:176,UnitPrice:12000,Revenue:2112000,Cost:1373000,Profit:739000},
+    {Month:"Jan 2025",Region:"South",Product:"Monitor",Channel:"Retail",UnitsSold:67,UnitPrice:12000,Revenue:804000,Cost:523000,Profit:281000},
+    {Month:"Jan 2025",Region:"South",Product:"Monitor",Channel:"Partner",UnitsSold:143,UnitPrice:12000,Revenue:1716000,Cost:1115000,Profit:601000},
+    {Month:"Jan 2025",Region:"South",Product:"Headphones",Channel:"Online",UnitsSold:156,UnitPrice:3500,Revenue:546000,Cost:332000,Profit:214000},
+    {Month:"Jan 2025",Region:"South",Product:"Headphones",Channel:"Retail",UnitsSold:91,UnitPrice:3500,Revenue:318500,Cost:194000,Profit:124500},
+    {Month:"Jan 2025",Region:"South",Product:"Headphones",Channel:"Partner",UnitsSold:178,UnitPrice:3500,Revenue:623000,Cost:379000,Profit:244000},
+    {Month:"Jan 2025",Region:"South",Product:"Keyboard",Channel:"Online",UnitsSold:134,UnitPrice:1800,Revenue:241200,Cost:145000,Profit:96200},
+    {Month:"Jan 2025",Region:"South",Product:"Keyboard",Channel:"Retail",UnitsSold:82,UnitPrice:1800,Revenue:147600,Cost:89000,Profit:58600},
+    {Month:"Jan 2025",Region:"South",Product:"Keyboard",Channel:"Partner",UnitsSold:109,UnitPrice:1800,Revenue:196200,Cost:118000,Profit:78200},
+    {Month:"Feb 2025",Region:"North",Product:"Laptop",Channel:"Online",UnitsSold:156,UnitPrice:65000,Revenue:10140000,Cost:7028000,Profit:3112000},
+    {Month:"Feb 2025",Region:"North",Product:"Laptop",Channel:"Retail",UnitsSold:42,UnitPrice:65000,Revenue:2730000,Cost:1842000,Profit:888000},
+    {Month:"Feb 2025",Region:"North",Product:"Laptop",Channel:"Partner",UnitsSold:187,UnitPrice:65000,Revenue:12155000,Cost:8468000,Profit:3687000},
+    {Month:"Feb 2025",Region:"North",Product:"Phone",Channel:"Online",UnitsSold:174,UnitPrice:32000,Revenue:5568000,Cost:3675000,Profit:1893000},
+    {Month:"Feb 2025",Region:"North",Product:"Phone",Channel:"Retail",UnitsSold:93,UnitPrice:32000,Revenue:2976000,Cost:1964000,Profit:1012000},
+    {Month:"Feb 2025",Region:"North",Product:"Phone",Channel:"Partner",UnitsSold:145,UnitPrice:32000,Revenue:4640000,Cost:3062000,Profit:1578000},
+    {Month:"Feb 2025",Region:"North",Product:"Tablet",Channel:"Online",UnitsSold:189,UnitPrice:18000,Revenue:3402000,Cost:2181000,Profit:1221000},
+    {Month:"Feb 2025",Region:"North",Product:"Tablet",Channel:"Retail",UnitsSold:71,UnitPrice:18000,Revenue:1278000,Cost:819000,Profit:459000},
+    {Month:"Feb 2025",Region:"North",Product:"Tablet",Channel:"Partner",UnitsSold:134,UnitPrice:18000,Revenue:2412000,Cost:1592000,Profit:820000},
+    {Month:"Feb 2025",Region:"North",Product:"Monitor",Channel:"Online",UnitsSold:165,UnitPrice:12000,Revenue:1980000,Cost:1287000,Profit:693000},
+    {Month:"Feb 2025",Region:"North",Product:"Monitor",Channel:"Retail",UnitsSold:58,UnitPrice:12000,Revenue:696000,Cost:452000,Profit:244000},
+    {Month:"Feb 2025",Region:"North",Product:"Monitor",Channel:"Partner",UnitsSold:191,UnitPrice:12000,Revenue:2292000,Cost:1490000,Profit:802000},
+    {Month:"Feb 2025",Region:"North",Product:"Headphones",Channel:"Online",UnitsSold:167,UnitPrice:3500,Revenue:584500,Cost:356000,Profit:228500},
+    {Month:"Feb 2025",Region:"North",Product:"Headphones",Channel:"Retail",UnitsSold:84,UnitPrice:3500,Revenue:294000,Cost:179000,Profit:115000},
+    {Month:"Feb 2025",Region:"North",Product:"Headphones",Channel:"Partner",UnitsSold:156,UnitPrice:3500,Revenue:546000,Cost:333000,Profit:213000},
+    {Month:"Feb 2025",Region:"North",Product:"Keyboard",Channel:"Online",UnitsSold:198,UnitPrice:1800,Revenue:356400,Cost:214000,Profit:142400},
+    {Month:"Feb 2025",Region:"North",Product:"Keyboard",Channel:"Retail",UnitsSold:76,UnitPrice:1800,Revenue:136800,Cost:82000,Profit:54800},
+    {Month:"Feb 2025",Region:"North",Product:"Keyboard",Channel:"Partner",UnitsSold:134,UnitPrice:1800,Revenue:241200,Cost:145000,Profit:96200},
+    {Month:"Feb 2025",Region:"South",Product:"Laptop",Channel:"Online",UnitsSold:178,UnitPrice:65000,Revenue:11570000,Cost:8035000,Profit:3535000},
+    {Month:"Feb 2025",Region:"South",Product:"Laptop",Channel:"Retail",UnitsSold:45,UnitPrice:65000,Revenue:2925000,Cost:2032000,Profit:893000},
+    {Month:"Feb 2025",Region:"South",Product:"Laptop",Channel:"Partner",UnitsSold:167,UnitPrice:65000,Revenue:10855000,Cost:7553000,Profit:3302000},
+    {Month:"Feb 2025",Region:"South",Product:"Phone",Channel:"Online",UnitsSold:189,UnitPrice:32000,Revenue:6048000,Cost:3992000,Profit:2056000},
+    {Month:"Feb 2025",Region:"South",Product:"Phone",Channel:"Retail",UnitsSold:67,UnitPrice:32000,Revenue:2144000,Cost:1415000,Profit:729000},
+    {Month:"Feb 2025",Region:"South",Product:"Phone",Channel:"Partner",UnitsSold:156,UnitPrice:32000,Revenue:4992000,Cost:3295000,Profit:1697000},
+    {Month:"Feb 2025",Region:"South",Product:"Tablet",Channel:"Online",UnitsSold:145,UnitPrice:18000,Revenue:2610000,Cost:1670000,Profit:940000},
+    {Month:"Feb 2025",Region:"South",Product:"Tablet",Channel:"Retail",UnitsSold:92,UnitPrice:18000,Revenue:1656000,Cost:1060000,Profit:596000},
+    {Month:"Feb 2025",Region:"South",Product:"Tablet",Channel:"Partner",UnitsSold:178,UnitPrice:18000,Revenue:3204000,Cost:2051000,Profit:1153000},
+    {Month:"Feb 2025",Region:"South",Product:"Monitor",Channel:"Online",UnitsSold:134,UnitPrice:12000,Revenue:1608000,Cost:1045000,Profit:563000},
+    {Month:"Feb 2025",Region:"South",Product:"Monitor",Channel:"Retail",UnitsSold:71,UnitPrice:12000,Revenue:852000,Cost:554000,Profit:298000},
+    {Month:"Feb 2025",Region:"South",Product:"Monitor",Channel:"Partner",UnitsSold:189,UnitPrice:12000,Revenue:2268000,Cost:1474000,Profit:794000},
+    {Month:"Feb 2025",Region:"South",Product:"Headphones",Channel:"Online",UnitsSold:145,UnitPrice:3500,Revenue:507500,Cost:309000,Profit:198500},
+    {Month:"Feb 2025",Region:"South",Product:"Headphones",Channel:"Retail",UnitsSold:87,UnitPrice:3500,Revenue:304500,Cost:185000,Profit:119500},
+    {Month:"Feb 2025",Region:"South",Product:"Headphones",Channel:"Partner",UnitsSold:167,UnitPrice:3500,Revenue:584500,Cost:356000,Profit:228500},
+    {Month:"Feb 2025",Region:"South",Product:"Keyboard",Channel:"Online",UnitsSold:156,UnitPrice:1800,Revenue:280800,Cost:168000,Profit:112800},
+    {Month:"Feb 2025",Region:"South",Product:"Keyboard",Channel:"Retail",UnitsSold:93,UnitPrice:1800,Revenue:167400,Cost:100000,Profit:67400},
+    {Month:"Feb 2025",Region:"South",Product:"Keyboard",Channel:"Partner",UnitsSold:128,UnitPrice:1800,Revenue:230400,Cost:138000,Profit:92400},
+    {Month:"Mar 2025",Region:"North",Product:"Laptop",Channel:"Online",UnitsSold:167,UnitPrice:65000,Revenue:10855000,Cost:7553000,Profit:3302000},
+    {Month:"Mar 2025",Region:"North",Product:"Laptop",Channel:"Retail",UnitsSold:38,UnitPrice:65000,Revenue:2470000,Cost:1679000,Profit:791000},
+    {Month:"Mar 2025",Region:"North",Product:"Laptop",Channel:"Partner",UnitsSold:201,UnitPrice:65000,Revenue:13065000,Cost:9097000,Profit:3968000},
+    {Month:"Mar 2025",Region:"North",Product:"Phone",Channel:"Online",UnitsSold:156,UnitPrice:32000,Revenue:4992000,Cost:3295000,Profit:1697000},
+    {Month:"Mar 2025",Region:"North",Product:"Phone",Channel:"Retail",UnitsSold:78,UnitPrice:32000,Revenue:2496000,Cost:1647000,Profit:849000},
+    {Month:"Mar 2025",Region:"North",Product:"Phone",Channel:"Partner",UnitsSold:189,UnitPrice:32000,Revenue:6048000,Cost:3992000,Profit:2056000},
+    {Month:"Mar 2025",Region:"North",Product:"Tablet",Channel:"Online",UnitsSold:178,UnitPrice:18000,Revenue:3204000,Cost:2051000,Profit:1153000},
+    {Month:"Mar 2025",Region:"North",Product:"Tablet",Channel:"Retail",UnitsSold:65,UnitPrice:18000,Revenue:1170000,Cost:749000,Profit:421000},
+    {Month:"Mar 2025",Region:"North",Product:"Tablet",Channel:"Partner",UnitsSold:156,UnitPrice:18000,Revenue:2808000,Cost:1797000,Profit:1011000},
+    {Month:"Mar 2025",Region:"North",Product:"Monitor",Channel:"Online",UnitsSold:189,UnitPrice:12000,Revenue:2268000,Cost:1474000,Profit:794000},
+    {Month:"Mar 2025",Region:"North",Product:"Monitor",Channel:"Retail",UnitsSold:52,UnitPrice:12000,Revenue:624000,Cost:406000,Profit:218000},
+    {Month:"Mar 2025",Region:"North",Product:"Monitor",Channel:"Partner",UnitsSold:176,UnitPrice:12000,Revenue:2112000,Cost:1373000,Profit:739000},
+    {Month:"Mar 2025",Region:"North",Product:"Headphones",Channel:"Online",UnitsSold:178,UnitPrice:3500,Revenue:623000,Cost:379000,Profit:244000},
+    {Month:"Mar 2025",Region:"North",Product:"Headphones",Channel:"Retail",UnitsSold:91,UnitPrice:3500,Revenue:318500,Cost:194000,Profit:124500},
+    {Month:"Mar 2025",Region:"North",Product:"Headphones",Channel:"Partner",UnitsSold:165,UnitPrice:3500,Revenue:577500,Cost:352000,Profit:225500},
+    {Month:"Mar 2025",Region:"North",Product:"Keyboard",Channel:"Online",UnitsSold:187,UnitPrice:1800,Revenue:336600,Cost:202000,Profit:134600},
+    {Month:"Mar 2025",Region:"North",Product:"Keyboard",Channel:"Retail",UnitsSold:89,UnitPrice:1800,Revenue:160200,Cost:96000,Profit:64200},
+    {Month:"Mar 2025",Region:"North",Product:"Keyboard",Channel:"Partner",UnitsSold:145,UnitPrice:1800,Revenue:261000,Cost:157000,Profit:104000},
+    {Month:"Mar 2025",Region:"South",Product:"Laptop",Channel:"Online",UnitsSold:189,UnitPrice:65000,Revenue:12285000,Cost:8543000,Profit:3742000},
+    {Month:"Mar 2025",Region:"South",Product:"Laptop",Channel:"Retail",UnitsSold:52,UnitPrice:65000,Revenue:3380000,Cost:2349000,Profit:1031000},
+    {Month:"Mar 2025",Region:"South",Product:"Laptop",Channel:"Partner",UnitsSold:178,UnitPrice:65000,Revenue:11570000,Cost:8045000,Profit:3525000},
+    {Month:"Mar 2025",Region:"South",Product:"Phone",Channel:"Online",UnitsSold:198,UnitPrice:32000,Revenue:6336000,Cost:4182000,Profit:2154000},
+    {Month:"Mar 2025",Region:"South",Product:"Phone",Channel:"Retail",UnitsSold:71,UnitPrice:32000,Revenue:2272000,Cost:1500000,Profit:772000},
+    {Month:"Mar 2025",Region:"South",Product:"Phone",Channel:"Partner",UnitsSold:167,UnitPrice:32000,Revenue:5344000,Cost:3527000,Profit:1817000},
+    {Month:"Mar 2025",Region:"South",Product:"Tablet",Channel:"Online",UnitsSold:156,UnitPrice:18000,Revenue:2808000,Cost:1797000,Profit:1011000},
+    {Month:"Mar 2025",Region:"South",Product:"Tablet",Channel:"Retail",UnitsSold:98,UnitPrice:18000,Revenue:1764000,Cost:1129000,Profit:635000},
+    {Month:"Mar 2025",Region:"South",Product:"Tablet",Channel:"Partner",UnitsSold:189,UnitPrice:18000,Revenue:3402000,Cost:2181000,Profit:1221000},
+    {Month:"Mar 2025",Region:"South",Product:"Monitor",Channel:"Online",UnitsSold:145,UnitPrice:12000,Revenue:1740000,Cost:1131000,Profit:609000},
+    {Month:"Mar 2025",Region:"South",Product:"Monitor",Channel:"Retail",UnitsSold:63,UnitPrice:12000,Revenue:756000,Cost:491000,Profit:265000},
+    {Month:"Mar 2025",Region:"South",Product:"Monitor",Channel:"Partner",UnitsSold:178,UnitPrice:12000,Revenue:2136000,Cost:1388000,Profit:748000},
+    {Month:"Mar 2025",Region:"South",Product:"Headphones",Channel:"Online",UnitsSold:167,UnitPrice:3500,Revenue:584500,Cost:356000,Profit:228500},
+    {Month:"Mar 2025",Region:"South",Product:"Headphones",Channel:"Retail",UnitsSold:94,UnitPrice:3500,Revenue:329000,Cost:200000,Profit:129000},
+    {Month:"Mar 2025",Region:"South",Product:"Headphones",Channel:"Partner",UnitsSold:189,UnitPrice:3500,Revenue:661500,Cost:402000,Profit:259500},
+    {Month:"Mar 2025",Region:"South",Product:"Keyboard",Channel:"Online",UnitsSold:178,UnitPrice:1800,Revenue:320400,Cost:192000,Profit:128400},
+    {Month:"Mar 2025",Region:"South",Product:"Keyboard",Channel:"Retail",UnitsSold:87,UnitPrice:1800,Revenue:156600,Cost:94000,Profit:62600},
+    {Month:"Mar 2025",Region:"South",Product:"Keyboard",Channel:"Partner",UnitsSold:134,UnitPrice:1800,Revenue:241200,Cost:145000,Profit:96200},
+    {Month:"Apr 2025",Region:"North",Product:"Laptop",Channel:"Online",UnitsSold:178,UnitPrice:65000,Revenue:11570000,Cost:8045000,Profit:3525000},
+    {Month:"Apr 2025",Region:"North",Product:"Laptop",Channel:"Retail",UnitsSold:48,UnitPrice:65000,Revenue:3120000,Cost:2169000,Profit:951000},
+    {Month:"Apr 2025",Region:"North",Product:"Laptop",Channel:"Partner",UnitsSold:189,UnitPrice:65000,Revenue:12285000,Cost:8543000,Profit:3742000},
+    {Month:"Apr 2025",Region:"North",Product:"Phone",Channel:"Online",UnitsSold:167,UnitPrice:32000,Revenue:5344000,Cost:3527000,Profit:1817000},
+    {Month:"Apr 2025",Region:"North",Product:"Phone",Channel:"Retail",UnitsSold:85,UnitPrice:32000,Revenue:2720000,Cost:1795000,Profit:925000},
+    {Month:"Apr 2025",Region:"North",Product:"Phone",Channel:"Partner",UnitsSold:198,UnitPrice:32000,Revenue:6336000,Cost:4182000,Profit:2154000},
+    {Month:"Apr 2025",Region:"North",Product:"Tablet",Channel:"Online",UnitsSold:167,UnitPrice:18000,Revenue:3006000,Cost:1984000,Profit:1022000},
+    {Month:"Apr 2025",Region:"North",Product:"Tablet",Channel:"Retail",UnitsSold:73,UnitPrice:18000,Revenue:1314000,Cost:841000,Profit:473000},
+    {Month:"Apr 2025",Region:"North",Product:"Tablet",Channel:"Partner",UnitsSold:189,UnitPrice:18000,Revenue:3402000,Cost:2181000,Profit:1221000},
+    {Month:"Apr 2025",Region:"North",Product:"Monitor",Channel:"Online",UnitsSold:176,UnitPrice:12000,Revenue:2112000,Cost:1373000,Profit:739000},
+    {Month:"Apr 2025",Region:"North",Product:"Monitor",Channel:"Retail",UnitsSold:61,UnitPrice:12000,Revenue:732000,Cost:476000,Profit:256000},
+    {Month:"Apr 2025",Region:"North",Product:"Monitor",Channel:"Partner",UnitsSold:167,UnitPrice:12000,Revenue:2004000,Cost:1303000,Profit:701000},
+    {Month:"Apr 2025",Region:"North",Product:"Headphones",Channel:"Online",UnitsSold:189,UnitPrice:3500,Revenue:661500,Cost:402000,Profit:259500},
+    {Month:"Apr 2025",Region:"North",Product:"Headphones",Channel:"Retail",UnitsSold:87,UnitPrice:3500,Revenue:304500,Cost:185000,Profit:119500},
+    {Month:"Apr 2025",Region:"North",Product:"Headphones",Channel:"Partner",UnitsSold:178,UnitPrice:3500,Revenue:623000,Cost:379000,Profit:244000},
+    {Month:"Apr 2025",Region:"North",Product:"Keyboard",Channel:"Online",UnitsSold:197,UnitPrice:1800,Revenue:354600,Cost:213000,Profit:141600},
+    {Month:"Apr 2025",Region:"North",Product:"Keyboard",Channel:"Retail",UnitsSold:92,UnitPrice:1800,Revenue:165600,Cost:99000,Profit:66600},
+    {Month:"Apr 2025",Region:"North",Product:"Keyboard",Channel:"Partner",UnitsSold:156,UnitPrice:1800,Revenue:280800,Cost:168000,Profit:112800},
+    {Month:"Apr 2025",Region:"South",Product:"Laptop",Channel:"Online",UnitsSold:198,UnitPrice:65000,Revenue:12870000,Cost:8968000,Profit:3902000},
+    {Month:"Apr 2025",Region:"South",Product:"Laptop",Channel:"Retail",UnitsSold:56,UnitPrice:65000,Revenue:3640000,Cost:2531000,Profit:1109000},
+    {Month:"Apr 2025",Region:"South",Product:"Laptop",Channel:"Partner",UnitsSold:189,UnitPrice:65000,Revenue:12285000,Cost:8543000,Profit:3742000},
+    {Month:"Apr 2025",Region:"South",Product:"Phone",Channel:"Online",UnitsSold:178,UnitPrice:32000,Revenue:5696000,Cost:3759000,Profit:1937000},
+    {Month:"Apr 2025",Region:"South",Product:"Phone",Channel:"Retail",UnitsSold:78,UnitPrice:32000,Revenue:2496000,Cost:1647000,Profit:849000},
+    {Month:"Apr 2025",Region:"South",Product:"Phone",Channel:"Partner",UnitsSold:167,UnitPrice:32000,Revenue:5344000,Cost:3527000,Profit:1817000},
+    {Month:"Apr 2025",Region:"South",Product:"Tablet",Channel:"Online",UnitsSold:189,UnitPrice:18000,Revenue:3402000,Cost:2181000,Profit:1221000},
+    {Month:"Apr 2025",Region:"South",Product:"Tablet",Channel:"Retail",UnitsSold:89,UnitPrice:18000,Revenue:1602000,Cost:1025000,Profit:577000},
+    {Month:"Apr 2025",Region:"South",Product:"Tablet",Channel:"Partner",UnitsSold:167,UnitPrice:18000,Revenue:3006000,Cost:1984000,Profit:1022000},
+    {Month:"Apr 2025",Region:"South",Product:"Monitor",Channel:"Online",UnitsSold:167,UnitPrice:12000,Revenue:2004000,Cost:1303000,Profit:701000},
+    {Month:"Apr 2025",Region:"South",Product:"Monitor",Channel:"Retail",UnitsSold:71,UnitPrice:12000,Revenue:852000,Cost:554000,Profit:298000},
+    {Month:"Apr 2025",Region:"South",Product:"Monitor",Channel:"Partner",UnitsSold:189,UnitPrice:12000,Revenue:2268000,Cost:1474000,Profit:794000},
+    {Month:"Apr 2025",Region:"South",Product:"Headphones",Channel:"Online",UnitsSold:178,UnitPrice:3500,Revenue:623000,Cost:379000,Profit:244000},
+    {Month:"Apr 2025",Region:"South",Product:"Headphones",Channel:"Retail",UnitsSold:92,UnitPrice:3500,Revenue:322000,Cost:196000,Profit:126000},
+    {Month:"Apr 2025",Region:"South",Product:"Headphones",Channel:"Partner",UnitsSold:156,UnitPrice:3500,Revenue:546000,Cost:332000,Profit:214000},
+    {Month:"Apr 2025",Region:"South",Product:"Keyboard",Channel:"Online",UnitsSold:189,UnitPrice:1800,Revenue:340200,Cost:204000,Profit:136200},
+    {Month:"Apr 2025",Region:"South",Product:"Keyboard",Channel:"Retail",UnitsSold:78,UnitPrice:1800,Revenue:140400,Cost:84000,Profit:56400},
+    {Month:"Apr 2025",Region:"South",Product:"Keyboard",Channel:"Partner",UnitsSold:145,UnitPrice:1800,Revenue:261000,Cost:157000,Profit:104000},
+    {Month:"May 2025",Region:"North",Product:"Laptop",Channel:"Online",UnitsSold:189,UnitPrice:65000,Revenue:12285000,Cost:8543000,Profit:3742000},
+    {Month:"May 2025",Region:"North",Product:"Laptop",Channel:"Retail",UnitsSold:52,UnitPrice:65000,Revenue:3380000,Cost:2349000,Profit:1031000},
+    {Month:"May 2025",Region:"North",Product:"Laptop",Channel:"Partner",UnitsSold:167,UnitPrice:65000,Revenue:10855000,Cost:7553000,Profit:3302000},
+    {Month:"May 2025",Region:"North",Product:"Phone",Channel:"Online",UnitsSold:189,UnitPrice:32000,Revenue:6048000,Cost:3992000,Profit:2056000},
+    {Month:"May 2025",Region:"North",Product:"Phone",Channel:"Retail",UnitsSold:78,UnitPrice:32000,Revenue:2496000,Cost:1647000,Profit:849000},
+    {Month:"May 2025",Region:"North",Product:"Phone",Channel:"Partner",UnitsSold:176,UnitPrice:32000,Revenue:5632000,Cost:3717000,Profit:1915000},
+    {Month:"May 2025",Region:"North",Product:"Tablet",Channel:"Online",UnitsSold:178,UnitPrice:18000,Revenue:3204000,Cost:2051000,Profit:1153000},
+    {Month:"May 2025",Region:"North",Product:"Tablet",Channel:"Retail",UnitsSold:67,UnitPrice:18000,Revenue:1206000,Cost:772000,Profit:434000},
+    {Month:"May 2025",Region:"North",Product:"Tablet",Channel:"Partner",UnitsSold:198,UnitPrice:18000,Revenue:3564000,Cost:2283000,Profit:1281000},
+    {Month:"May 2025",Region:"North",Product:"Monitor",Channel:"Online",UnitsSold:189,UnitPrice:12000,Revenue:2268000,Cost:1474000,Profit:794000},
+    {Month:"May 2025",Region:"North",Product:"Monitor",Channel:"Retail",UnitsSold:58,UnitPrice:12000,Revenue:696000,Cost:452000,Profit:244000},
+    {Month:"May 2025",Region:"North",Product:"Monitor",Channel:"Partner",UnitsSold:178,UnitPrice:12000,Revenue:2136000,Cost:1388000,Profit:748000},
+    {Month:"May 2025",Region:"North",Product:"Headphones",Channel:"Online",UnitsSold:198,UnitPrice:3500,Revenue:693000,Cost:422000,Profit:271000},
+    {Month:"May 2025",Region:"North",Product:"Headphones",Channel:"Retail",UnitsSold:89,UnitPrice:3500,Revenue:311500,Cost:190000,Profit:121500},
+    {Month:"May 2025",Region:"North",Product:"Headphones",Channel:"Partner",UnitsSold:187,UnitPrice:3500,Revenue:654500,Cost:399000,Profit:255500},
+    {Month:"May 2025",Region:"North",Product:"Keyboard",Channel:"Online",UnitsSold:178,UnitPrice:1800,Revenue:320400,Cost:192000,Profit:128400},
+    {Month:"May 2025",Region:"North",Product:"Keyboard",Channel:"Retail",UnitsSold:91,UnitPrice:1800,Revenue:163800,Cost:98000,Profit:65800},
+    {Month:"May 2025",Region:"North",Product:"Keyboard",Channel:"Partner",UnitsSold:167,UnitPrice:1800,Revenue:300600,Cost:180000,Profit:120600},
+    {Month:"May 2025",Region:"South",Product:"Laptop",Channel:"Online",UnitsSold:167,UnitPrice:65000,Revenue:10855000,Cost:7553000,Profit:3302000},
+    {Month:"May 2025",Region:"South",Product:"Laptop",Channel:"Retail",UnitsSold:61,UnitPrice:65000,Revenue:3965000,Cost:2756000,Profit:1209000},
+    {Month:"May 2025",Region:"South",Product:"Laptop",Channel:"Partner",UnitsSold:198,UnitPrice:65000,Revenue:12870000,Cost:8968000,Profit:3902000},
+    {Month:"May 2025",Region:"South",Product:"Phone",Channel:"Online",UnitsSold:189,UnitPrice:32000,Revenue:6048000,Cost:3992000,Profit:2056000},
+    {Month:"May 2025",Region:"South",Product:"Phone",Channel:"Retail",UnitsSold:84,UnitPrice:32000,Revenue:2688000,Cost:1774000,Profit:914000},
+    {Month:"May 2025",Region:"South",Product:"Phone",Channel:"Partner",UnitsSold:178,UnitPrice:32000,Revenue:5696000,Cost:3759000,Profit:1937000},
+    {Month:"May 2025",Region:"South",Product:"Tablet",Channel:"Online",UnitsSold:167,UnitPrice:18000,Revenue:3006000,Cost:1984000,Profit:1022000},
+    {Month:"May 2025",Region:"South",Product:"Tablet",Channel:"Retail",UnitsSold:93,UnitPrice:18000,Revenue:1674000,Cost:1071000,Profit:603000},
+    {Month:"May 2025",Region:"South",Product:"Tablet",Channel:"Partner",UnitsSold:178,UnitPrice:18000,Revenue:3204000,Cost:2051000,Profit:1153000},
+    {Month:"May 2025",Region:"South",Product:"Monitor",Channel:"Online",UnitsSold:156,UnitPrice:12000,Revenue:1872000,Cost:1217000,Profit:655000},
+    {Month:"May 2025",Region:"South",Product:"Monitor",Channel:"Retail",UnitsSold:67,UnitPrice:12000,Revenue:804000,Cost:523000,Profit:281000},
+    {Month:"May 2025",Region:"South",Product:"Monitor",Channel:"Partner",UnitsSold:189,UnitPrice:12000,Revenue:2268000,Cost:1474000,Profit:794000},
+    {Month:"May 2025",Region:"South",Product:"Headphones",Channel:"Online",UnitsSold:189,UnitPrice:3500,Revenue:661500,Cost:402000,Profit:259500},
+    {Month:"May 2025",Region:"South",Product:"Headphones",Channel:"Retail",UnitsSold:87,UnitPrice:3500,Revenue:304500,Cost:185000,Profit:119500},
+    {Month:"May 2025",Region:"South",Product:"Headphones",Channel:"Partner",UnitsSold:167,UnitPrice:3500,Revenue:584500,Cost:356000,Profit:228500},
+    {Month:"May 2025",Region:"South",Product:"Keyboard",Channel:"Online",UnitsSold:198,UnitPrice:1800,Revenue:356400,Cost:214000,Profit:142400},
+    {Month:"May 2025",Region:"South",Product:"Keyboard",Channel:"Retail",UnitsSold:82,UnitPrice:1800,Revenue:147600,Cost:89000,Profit:58600},
+    {Month:"May 2025",Region:"South",Product:"Keyboard",Channel:"Partner",UnitsSold:156,UnitPrice:1800,Revenue:280800,Cost:168000,Profit:112800},
+    {Month:"Jun 2025",Region:"North",Product:"Laptop",Channel:"Online",UnitsSold:198,UnitPrice:65000,Revenue:12870000,Cost:8968000,Profit:3902000},
+    {Month:"Jun 2025",Region:"North",Product:"Laptop",Channel:"Retail",UnitsSold:55,UnitPrice:65000,Revenue:3575000,Cost:2486000,Profit:1089000},
+    {Month:"Jun 2025",Region:"North",Product:"Laptop",Channel:"Partner",UnitsSold:189,UnitPrice:65000,Revenue:12285000,Cost:8543000,Profit:3742000},
+    {Month:"Jun 2025",Region:"North",Product:"Phone",Channel:"Online",UnitsSold:178,UnitPrice:32000,Revenue:5696000,Cost:3759000,Profit:1937000},
+    {Month:"Jun 2025",Region:"North",Product:"Phone",Channel:"Retail",UnitsSold:89,UnitPrice:32000,Revenue:2848000,Cost:1879000,Profit:969000},
+    {Month:"Jun 2025",Region:"North",Product:"Phone",Channel:"Partner",UnitsSold:189,UnitPrice:32000,Revenue:6048000,Cost:3992000,Profit:2056000},
+    {Month:"Jun 2025",Region:"North",Product:"Tablet",Channel:"Online",UnitsSold:189,UnitPrice:18000,Revenue:3402000,Cost:2181000,Profit:1221000},
+    {Month:"Jun 2025",Region:"North",Product:"Tablet",Channel:"Retail",UnitsSold:71,UnitPrice:18000,Revenue:1278000,Cost:819000,Profit:459000},
+    {Month:"Jun 2025",Region:"North",Product:"Tablet",Channel:"Partner",UnitsSold:167,UnitPrice:18000,Revenue:3006000,Cost:1984000,Profit:1022000},
+    {Month:"Jun 2025",Region:"North",Product:"Monitor",Channel:"Online",UnitsSold:198,UnitPrice:12000,Revenue:2376000,Cost:1545000,Profit:831000},
+    {Month:"Jun 2025",Region:"North",Product:"Monitor",Channel:"Retail",UnitsSold:62,UnitPrice:12000,Revenue:744000,Cost:484000,Profit:260000},
+    {Month:"Jun 2025",Region:"North",Product:"Monitor",Channel:"Partner",UnitsSold:189,UnitPrice:12000,Revenue:2268000,Cost:1474000,Profit:794000},
+    {Month:"Jun 2025",Region:"North",Product:"Headphones",Channel:"Online",UnitsSold:189,UnitPrice:3500,Revenue:661500,Cost:402000,Profit:259500},
+    {Month:"Jun 2025",Region:"North",Product:"Headphones",Channel:"Retail",UnitsSold:92,UnitPrice:3500,Revenue:322000,Cost:196000,Profit:126000},
+    {Month:"Jun 2025",Region:"North",Product:"Headphones",Channel:"Partner",UnitsSold:178,UnitPrice:3500,Revenue:623000,Cost:379000,Profit:244000},
+    {Month:"Jun 2025",Region:"North",Product:"Keyboard",Channel:"Online",UnitsSold:189,UnitPrice:1800,Revenue:340200,Cost:204000,Profit:136200},
+    {Month:"Jun 2025",Region:"North",Product:"Keyboard",Channel:"Retail",UnitsSold:87,UnitPrice:1800,Revenue:156600,Cost:94000,Profit:62600},
+    {Month:"Jun 2025",Region:"North",Product:"Keyboard",Channel:"Partner",UnitsSold:178,UnitPrice:1800,Revenue:320400,Cost:192000,Profit:128400},
+    {Month:"Jun 2025",Region:"South",Product:"Laptop",Channel:"Online",UnitsSold:189,UnitPrice:65000,Revenue:12285000,Cost:8543000,Profit:3742000},
+    {Month:"Jun 2025",Region:"South",Product:"Laptop",Channel:"Retail",UnitsSold:63,UnitPrice:65000,Revenue:4095000,Cost:2846000,Profit:1249000},
+    {Month:"Jun 2025",Region:"South",Product:"Laptop",Channel:"Partner",UnitsSold:178,UnitPrice:65000,Revenue:11570000,Cost:8045000,Profit:3525000},
+    {Month:"Jun 2025",Region:"South",Product:"Phone",Channel:"Online",UnitsSold:198,UnitPrice:32000,Revenue:6336000,Cost:4182000,Profit:2154000},
+    {Month:"Jun 2025",Region:"South",Product:"Phone",Channel:"Retail",UnitsSold:85,UnitPrice:32000,Revenue:2720000,Cost:1795000,Profit:925000},
+    {Month:"Jun 2025",Region:"South",Product:"Phone",Channel:"Partner",UnitsSold:189,UnitPrice:32000,Revenue:6048000,Cost:3992000,Profit:2056000},
+    {Month:"Jun 2025",Region:"South",Product:"Tablet",Channel:"Online",UnitsSold:178,UnitPrice:18000,Revenue:3204000,Cost:2051000,Profit:1153000},
+    {Month:"Jun 2025",Region:"South",Product:"Tablet",Channel:"Retail",UnitsSold:89,UnitPrice:18000,Revenue:1602000,Cost:1025000,Profit:577000},
+    {Month:"Jun 2025",Region:"South",Product:"Tablet",Channel:"Partner",UnitsSold:198,UnitPrice:18000,Revenue:3564000,Cost:2283000,Profit:1281000},
+    {Month:"Jun 2025",Region:"South",Product:"Monitor",Channel:"Online",UnitsSold:167,UnitPrice:12000,Revenue:2004000,Cost:1303000,Profit:701000},
+    {Month:"Jun 2025",Region:"South",Product:"Monitor",Channel:"Retail",UnitsSold:71,UnitPrice:12000,Revenue:852000,Cost:554000,Profit:298000},
+    {Month:"Jun 2025",Region:"South",Product:"Monitor",Channel:"Partner",UnitsSold:198,UnitPrice:12000,Revenue:2376000,Cost:1545000,Profit:831000},
+    {Month:"Jun 2025",Region:"South",Product:"Headphones",Channel:"Online",UnitsSold:178,UnitPrice:3500,Revenue:623000,Cost:379000,Profit:244000},
+    {Month:"Jun 2025",Region:"South",Product:"Headphones",Channel:"Retail",UnitsSold:94,UnitPrice:3500,Revenue:329000,Cost:200000,Profit:129000},
+    {Month:"Jun 2025",Region:"South",Product:"Headphones",Channel:"Partner",UnitsSold:189,UnitPrice:3500,Revenue:661500,Cost:402000,Profit:259500},
+    {Month:"Jun 2025",Region:"South",Product:"Keyboard",Channel:"Online",UnitsSold:189,UnitPrice:1800,Revenue:340200,Cost:204000,Profit:136200},
+    {Month:"Jun 2025",Region:"South",Product:"Keyboard",Channel:"Retail",UnitsSold:89,UnitPrice:1800,Revenue:160200,Cost:96000,Profit:64200},
+    {Month:"Jun 2025",Region:"South",Product:"Keyboard",Channel:"Partner",UnitsSold:167,UnitPrice:1800,Revenue:300600,Cost:180000,Profit:120600},
+];
+
+const monthOrder = ["Jan 2025","Feb 2025","Mar 2025","Apr 2025","May 2025","Jun 2025"];
+let charts = {};
+
+// ============================================================
+//  Helpers
+// ============================================================
+const fmtINR = (n) => {
+    const abs = Math.abs(n);
+    if (abs >= 10000000) return '\u20B9' + (n / 10000000).toFixed(2) + ' Cr';
+    if (abs >= 100000)   return '\u20B9' + (n / 100000).toFixed(2)   + ' L';
+    if (abs >= 1000)     return '\u20B9' + (n / 1000).toFixed(2)     + ' K';
+    return '\u20B9' + n.toFixed(2);
+};
+const fmtNum = (n) => n.toLocaleString('en-IN');
+const fmtPct = (n) => (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
+
+// ============================================================
+//  Filters
+// ============================================================
+const uniqueValues = (key) => [...new Set(RAW_DATA.map(r => r[key]))].sort();
+
+function initFilters() {
+    [['regionFilter','Region'],['productFilter','Product'],['channelFilter','Channel']].forEach(([id, key]) => {
+        const sel = document.getElementById(id);
+        sel.innerHTML = '<option value="">All</option>' +
+            uniqueValues(key).map(v => '<option value="' + v + '">' + v + '</option>').join('');
+        sel.addEventListener('change', renderAll);
+    });
+    document.getElementById('resetFilters').addEventListener('click', () => {
+        ['regionFilter','productFilter','channelFilter'].forEach(id => {
+            document.getElementById(id).value = '';
+        });
+        renderAll();
+    });
+}
+
+function getFilteredData() {
+    const region = document.getElementById('regionFilter').value;
+    const product = document.getElementById('productFilter').value;
+    const channel = document.getElementById('channelFilter').value;
+    return RAW_DATA.filter(r =>
+        (!region || r.Region === region) &&
+        (!product || r.Product === product) &&
+        (!channel || r.Channel === channel)
+    );
+}
+
+// ============================================================
+//  KPIs
+// ============================================================
+function renderKPIs(data) {
+    const totalRevenue = data.reduce((s,r) => s + r.Revenue, 0);
+    const totalProfit = data.reduce((s,r) => s + r.Profit, 0);
+    const totalUnits = data.reduce((s,r) => s + r.UnitsSold, 0);
+    const margin = totalRevenue > 0 ? (totalProfit / totalRevenue * 100) : 0;
+
+    const monthMap = {};
+    data.forEach(r => { monthMap[r.Month] = (monthMap[r.Month] || 0) + r.Revenue; });
+    const months = monthOrder.filter(m => monthMap[m] !== undefined);
+    let momChange = 0;
+    if (months.length >= 2) {
+        const last = monthMap[months[months.length - 1]];
+        const prev = monthMap[months[months.length - 2]];
+        momChange = prev > 0 ? ((last - prev) / prev * 100) : 0;
+    }
+
+    const numProducts = [...new Set(data.map(r => r.Product))].length;
+    const numRegions = [...new Set(data.map(r => r.Region))].length;
+
+    const cards = [
+        { label:'Total Revenue', value: fmtINR(totalRevenue), sub: fmtPct(momChange) + ' MoM', isDown: momChange < 0 },
+        { label:'Total Profit', value: fmtINR(totalProfit), sub: margin.toFixed(1) + '% margin', isDown: false },
+        { label:'Units Sold', value: fmtNum(totalUnits), sub: 'across ' + numProducts + ' products', isDown: false },
+        { label:'Profit Margin', value: margin.toFixed(1) + '%', sub: numRegions + ' regions', isDown: false },
+    ];
+
+    document.getElementById('kpiGrid').innerHTML = cards.map(c => `
+        <div class="metric-card-lg">
+            <span class="metric-label-lg">${c.label}</span>
+            <h3>${c.value}</h3>
+            <small class="${c.isDown ? 'down' : ''}">${c.sub}</small>
+        </div>
+    `).join('');
+}
+
+// ============================================================
+//  Charts
+// ============================================================
+const chartColors = {
+    primary: '#EF4444',
+    primaryHover: '#DC2626',
+    primaryBg: 'rgba(239,68,68,0.12)',
+    heading: '#111827',
+    body: '#4B5563',
+    muted: '#6B7280',
+    border: '#E5E7EB',
+    grid: 'rgba(0,0,0,0.05)',
+    palette: ['#EF4444','#F59E0B','#22C55E','#3B82F6','#8B5CF6','#EC4899','#14B8A6','#F97316']
+};
+
+const baseChartOpts = () => ({
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+        legend: { display: false },
+        tooltip: {
+            backgroundColor: '#111827',
+            titleColor: '#fff',
+            bodyColor: '#fff',
+            borderColor: 'rgba(255,255,255,0.1)',
+            borderWidth: 1,
+            padding: 12,
+            cornerRadius: 8,
+            displayColors: true,
+            callbacks: {
+                label: (ctx) => ' ' + ctx.dataset.label + ': ' + fmtINR(ctx.parsed.y)
+            }
+        }
+    },
+    scales: {
+        x: { ticks: { color: chartColors.muted, font: { size: 11, family: 'Inter' } }, grid: { display: false } },
+        y: { ticks: { color: chartColors.muted, font: { size: 11, family: 'Inter' }, callback: (v) => fmtINR(v) }, grid: { color: chartColors.grid } }
+    }
+});
+
+function renderTrendChart(data) {
+    const monthMap = {}, profitMap = {};
+    monthOrder.forEach(m => { monthMap[m] = 0; profitMap[m] = 0; });
+    data.forEach(r => {
+        monthMap[r.Month] += r.Revenue;
+        profitMap[r.Month] += r.Profit;
+    });
+    const labels = monthOrder;
+    const revData = labels.map(m => monthMap[m]);
+    const profData = labels.map(m => profitMap[m]);
+
+    if (charts.trend) charts.trend.destroy();
+    charts.trend = new Chart(document.getElementById('trendChart'), {
+        type: 'line',
+        data: {
+            labels,
+            datasets: [
+                { label: 'Revenue', data: revData, borderColor: chartColors.primary, backgroundColor: chartColors.primaryBg, fill: true, tension: 0.35, borderWidth: 2.5, pointRadius: 4, pointBackgroundColor: chartColors.primary },
+                { label: 'Profit', data: profData, borderColor: '#22C55E', backgroundColor: 'rgba(34,197,94,0.10)', fill: true, tension: 0.35, borderWidth: 2.5, pointRadius: 4, pointBackgroundColor: '#22C55E' }
+            ]
+        },
+        options: {
+            ...baseChartOpts(),
+            plugins: {
+                ...baseChartOpts().plugins,
+                legend: { display: true, labels: { color: chartColors.muted, font: { size: 12, weight: '600', family: 'Inter' }, usePointStyle: true, pointStyle: 'circle', padding: 16 } }
+            }
+        }
+    });
+}
+
+function renderRegionChart(data) {
+    const map = {};
+    data.forEach(r => { map[r.Region] = (map[r.Region]||0) + r.Revenue; });
+    const labels = Object.keys(map).sort((a,b) => map[b] - map[a]);
+    const values = labels.map(k => map[k]);
+
+    if (charts.region) charts.region.destroy();
+    charts.region = new Chart(document.getElementById('regionChart'), {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'Revenue', data: values, backgroundColor: chartColors.palette, borderRadius: 6, maxBarThickness: 50 }] },
+        options: baseChartOpts()
+    });
+}
+
+function renderProductChart(data) {
+    const map = {};
+    data.forEach(r => { map[r.Product] = (map[r.Product]||0) + r.Revenue; });
+    const labels = Object.keys(map).sort((a,b) => map[b] - map[a]);
+    const values = labels.map(k => map[k]);
+
+    if (charts.product) charts.product.destroy();
+    charts.product = new Chart(document.getElementById('productChart'), {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'Revenue', data: values, backgroundColor: '#3B82F6', borderRadius: 6, maxBarThickness: 50 }] },
+        options: baseChartOpts()
+    });
+}
+
+// ============================================================
+//  Table
+// ============================================================
+function renderTable(data) {
+    const regions = [...new Set(data.map(r => r.Region))].sort();
+    const products = [...new Set(data.map(r => r.Product))].sort();
+
+    const matrix = {};
+    regions.forEach(reg => { matrix[reg] = {}; products.forEach(p => matrix[reg][p] = 0); });
+    data.forEach(r => { matrix[r.Region][r.Product] += r.Revenue; });
+
+    let html = '<table><thead><tr><th>Region</th>';
+    products.forEach(p => { html += '<th class="num">' + p + '</th>'; });
+    html += '<th class="num">Total</th></tr></thead><tbody>';
+
+    regions.forEach(reg => {
+        let rowTotal = 0;
+        html += '<tr><td>' + reg + '</td>';
+        products.forEach(p => {
+            const val = matrix[reg][p];
+            rowTotal += val;
+            html += '<td class="num">' + fmtINR(val) + '</td>';
+        });
+        html += '<td class="num" style="font-weight:700;color:#EF4444;">' + fmtINR(rowTotal) + '</td></tr>';
+    });
+
+    html += '<tr style="border-top:2px solid #E5E7EB;"><td style="font-weight:700;">Total</td>';
+    products.forEach(p => {
+        const colTotal = regions.reduce((s,reg) => s + matrix[reg][p], 0);
+        html += '<td class="num" style="font-weight:700;color:#22C55E;">' + fmtINR(colTotal) + '</td>';
+    });
+    const grand = data.reduce((s,r) => s + r.Revenue, 0);
+    html += '<td class="num" style="font-weight:800;color:#111827;">' + fmtINR(grand) + '</td></tr>';
+    html += '</tbody></table>';
+    document.getElementById('tableWrap').innerHTML = html;
+}
+
+// ============================================================
+//  Render All
+// ============================================================
+function renderAll() {
+    const data = getFilteredData();
+    if (data.length === 0) return;
+    renderKPIs(data);
+    renderTrendChart(data);
+    renderRegionChart(data);
+    renderProductChart(data);
+    renderTable(data);
+}
+
+// ============================================================
+//  Init
+// ============================================================
+initFilters();
+renderAll();
+</script>
+</body>
+</html>

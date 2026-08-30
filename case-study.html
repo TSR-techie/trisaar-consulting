@@ -6,7 +6,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TriSaar Case Study</title>
+    <title>Case Study | TriSaar Consulting</title>
+
+    <meta name="description"
+          content="TriSaar Consulting case studies covering business analytics, automation, and decision-support solutions.">
+
+    <meta name="keywords"
+          content="Case Study, Business Analytics, Automation, Consulting, Excel, Power BI, Python">
+
+    <meta name="author"
+          content="TriSaar Consulting">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <meta name="theme-color"
+          content="#B91C1C">
+
+    <link rel="canonical"
+          href="https://tsr-techie.github.io/trisaar-consulting/case-study.html">
+
+    <meta property="og:type" content="article">
+
+    <meta property="og:title"
+          content="Case Study | TriSaar Consulting">
+
+    <meta property="og:description"
+          content="TriSaar Consulting case studies covering business analytics, automation, and decision-support solutions.">
+
+    <meta property="og:url"
+          content="https://tsr-techie.github.io/trisaar-consulting/case-study.html">
+
+    <meta property="og:site_name"
+          content="TriSaar Consulting">
+
+    <meta property="og:locale"
+          content="en_US">
+
+    <meta property="og:image"
+          content="https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png">
+
+    <meta property="og:image:alt"
+          content="TriSaar Consulting">
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="Case Study | TriSaar Consulting">
+
+    <meta name="twitter:description"
+          content="TriSaar Consulting case studies covering business analytics, automation, and decision-support solutions.">
+
+    <meta name="twitter:image"
+          content="https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png">
+
+    <script type="application/ld+json" id="case-study-jsonld"></script>
 
     <!-- =========================
          Favicons
@@ -43,8 +98,8 @@
     <link rel="stylesheet" href="./docs/assets/modules/publication/publication.css">
     <link rel="stylesheet" href="./docs/assets/modules/executive-summary/executiveSummary.css">
     <link rel="stylesheet" href="./docs/assets/modules/challenge/challenge.css">
-    <link rel="stylesheet" href="./docs/assets/modules/approach/approach.css">
-    <link rel="stylesheet" href="./docs/assets/modules/outcomes/outcomes.css">
+    <link rel="stylesheet" href="./docs/assets/modules/solution/solution.css">
+    <link rel="stylesheet" href="./docs/assets/modules/impact/impact.css">
     <link rel="stylesheet" href="./docs/assets/modules/cta/cta.css">
 
 </head>
@@ -54,8 +109,24 @@
     <div id="navbar"></div>
 
     <main id="case-study-root">
-        <!-- Entire page rendered here -->
+        <h1 id="case-study-heading" class="cs-hero-title">Case Study</h1>
     </main>
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var id = params.get("id");
+            var titles = {
+                "sara-0001": "Infrastructure Network Feasibility Toolkit",
+                "sara-0002": "Workload Rebalancing Dashboard",
+                "sara-0003": "Least-cost Network & Logistics Optimization",
+                "sara-0004": "Interactive Sales Analytics Dashboard"
+            };
+            var heading = document.getElementById("case-study-heading");
+            if (heading && id && titles[id]) {
+                heading.textContent = titles[id];
+            }
+        })();
+    </script>
 
     <div id="consent-banner"></div>
     <div id="footer"></div>

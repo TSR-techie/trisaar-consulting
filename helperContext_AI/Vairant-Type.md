@@ -16,19 +16,37 @@ executive-brief
 
 challenge-simple
 
-challenge-friction-base
+challenge-frictionMap
 
-challenge-friction-modern
+challenge-frictionModern
 
-challenge-friction-colored
-
-
+challenge-frictionColored
 
 
 
 
 
+**Approach/Solution**
+
+solution-simple
+
+solution-decision-path
+
+solution-control-hub
+
+solution-decision-engine
 
 
 
+
+
+**Impact**
+
+impact-simple
+
+impact-scorecard
+
+impact-value-orbit
+
+impact-bridge
 

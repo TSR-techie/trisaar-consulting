@@ -1,26 +1,41 @@
 {
   "schemaVersion": "1.0",
-
   "meta": {
     "id": "sara-0003",
-    "title": "Commercial Credit Underwriting Engine | TriSaar"
+    "title": "Least-cost Network & Logistics Optimization | Sāra 0003 | TriSaar Consulting",
+    "description": "Sāra 0003 case study: a network optimization and Excel/VBA decision-support tool that calculates total delivered cost and ranks alternative plants for each city, product and channel.",
+    "keywords": [
+      "Industrial Goods",
+      "Cement Manufacturing",
+      "Network Optimization",
+      "Logistics Optimization",
+      "Total Delivered Cost",
+      "Supply Chain",
+      "Cost Optimization",
+      "Excel",
+      "VBA",
+      "Decision Support"
+    ],
+    "author": "TriSaar Consulting",
+    "themeColor": "#B91C1C",
+    "canonical": "https://tsr-techie.github.io/trisaar-consulting/case-study.html?id=sara-0003",
+    "ogImage": "https://tsr-techie.github.io/trisaar-consulting/docs/assets/images/Social-preview.png",
+    "robots": "index, follow"
   },
-
   "sections": [
     {
       "id": "hero",
       "component": "hero",
       "variant": "immersive",
       "visible": true,
-
       "parts": [
         {
           "type": "taxonomy",
           "data": {
             "items": [
-              "Commercial Banking",
-              "Credit Underwriting",
-              "Risk Modeling"
+              "Industrial Goods",
+              "Cement Manufacturing",
+              "Logistics Optimization"
             ]
           }
         },
@@ -28,19 +43,19 @@
           "type": "identity",
           "variant": "dualTone",
           "data": {
-            "text": "Sāra 0002 · सार ०००२"
+            "text": "Sāra 0003 · सार ०००३"
           }
         },
         {
           "type": "title",
           "data": {
-            "text": "Commercial Credit Underwriting Engine"
+            "text": "Least-cost Network & Logistics Optimization"
           }
         },
         {
           "type": "subtitle",
           "data": {
-            "text": "Streamlining middle-market commercial loan approvals from manual spreadsheet reviews into an automated risk scoring system."
+            "text": "Turning freight, clinker, subsidy and variable-cost data into a ranked view of the lowest-cost plants for every market."
           }
         },
         {
@@ -65,7 +80,7 @@
         {
           "type": "description",
           "data": {
-            "text": "An automated risk-scoring framework that integrated financial statement parsing with regulatory stress-testing to accelerate loan origination."
+            "text": "A network optimization tool that combines freight, clinker, subsidy, production and variable costs to calculate total delivered cost and surface the top plant alternatives for each city, product and channel."
           },
           "visible": true
         },
@@ -77,31 +92,36 @@
             "fields": [
               {
                 "label": "Client",
-                "value": "Global Regional Bank",
+                "value": "National Industry Leader",
                 "icon": "client"
               },
               {
+                "label": "Country / Region",
+                "value": "India · Asia",
+                "icon": "globe"
+              },
+              {
                 "label": "Duration",
-                "value": "8 Weeks",
+                "value": "2 Weeks",
                 "icon": "duration"
               },
               {
                 "label": "Outcome",
                 "icon": "outcome",
                 "values": [
-                  "Weeks → Hours",
-                  "Zero Audit Exceptions",
-                  "75% Manual Effort Cut"
+                  "Lowest-cost plant ranking",
+                  "One tool, full network",
+                  "Top-5 alternatives"
                 ]
               },
               {
                 "label": "Technology",
-                "value": "Python • Power BI",
+                "value": "Excel • VBA",
                 "icon": "technology"
               },
               {
                 "label": "Dataset",
-                "value": "Anonymized Portfolio",
+                "value": "Anonymized",
                 "icon": "dataset"
               },
               {
@@ -114,13 +134,11 @@
         }
       ]
     },
-
     {
       "id": "publication",
       "component": "publication",
       "variant": "rule",
       "visible": true,
-
       "data": {
         "label": "Sāra Publication",
         "edition": "Public Edition",
@@ -129,37 +147,34 @@
         "readTime": "10 min read"
       }
     },
-
     {
       "id": "executive-summary",
       "component": "executiveSummary",
       "variant": "executive-overview",
       "visible": true,
-
       "data": {
         "eyebrow": "Executive Summary",
-        "title": "From manual audit friction to a high-speed risk engine.",
-        "subtitle": "We transformed a fragmented commercial credit evaluation pipeline into an automated intelligence engine delivering standardized, audit-ready decisions.",
-
+        "title": "One view of the lowest-cost plant for every market.",
+        "subtitle": "A repeatable total delivered cost engine for evaluating plant-to-market allocation.",
         "pillars": [
           {
             "key": "challenge",
             "label": "Challenge",
             "icon": "people",
-            "title": "Underwriting stuck in disparate spreadsheets.",
-            "body": "Commercial loan officers spent over 60% of their time manually re-keying balance sheets and running customized risk models, creating severe backlogs and inconsistent risk scoring.",
+            "title": "The lowest-cost option was difficult to identify at network scale.",
+            "body": "With dozens of plants, multiple products and hundreds of cities, identifying the best plant for a market often meant manually checking freight rates, existing plant-to-city assignments and inputs from different teams.",
             "points": [
               {
                 "icon": "duration",
-                "text": "Manual data extraction delayed approvals by up to three weeks"
+                "text": "87K+ plant-city-product-channel combinations"
               },
               {
                 "icon": "scales",
-                "text": "Discrepancies in ratio calculations across regional underwriting pods"
+                "text": "Multiple cost components across the network"
               },
               {
                 "icon": "person",
-                "text": "High operational overhead during quarterly deal volume spikes"
+                "text": "Alternative-plant analysis depended on manual coordination"
               }
             ]
           },
@@ -167,24 +182,24 @@
             "key": "solution",
             "label": "Solution",
             "icon": "gear",
-            "title": "Standardized extraction and dynamic risk rules.",
-            "body": "We engineered a unified risk scoring pipeline combining automated financial parsing, real-time stress testing, and interactive reporting for credit committees.",
+            "title": "A total delivered cost engine for network-wide plant selection.",
+            "body": "We built a decision-support tool that combines the relevant cost components and ranks the top 5 plant alternatives for a selected city, product and channel.",
             "steps": [
               {
                 "icon": "flow",
-                "text": "Standardize credit ratio definitions"
+                "text": "Combines production, clinker, freight, subsidy & variable costs"
               },
               {
                 "icon": "grid",
-                "text": "Construct automated data extraction tools"
+                "text": "Calculates total delivered cost across the network"
               },
               {
-                "icon": "code",
-                "text": "Deploy Python risk-scoring algorithms"
+                "icon": "chart",
+                "text": "Ranks the top 5 plant alternatives"
               },
               {
-                "icon": "shield",
-                "text": "Establish audit logs & compliance checks"
+                "icon": "sliders",
+                "text": "Tests cost scenarios by toggling subsidy and variable-cost assumptions"
               }
             ]
           },
@@ -192,46 +207,45 @@
             "key": "impact",
             "label": "Impact",
             "icon": "chart",
-            "title": "Accelerated origination. Standardized risk.",
-            "body": "The solution dramatically shortened turnarounds while empowering risk officers to stress-test portfolios against macroeconomic shifts instantly.",
+            "title": "From manual alternative-plant analysis to structured network decisions.",
+            "body": "The team can now evaluate the lowest-cost plant and the next-best alternatives from a consistent cost view, helping them respond faster when a preferred plant is affected by logistics, manufacturing or natural-hazard disruptions.",
             "metrics": [
               {
                 "icon": "duration",
-                "value": "Weeks → Hours",
-                "label": "Turnaround time reduced"
+                "value": "87K+",
+                "label": "network combinations evaluated"
               },
               {
                 "icon": "people",
-                "value": "75%",
-                "label": "Manual data entry cut"
+                "value": "Top 5",
+                "label": "plant alternatives surfaced"
               },
               {
                 "icon": "outcome",
-                "value": "3x Volume",
-                "label": "Deal throughput capacity"
+                "value": "1 View",
+                "label": "consistent cost comparison"
               },
               {
-                "icon": "shield",
-                "value": "100%",
-                "label": "Audit trail compliance"
+                "icon": "scales",
+                "value": "Scenario",
+                "label": "cost assumptions can be tested"
               }
             ]
           }
         ],
-
         "bottomLine": {
           "label": "Bottom line",
           "icon": "star",
           "parts": [
             {
-              "text": "A robust credit underwriting engine that converts fragmented financial statements into "
+              "text": "The client moved from ad-hoc, plant-by-plant comparisons to an "
             },
             {
-              "text": "rapid, compliant, and defensible",
+              "text": "structured ranking of the lowest-cost and next-best plant options",
               "emphasis": true
             },
             {
-              "text": " lending decisions—at enterprise scale."
+              "text": " for each city, product and channel."
             }
           ],
           "cta": {
@@ -240,181 +254,356 @@
             "icon": "document"
           }
         },
-
         "meta": [
           {
             "label": "Industry",
-            "value": "Financial Services",
+            "value": "Industrial Goods",
             "icon": "industry"
           },
           {
             "label": "Domain",
-            "value": "Credit Underwriting",
+            "value": "Cement Manufacturer",
             "icon": "network"
           },
           {
             "label": "Technology",
-            "value": "Python • Power BI",
+            "value": "Excel • VBA",
             "icon": "technology"
           },
           {
             "label": "Duration",
-            "value": "8 Weeks",
+            "value": "2 Weeks",
             "icon": "duration"
           },
           {
             "label": "Client",
-            "value": "Global Regional Bank",
+            "value": "National Industry Leader",
             "icon": "client"
           }
         ]
       }
     },
-
     {
       "id": "challenge",
       "component": "challenge",
       "variant": "challenge-friction-modern",
       "visible": true,
-
       "data": {
         "eyebrow": "Challenge",
-        "title": "Underwriting stuck in disparate spreadsheets.",
-        "body": "Commercial loan officers spent over 60% of their time manually re-keying balance sheets and running customized risk models, creating severe backlogs and inconsistent risk scoring.",
-
+        "title": "Finding the next-best plant was a manual network exercise.",
+        "body": "The production network spanned dozens of plants, products and hundreds of cities. When the preferred plant was not viable because of a logistics issue, manufacturing constraint or natural hazard, teams had to manually investigate alternative plants using freight rates, existing assignments and guidance from colleagues.",
         "core": {
           "icon": "warning",
           "label": "The Core Challenge",
-          "body": "Approvals stalled because financial data lived in silos, scoring was manual, and no single view of risk existed."
+          "body": "The data needed to evaluate plant economics existed, but there was no consistent network-wide decision view that quickly ranked the best alternatives for a market."
         },
-
         "points": [
           {
             "icon": "dataset",
-            "title": "Fragmented statements",
-            "body": "Balance sheets and supporting files lived in different sources and formats, making consolidation slow and error-prone."
+            "title": "Complex network choices",
+            "body": "Each decision could involve multiple plants, products, cities and channels, creating thousands of possible plant-to-market combinations."
           },
           {
             "icon": "workstation",
-            "title": "Manual re-keying",
-            "body": "Officers retyped figures into customized models, relying on individual knowledge instead of a shared workflow."
+            "title": "Manual cost checking",
+            "body": "Teams checked freight rates, existing plant-to-city assignments and other cost inputs across different sources before comparing alternatives."
+          },
+          {
+            "icon": "people",
+            "title": "Colleague-dependent analysis",
+            "body": "Finding the right alternative often relied on guidance and knowledge from colleagues familiar with the network, rather than a common decision framework."
           },
           {
             "icon": "scales",
-            "title": "Inconsistent scoring",
-            "body": "Ratio definitions and risk criteria varied by regional underwriting pod, making outcomes hard to compare."
-          },
-          {
-            "icon": "duration",
-            "title": "Volume spikes",
-            "body": "Quarterly deal surges created severe backlogs and stretched already manual review cycles."
+            "title": "Limited alternative visibility",
+            "body": "The lowest-cost option might be clear only after manual analysis, while the next-best alternatives were harder to assess quickly when circumstances changed."
           }
         ],
-
         "impact": {
           "icon": "quote",
-          "label": "The Impact",
-          "body": "Longer origination cycles, inconsistent risk calls, and heavy dependence on manual effort.",
+          "label": "The Business Impact",
+          "body": "When a preferred plant became constrained or unavailable, the business could struggle to act quickly. Manual alternative analysis was time-consuming, plant allocation could remain suboptimal, and decisions could depend on individual knowledge and colleague guidance.",
           "metrics": [
             {
               "icon": "duration",
-              "value": "Up to 3 weeks",
-              "label": "to complete data extraction"
+              "value": "87K+",
+              "label": "network combinations"
             },
             {
               "icon": "person",
-              "value": "60%+",
-              "label": "of officer time on re-keying"
+              "value": "Manual",
+              "label": "alternative analysis"
             },
             {
-              "icon": "spreadsheet",
-              "value": "Disparate",
-              "label": "workbooks per region"
+              "icon": "people",
+              "value": "Colleague-dependent",
+              "label": "network guidance"
             },
             {
               "icon": "warning",
-              "value": "High",
-              "label": "risk of scoring discrepancies"
+              "value": "Suboptimal",
+              "label": "allocation risk"
             }
           ]
         }
       }
     },
-
     {
-      "id": "approach",
-      "component": "approach",
-      "variant": "numbered",
+      "id": "solution",
+      "component": "solution",
+      "variant": "solution-control-hub",
       "visible": true,
-
       "data": {
-        "eyebrow": "Approach",
-        "title": "From manual spreadsheets to an automated intelligence engine.",
-        "intro": "We harmonized disparate underwriting criteria into a centralized risk framework, then built automated extraction and risk-scoring modules so underwriters could focus on deal structuring.",
+        "eyebrow": "Solution",
+        "title": "A network-wide engine for total delivered cost and plant ranking.",
+        "intro": "We translated the client's network economics into a repeatable Excel/VBA decision-support tool. Users select a city, product and channel; the engine calculates total delivered cost across relevant plants and surfaces the top alternatives for comparison.",
+        "hub": {
+          "icon": "puzzle",
+          "label": "Our Approach",
+          "body": "Convert fragmented cost & network into one consistent framework for evaluating plant-to-market economics."
+        },
         "steps": [
           {
-            "title": "Standardize credit ratio definitions",
-            "body": "Collaborated with senior risk officers to unify cash flow, coverage ratio, and leverage definitions across all commercial lending divisions."
+            "icon": "dataset",
+            "title": "Bring the network economics together",
+            "body": "Consolidated the cost inputs required to evaluate each plant-to-market combination across production, clinker, freight, subsidy and variable cost.",
+            "weight": 25,
+            "points": [
+              "Production cost per unit",
+              "Clinker cost",
+              "Freight cost",
+              "State subsidy",
+              "Variable cost for incremental demand"
+            ]
           },
           {
-            "title": "Construct automated data extraction tools",
-            "body": "Built parsing utilities to automatically ingest borrower financial statements, tax filings, and bank statements directly into unified data models."
+            "icon": "flow",
+            "title": "Calculate total delivered cost",
+            "body": "Built a consistent calculation for each plant, city, product and channel combination so alternatives could be compared on the same economic basis.",
+            "weight": 25,
+            "points": [
+              "Production cost",
+              "Clinker cost",
+              "Freight",
+              "Less subsidy",
+              "Plus variable cost"
+            ]
           },
           {
-            "title": "Deploy Python risk-scoring algorithms",
-            "body": "Programmed multi-factor credit risk scoring engines incorporating industry benchmarks, debt service coverage, and macroeconomic sensitivity."
+            "icon": "chart",
+            "title": "Rank the network alternatives",
+            "body": "For a selected city, product and channel, the tool evaluates the network and ranks the top 5 plant options by total delivered cost.",
+            "weight": 25,
+            "points": [
+              "City selection",
+              "Product selection",
+              "Channel selection",
+              "Top-5 plant ranking"
+            ]
           },
           {
-            "title": "Establish audit logs & compliance checks",
-            "body": "Integrated automated audit trails and rule validation to ensure full compliance with internal credit policies and regulatory standards."
+            "icon": "sliders",
+            "title": "Support scenario-based decisions",
+            "body": "Users can test the effect of cost assumptions, including whether subsidy is considered and how variable cost from additional demand changes the ranking.",
+            "weight": 25,
+            "points": [
+              "Toggle subsidy treatment",
+              "Test variable-cost assumptions",
+              "Compare alternative plants",
+              "Support disruption-response decisions"
+            ]
           }
-        ]
+        ],
+        "outcome": {
+          "icon": "outcome",
+          "label": "The Outcome",
+          "items": [
+            {
+              "icon": "chart",
+              "title": "Network-wide visibility",
+              "body": "The economics of plant alternatives can be assessed through one consistent view."
+            },
+            {
+              "icon": "scales",
+              "title": "Alternatives surfaced",
+              "body": "The next-best plants are visible alongside the lowest-cost option."
+            },
+            {
+              "icon": "duration",
+              "title": "Faster response",
+              "body": "Teams can evaluate alternatives without repeating a plant-by-plant manual analysis."
+            }
+          ]
+        },
+        "enablers": {
+          "icon": "gear",
+          "label": "Key Enablers",
+          "intro": "The tool combines network economics with lightweight Excel automation.",
+          "items": [
+            {
+              "icon": "spreadsheet",
+              "title": "Cost inputs",
+              "body": "Production, clinker & freight"
+            },
+            {
+              "icon": "scales",
+              "title": "Subsidy logic",
+              "body": "Cost treatment"
+            },
+            {
+              "icon": "chart",
+              "title": "Network ranking",
+              "body": "Plant alternatives"
+            },
+            {
+              "icon": "code",
+              "title": "VBA",
+              "body": "Calculation & automation"
+            },
+            {
+              "icon": "document",
+              "title": "Decision view",
+              "body": "City × product × channel"
+            }
+          ]
+        }
       }
     },
-
     {
-      "id": "outcomes",
-      "component": "outcomes",
-      "variant": "strip",
+      "id": "impact",
+      "component": "impact",
+      "variant": "impact-value-orbit",
       "visible": true,
-
       "data": {
-        "eyebrow": "Outcomes",
-        "title": "Faster decisions, lower risk, scale-ready origination.",
+        "eyebrow": "Impact",
+        "title": "Faster alternative evaluation. Better-informed network decisions.",
+        "titleHighlight": "network decisions.",
+        "intro": "The tool turned a fragmented, manually guided exercise into a structured decision-support process for evaluating plant-to-market alternatives.",
+        "orbit": {
+          "icon": "outcome",
+          "label": "Business Impact",
+          "body": "What changed for network decision-makers.",
+          "tagline": "A consistent way to evaluate alternatives when the network changes.",
+          "showKpi": false,
+          "showPercent": false
+        },
+        "bridge": {
+          "quote": "When the preferred plant changes, the next-best option should not require starting the analysis from scratch."
+        },
+        "glance": {
+          "icon": "outcome",
+          "label": "Impact at a glance",
+          "items": [
+            {
+              "icon": "chart",
+              "text": "Plant alternatives can be evaluated from a consistent total delivered cost view."
+            },
+            {
+              "icon": "scales",
+              "text": "Top-5 alternatives are surfaced rather than requiring teams to identify the next option manually."
+            },
+            {
+              "icon": "duration",
+              "text": "Disruption scenarios can be assessed without repeating fragmented plant-by-plant analysis."
+            },
+            {
+              "icon": "people",
+              "text": "Decision-making is less dependent on individual colleagues' network knowledge and guidance."
+            }
+          ]
+        },
         "metrics": [
           {
-            "value": "Weeks → Hours",
-            "label": "Origination turnaround",
-            "note": "Deal evaluations no longer suffer from manual extraction bottlenecks."
+            "icon": "duration",
+            "value": "87K+",
+            "label": "Network combinations",
+            "note": "The tool evaluates the breadth of the plant-city-product-channel network.",
+            "weight": 35,
+            "orbit": true,
+            "bridgeSlot": "top",
+            "tag": {
+              "icon": "chart",
+              "text": "Network Scale"
+            }
           },
           {
-            "value": "Unified Engine",
-            "label": "Delivery model",
-            "note": "Deployed a modular underwriting platform seamlessly integrated with existing BI dashboards."
+            "icon": "scales",
+            "value": "Top 5",
+            "label": "Plant alternatives",
+            "note": "The next-best options are surfaced alongside the lowest-cost plant.",
+            "weight": 30,
+            "orbit": true,
+            "bridgeSlot": "end",
+            "tag": {
+              "icon": "outcome",
+              "text": "Alternatives"
+            }
           },
           {
-            "value": "Standard Risk",
-            "label": "Decision consistency",
-            "note": "Risk models and policy rules are codified central sources of truth."
+            "icon": "outcome",
+            "value": "1 View",
+            "label": "Cost comparison",
+            "note": "Plant alternatives can be compared using a consistent total delivered cost framework.",
+            "weight": 35,
+            "orbit": true,
+            "bridgeSlot": "start",
+            "tag": {
+              "icon": "check",
+              "text": "Consistent"
+            }
+          },
+          {
+            "icon": "sliders",
+            "value": "Scenario",
+            "label": "Cost assumptions",
+            "note": "Subsidy and variable-cost treatment can be tested when evaluating alternatives.",
+            "tag": {
+              "icon": "trend-up",
+              "text": "What-if"
+            }
           }
-        ]
+        ],
+        "kpis": [
+          {
+            "icon": "duration",
+            "value": "87K+",
+            "label": "Plant-city-product-channel combinations evaluated."
+          },
+          {
+            "icon": "people",
+            "value": "Top 5",
+            "label": "Alternative plants surfaced for comparison."
+          },
+          {
+            "icon": "chart",
+            "value": "1 View",
+            "label": "Consistent total delivered cost comparison."
+          },
+          {
+            "icon": "scales",
+            "value": "Scenario",
+            "label": "Cost assumptions can be tested."
+          }
+        ],
+        "summary": {
+          "icon": "chart",
+          "text": "Structured alternatives. Faster evaluation. Better-informed network decisions."
+        }
       }
     },
-
     {
       "id": "next-step",
       "component": "cta",
       "variant": "centered",
       "visible": true,
-
       "data": {
-        "title": "Need an automated risk engine for your lending operations?",
-        "body": "We help financial institutions streamline complex analytical workflows into standardized, auditable software tools; driving throughput while maintaining strict risk controls.",
+        "title": "Need to evaluate the economics of a complex supply network?",
+        "body": "TriSaar helps operations and supply chain teams turn fragmented cost data, network relationships and business rules into practical decision-support tools for faster, better-informed decisions.",
         "actions": [
           {
             "label": "Start a Conversation",
             "type": "primary",
-            "target": "contact.html"
+            "target": "contactus.html"
           },
           {
             "label": "View More Work",
