@@ -1,0 +1,42 @@
+/* Default = hub / TriSaar light */
+
+html.os-page,
+html[data-theme="hub"],
+html[data-theme="trisaar"],
+.os-pin[data-theme="hub"],
+.os-pin[data-theme="trisaar"] {
+    --os-accent: #d32f2f;
+    --os-accent-secondary: #991b1b;
+    --os-bg: #fafafa;
+    --os-surface: #ffffff;
+    --os-text: #1f2937;
+    --os-text-muted: #6b7280;
+    --os-border: #e5e7eb;
+}
+
+html[data-theme="trishader"],
+.os-pin[data-theme="trishader"] {
+    --os-accent: #00b020;
+    --os-accent-secondary: #ff0000;
+    --os-bg: #000000;
+    --os-surface: #111111;
+    --os-text: #ffffff;
+    --os-text-muted: #9ca3af;
+    --os-border: #262626;
+}
+
+html[data-theme="trinidhi"],
+.os-pin[data-theme="trinidhi"] {
+    --os-accent: #5d2e7b;
+    --os-accent-secondary: #1a3c24;
+    --os-bg: #e2d9c2;
+    --os-surface: #ffffff;
+    --os-text: #1a3c24;
+    --os-text-muted: #7a6f5a;
+    --os-border: #cfc4a8;
+}
+
+.os-pin {
+    background: var(--os-bg);
+    color: var(--os-text);
+}

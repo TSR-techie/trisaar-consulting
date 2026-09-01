@@ -1,0 +1,73 @@
+/* Isolated Our Services tokens — ideology copied, not imported */
+
+:root {
+    --os-font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --os-text-hero: clamp(2.4rem, 5.2vw, 4.6rem);
+    --os-text-title: clamp(1.85rem, 3.4vw, 3rem);
+    --os-text-body: clamp(1rem, 1.4vw, 1.2rem);
+    --os-text-label: 0.75rem;
+    --os-radius: 22px;
+    --os-radius-sm: 14px;
+    --os-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+    --os-ease: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    --os-nav-offset: 80px;
+    --os-switcher-h: 52px;
+    --os-chrome: calc(var(--os-nav-offset) + var(--os-switcher-h));
+}
+
+html.os-page {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+html.os-page #navbar {
+    min-height: 80px;
+}
+
+.os-page body {
+    font-family: var(--os-font);
+    background: var(--os-bg);
+    color: var(--os-text);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.os-section-label {
+    display: block;
+    font-size: var(--os-text-label);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--os-accent);
+    margin-bottom: 0.85rem;
+}
+
+.os-title {
+    font-family: var(--os-font);
+    font-size: var(--os-text-hero);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--os-text);
+    margin: 0 0 1.25rem;
+}
+
+.os-body {
+    font-size: var(--os-text-body);
+    line-height: 1.75;
+    color: var(--os-text-muted);
+    max-width: 36rem;
+    margin: 0;
+}
+
+.os-placeholder {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--os-text-muted);
+    border: 1px solid var(--os-border);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+}

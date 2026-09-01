@@ -323,9 +323,37 @@ CAPABILITIES
 
 .capability-icon{
 
-    font-size:2rem;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    width:56px;
+    height:56px;
 
     margin-bottom:1rem;
+
+    border-radius:50%;
+
+    background:var(--color-primary-light);
+
+    color:var(--color-primary);
+
+    transition:transform var(--transition-normal);
+
+}
+
+.capability-icon svg{
+
+    display:block;
+
+    width:26px;
+    height:26px;
+
+}
+
+.capability-card:hover .capability-icon{
+
+    transform:scale(1.08);
 
 }
 
